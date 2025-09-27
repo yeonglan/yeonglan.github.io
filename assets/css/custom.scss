@@ -79,3 +79,21 @@ h1 { border-bottom: 2px solid var(--border); padding-bottom: .4rem; }
 .profile h3 { margin: .25rem 0 .25rem; }
 .profile .subtitle { color: var(--muted); margin: 0 0 .5rem; font-size: .95rem; }
 .profile .links a { display: inline-block; margin-right: .5rem; }
+
+/* 우측 소개문 카드 */
+.sidebar-card{
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem;
+}
+.sidebar-card img:first-child{
+  width: 120px; height: 120px; object-fit: cover;
+  border-radius: 9999px; border: 2px solid var(--accent);
+  display:block; margin-bottom:.75rem;
+}
+.sidebar-card h3{ margin:.25rem 0 .25rem; }
+.sidebar-card .muted{ color: var(--muted); margin:.25rem 0 .75rem; font-size:.95rem; }
+.sidebar-card a{ color: var(--link); }
+.sidebar-card a:hover{ color: var(--link-hover); }
+
