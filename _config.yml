@@ -1,9 +1,9 @@
-title: no style, please! # name of the site
-author: Riccardo Graziosi # name of site's author
-email: riccardo.graziosi97@gmail.com # email of site's author
-url: https://riggraz.dev/no-style-please # root address of the site
+title: 포트폴리오 # name of the site
+author: Ko Yoenglan # name of site's author
+email: jijamsee@gmail.com # email of site's author
+url: https://github.com/yeonglan # root address of the site
 description: > # description of the site (multiple lines allowed)
-  A (nearly) no-CSS, fast, minimalist Jekyll theme.
+  프로젝트 갤러리
 
 permalink: /:slug.html
 
@@ -11,8 +11,6 @@ favicon: "./logo.png" # relative path to site's favicon
 # goat_counter: "yoursitename" # put your GoatCounter name if you want to use GoatCounter analytics
 
 remote_theme: riggraz/no-style-please
-plugins:
-  - jekyll-remote-theme
 
 theme_config:
   appearance: "auto" # can be "light", "dark" or "auto"
@@ -24,5 +22,6 @@ sass:
   style: :compressed
 
 plugins:
+  - jekyll-remote-theme
   - jekyll-feed
   - jekyll-seo-tag
