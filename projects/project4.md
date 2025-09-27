@@ -1,7 +1,7 @@
 ---
-title: "청년층 미충족 의료 분석"
-order: 5
-thumbnail: /assets/img/thumbs/umnd.jpg
+title: "청년층 미충족 의료율 영향 요인 분석"
+order: 4
+thumbnail: assets/img/thumbs/shap_summary.png
 tags: [Health, Policy, ML]
 links:
   repo: https://github.com/YOUR/repo1
