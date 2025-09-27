@@ -1,0 +1,12 @@
+name: 고영란
+title: Data Analyst
+photo: /assets/img/profile.jpg   # 여기에 프로필 이미지 업로드
+location: Seoul, KR
+email: yourname@example.com
+links:
+  - text: GitHub
+    url: https://github.com/YOUR_USERNAME
+  - text: LinkedIn
+    url: https://www.linkedin.com/in/YOUR_ID
+  - text: Email
+    url: mailto:yourname@example.com
