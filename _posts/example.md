@@ -19,6 +19,6 @@ Mauris viverra dictum ultricies. Vestibulum quis ipsum euismod, facilisis metus 
 
 미충족 의료율을 높이는 영향 요인으로 인구 천명 당 간호사 수 등이 도출되었다.
 
-## 소감(#the-end)
+## [소감](#the-end)
 
 데이터 탐색 및 분석 과정에서 현행 의료보건 체계의 문제점을 파악하고 추가적인 분석을 수행하여 유의미한 시사점을 이끌어냄.
