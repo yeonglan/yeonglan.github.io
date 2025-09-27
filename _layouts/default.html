@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: 'en' }}">
   {%- include head.html -%}
-  <body class="{{ site.theme_config.appearance | default: 'auto' }}">
+  <body class="{{ site.theme_config.appearance | default: 'light' }}">
     <main class="page-content" aria-label="Content">
       <div class="w">
         <div class="layout-2">
@@ -9,7 +9,6 @@
             {% if page.gallery %}{% include gallery.html %}{% endif %}
             {{ content }}
           </div>
-
           <aside class="sidebar-right" aria-label="Sidebar">
             {% if page.sidebar %}
               <div class="sidebar-card">
