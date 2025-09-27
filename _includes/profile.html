@@ -1,0 +1,14 @@
+<div class="profile">
+  <img src="{{ site.data.profile.photo | relative_url }}" alt="{{ site.data.profile.name }}" class="avatar">
+  <h3>{{ site.data.profile.name }}</h3>
+  <p class="subtitle">{{ site.data.profile.title }}</p>
+  <ul style="padding-left:0; list-style:none; margin:.25rem 0 .75rem;">
+    <li>📍 {{ site.data.profile.location }}</li>
+    <li>✉️ <a href="mailto:{{ site.data.profile.email }}">{{ site.data.profile.email }}</a></li>
+  </ul>
+  <div class="links">
+    {% for l in site.data.profile.links %}
+      <a href="{{ l.url }}" target="_blank" rel="noopener">{{ l.text }}</a>
+    {% endfor %}
+  </div>
+</div>
