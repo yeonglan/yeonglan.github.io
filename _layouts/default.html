@@ -6,14 +6,18 @@
       <div class="w">
         <div class="layout-2">
           <div class="main">
-            {%- if page.gallery -%}
-              {%- include gallery.html -%}
-            {%- else -%}
-              {{ content }}
-            {%- endif -%}
+            {% if page.gallery %}{% include gallery.html %}{% endif %}
+            {{ content }}
           </div>
-          <aside class="sidebar-right" aria-label="Profile">
-            {% include profile.html %}
+
+          <aside class="sidebar-right" aria-label="Sidebar">
+            {% if page.sidebar %}
+              <div class="sidebar-card">
+                {{ page.sidebar | markdownify }}
+              </div>
+            {% else %}
+              {% include profile.html %}
+            {% endif %}
           </aside>
         </div>
       </div>
