@@ -137,3 +137,44 @@ code, pre {
                'Liberation Mono', 'Courier New', monospace;
   font-size: 0.95rem;
 }
+
+
+
+/* -------- Profile card text fix (wrap + size + spacing) -------- */
+.profile{
+  padding: 18px 18px;        /* 여백 넉넉히 */
+  font-size: .92rem;         /* 전체 글씨 크기 ↓ */
+  line-height: 1.55;
+  box-sizing: border-box;
+}
+
+.profile *{
+  max-width: 100%;           /* 상자 밖으로 못 나가게 */
+  overflow-wrap: anywhere;   /* 긴 이메일/URL 줄바꿈 */
+  word-break: break-word;
+}
+
+.profile h3{
+  font-size: 1.02rem;
+  margin: .25rem 0 .25rem;
+  font-weight: 700;
+}
+
+.profile .subtitle{
+  font-size: .9rem;
+  color: var(--muted);
+  margin: 0 0 .5rem;
+}
+
+/* 리스트/링크 정리 */
+.profile ul{
+  list-style: none;          /* 불릿 제거(원하면 지우고 기본 불릿 사용) */
+  padding-left: 0;
+  margin: 0 0 .75rem;
+}
+.profile li{ margin: .25rem 0; }
+.profile a{ text-decoration: none; border-bottom: 0; } /* 카드 안 링크 밑줄 제거 */
+
+/* 혹시 남는 얇은 줄(테마 hr 등) 숨기기 */
+.profile hr{ display:none; }
+
