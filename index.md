@@ -4,8 +4,8 @@ title: "Home"
 gallery: true
 sidebar: |
   ![](/assets/img/profile.jpg)
-  ### 영란님
-  <p class="muted">Data Analyst · Story Architect</p>
+  ### ---
+  <p class="muted">Data Analyst</p>
   - 📍 Seoul, KR  
   - ✉️ <a href="mailto:yourname@example.com">yourname@example.com</a>  
   <br>
