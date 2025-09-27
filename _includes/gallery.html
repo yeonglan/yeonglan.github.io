@@ -1,16 +1,21 @@
-<div class="gallery">
+<!-- _includes/gallery.html -->
+<div class="gallery gallery--list">
   {% assign items = site.projects | sort: 'order' %}
   {% for post in items %}
-    <a class="card" href="{{ post.url | relative_url }}" aria-label="{{ post.title }}">
-      {% if post.thumbnail %}
-        <img src="{{ post.thumbnail | relative_url }}" alt="{{ post.title }}">
-      {% endif %}
+    <a class="card card--row" href="{{ post.url | relative_url }}" aria-label="{{ post.title }}">
+      <div class="thumb">
+        {% if post.thumbnail %}
+          <img src="{{ post.thumbnail | relative_url }}" alt="{{ post.title }}">
+        {% endif %}
+      </div>
       <div class="meta">
         <h4>{{ post.title }}</h4>
         {% if post.date %}
           <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y-%m-%d" }}</time>
         {% endif %}
-        {% if post.excerpt %}<p>{{ post.excerpt | strip_html | truncate: 110 }}</p>{% endif %}
+        {% if post.excerpt %}
+          <p class="excerpt">{{ post.excerpt | strip_html | truncate: 180 }}</p>
+        {% endif %}
       </div>
     </a>
   {% endfor %}
