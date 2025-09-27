@@ -23,7 +23,7 @@ h1{ border-bottom:2px solid var(--border); padding-bottom:.4rem; }
 /* 갤러리 카드 */
 .gallery{ display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:16px; }
 .card{ display:block; background:var(--bg-soft); border:1px solid var(--border); border-radius:12px; overflow:hidden; color:inherit; }
-.card img{ width:100%; height:140px; object-fit:cover; display:block; }
+.card img{ width:400%; height:200px; object-fit:cover; display:block; }
 .card .meta{ padding:.75rem 1rem; }
 .card .meta h4{ margin:.25rem 0 .25rem; font-size:1.05rem; }
 .card time{ display:block; color:var(--muted); font-size:.9rem; }
