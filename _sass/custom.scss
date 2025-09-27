@@ -1,0 +1,47 @@
+/* 라이트 팔레트 */
+:root{
+  --bg:#F7F2E8; --bg-soft:#FAF7EF; --text:#111827; --muted:#4B5563;
+  --border:#E5E7EB; --link:#1D4ED8; --link-hover:#1E40AF; --accent:#2563EB;
+}
+
+/* 기본 적용 */
+html,body{ background:var(--bg); color:var(--text); }
+a{ color:var(--link); text-decoration:none; border-bottom:1px solid rgba(29,78,216,.3); }
+a:hover{ color:var(--link-hover); border-bottom-color:currentColor; }
+code,pre{ background:var(--bg-soft); border:1px solid var(--border); }
+blockquote{ background:var(--bg-soft); border-left:4px solid var(--accent); padding:.75rem 1rem; }
+h1{ border-bottom:2px solid var(--border); padding-bottom:.4rem; }
+
+/* 컨테이너 폭 확대 */
+.w{ max-width:1100px; }
+
+/* 2열: 좌측(갤러리/본문) + 우측(사이드) */
+.layout-2{ display:grid; grid-template-columns:1fr 300px; gap:24px; align-items:start; }
+.sidebar-right{ position:sticky; top:2rem; }
+.main{ min-width:0; }
+
+/* 갤러리 카드 */
+.gallery{ display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:16px; }
+.card{ display:block; background:var(--bg-soft); border:1px solid var(--border); border-radius:12px; overflow:hidden; color:inherit; }
+.card img{ width:100%; height:140px; object-fit:cover; display:block; }
+.card .meta{ padding:.75rem 1rem; }
+.card .meta h4{ margin:.25rem 0 .25rem; font-size:1.05rem; }
+.card time{ display:block; color:var(--muted); font-size:.9rem; }
+
+/* 우측 소개/프로필 카드 공통 */
+.profile,.sidebar-card{ background:var(--bg-soft); border:1px solid var(--border); border-radius:12px; padding:1rem; }
+.profile .avatar,.sidebar-card img:first-child{
+  width:120px; height:120px; object-fit:cover; border-radius:9999px; border:2px solid var(--accent);
+  display:block; margin-bottom:.75rem;
+}
+.profile .subtitle,.sidebar-card .subtitle,.sidebar-card .muted{ color:var(--muted); font-size:.95rem; }
+
+/* (중요) 테마의 다크反전 비활성화 */
+body[a="dark"], body[a="auto"]{ filter:none !important; }
+body[a="dark"] img, body[a="auto"] img{ filter:none !important; }
+
+/* 모바일 */
+@media (max-width:1024px){
+  .layout-2{ grid-template-columns:1fr; }
+  .sidebar-right{ position:static; }
+}
