@@ -97,7 +97,6 @@ h1{ border-bottom:2px solid var(--border); padding-bottom:.4rem; }
   width:120px; height:120px; object-fit:cover; border-radius:9999px; border:2px solid var(--accent);
   display:block; margin-bottom:.75rem;
 }
-.subtitle,.sidebar-card .subtitle,.sidebar-card .muted{ color:var(--muted); font-size:.95rem; }
 
 /* 다크버전 비활성화 */
 body[a="dark"], body[a="auto"]{ filter:none !important; }
@@ -112,8 +111,7 @@ body[a="dark"] img, body[a="auto"] img{ filter:none !important; }
 /* ------------------ Typography (Pretendard + Size) ------------------ */
 
 /* 전체 기본 글자 크기. 숫자만 바꾸면 전역이 같이 커진다. */
-:root { --base-font-size: 16px; }  /* 16~18px 사이 추천 */
-
+:root { --base-font-size: 15px; }  /* 16~18px 사이 추천 */
 html { font-size: var(--base-font-size); }
 
 /* 본문 폰트: Pretendard Variable 우선, 시스템 폰트 백업 */
@@ -126,6 +124,24 @@ body {
   letter-spacing: .01em;
 }
 
+/* 홈: sidebar 블록을 쓸 때 */
+.sidebar-card{
+  font-size: .85rem;         /* 카드 전체 축소 */
+  line-height: 1.5;
+}
+.sidebar-card .subtitle,
+.sidebar-card .muted{ font-size: .8rem; }
+
+/* 다른 페이지: profile include를 쓸 때 */
+.profile{
+  font-size: .85rem;
+  line-height: 1.5;
+}
+.profile .subtitle{ font-size: .8rem; }
+
+/* 포스트 본문(왼쪽 메인 영역)만 살짝 더 줄이기 */
+.main { font-size: .96rem; }
+
 /* 제목 크기/굵기 */
 h1 { font-weight: 700; font-size: clamp(28px, 3.5vw, 40px); line-height: 1.2; }
 h2 { font-weight: 700; font-size: clamp(22px, 2.6vw, 28px); line-height: 1.3; }
@@ -136,16 +152,6 @@ code, pre {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
                'Liberation Mono', 'Courier New', monospace;
   font-size: 0.95rem;
-}
-
-
-
-/* -------- Profile card text fix (wrap + size + spacing) -------- */
-.profile{
-  padding: 18px 18px;        /* 여백 넉넉히 */
-  font-size: .8rem;         /* 전체 글씨 크기 ↓ */
-  line-height: 1.55;
-  box-sizing: border-box;
 }
 
 .profile *{
