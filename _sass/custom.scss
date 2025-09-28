@@ -112,7 +112,7 @@ body[a="dark"] img, body[a="auto"] img{ filter:none !important; }
 /* ------------------ Typography (Pretendard + Size) ------------------ */
 
 /* 전체 기본 글자 크기. 숫자만 바꾸면 전역이 같이 커진다. */
-:root { --base-font-size: 17px; }  /* 16~18px 사이 추천 */
+:root { --base-font-size: 16px; }  /* 16~18px 사이 추천 */
 
 html { font-size: var(--base-font-size); }
 
