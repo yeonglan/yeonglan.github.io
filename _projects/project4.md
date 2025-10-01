@@ -1,7 +1,7 @@
 ---
 title: "[음성분석] 너의 소울을 들려줘: 랩 시뮬레이터"
 order: 4
-thumbnail: assets/img/thumbs/shap_summary.png
+thumbnail: assets/img/thumbs/rab_simulator.png
 tags: [Health, Policy, ML]
 links:
   repo: https://github.com/YOUR/repo1
