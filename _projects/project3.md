@@ -1,6 +1,6 @@
 ---
 title: "청년층 미충족 의료율 영향 요인 분석"
-order: 4
+order: 3
 thumbnail: assets/img/thumbs/shap_summary.png
 tags: [Health, Policy, ML]
 links:
