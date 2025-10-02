@@ -45,12 +45,23 @@ ElasticNet으로 선별한 변수 목록.
 
 ## 느낀 점
 데이터가 문제를 말해준다. 해당 프로젝트를 수행하며 가장 먼저 느낀 점입니다.
-찾고자 하는 문제와 관련된 데이터를 적절히 선별하는 것이 데이터 분석의 첫번째 시금석이라는 것을 배웠습니다.
-만일 시민의 건강행태에 있어 운동에 관련된 데이터만 사용했더라면 미충족 의료율과 의료비 등 보건행동에 따른 자치구별 차별점을 인식할 수 없었을 것입니다.
+만일 시민의 건강행태에 있어 운동에 관련된 데이터만 사용했더라면 미충족 의료율과 의료비 등 보건행동에 따른 자치구별 차별점을 인식하지 못했을 것입니다.
+찾고자 하는 문제와 관련된 데이터를 다양하게 수집한 덕분에 좀더 포괄적인 관점에서 문제를 진단할 수 있었습니다.
+또한 강서구 등 특정 자치구에 집중된 독특한 현상을 확인하고 영향 요인을 분석하였는데, 분석 결과가 선행연구를 뒷받침하는 점이 신기했습니다.
+저의 분석에서 도출한 고무적인 포인트는 바로 간호사의 수였습니다. Choi, Kim, Cho & Jeong(2025) 문헌에서 노동력 부족을 언급했지만, 이는 수도권과 비수도권의 격차를 비교한 것이지 수도권 내를 연구한 것은 아니었습니다. 하지만 분석 결과, 수도권 내에서도 간호 인력 부족이 의료 공백으로 이어질 수 있다는 시사점이 드러났습니다.
+비록 데이터 부족으로 인해 완전히 신뢰하기는 어려운 결과지만...~
+
+
+
+
+## 참고문헌
+Changes in Nursing Grades and Nurse Staffing Levels following the 2024 Revision of Nursing Management Fee Standards: A Focus on Tertiary Hospitals and Medical Institutions in Seoul
+Hyeyoung Choi, Kiyoung Kim, Su-Jin Cho, Suyong Jeong
+Health Insurance Review & Assessment Service Research.2025; 5(1): 58.  
 
 
 ## 기술스택
-Python(pandas, scikit-learn), QGIS, SHAP
+Python(pandas, scikit-learn, SHAP), QGIS
 
 
 ## 링크
