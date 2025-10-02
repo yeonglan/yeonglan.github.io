@@ -2,7 +2,7 @@
 title: "[도그널]"
 order: 2
 thumbnail: assets/img/thumbs/shap_summary.png
-tags: [Health, Policy, ML]
+tags: [Life, Human-Animal-Interaction, DL, Video]
 links:
   repo: https://github.com/YOUR/repo1
   report: /assets/docs/umnd-report.pdf
@@ -13,6 +13,8 @@ links:
 
 
 ## 개요
+- 강아지 동영상 데이터를 활용한 5가지 감정 분석
+- 
 
 
 ## 상세 내용

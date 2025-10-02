@@ -2,21 +2,23 @@
 title: "[음성분석] 너의 소울을 들려줘: 랩 시뮬레이터"
 order: 4
 thumbnail: assets/img/thumbs/rap_simulator.png
-tags: [Health, Policy, ML]
+tags: [ML, DL, Voice, Education, Transformer]
 links:
   repo: https://github.com/YOUR/repo1
   report: /assets/docs/umnd-report.pdf
 ---
 
 ## 주요 성과
-- 2023 관악구 데이터사이언스 양성 과정 수상 (우수상)
-- 정책 타깃 및 아이디어 제안
+- 랩 가수의 음성 특징을 추출하여 지망생의 독학에 도움을 주는 랩 시뮬레이터 모델 개발
+  
 
 
 ## 개요
-4인 팀 프로젝트를 진행하며, 데이터 설계, 수집, 전처리, 모델링, 시각화 전반에 걸쳐 기여했습니다.
+6인 팀 프로젝트를 진행하며, 음성 데이터 전처리, 모델링, 시각화를 담당하였습니다.
 
-1. 회귀 알고리즘으로 관악구 상담버스 정차 입지 제안
+1. Transformer 활용하여 HuBERT 모델 인코딩 및 파인튜닝
+2. 샴 네트워크 구현
+
 
 
 ## 상세 내용
@@ -28,7 +30,7 @@ links:
 
 
 ## 기술스택
-Python(pandas, scikit-learn), QGIS
+Python(pandas, scikit-learn, pytorch)
 
 
 ## 링크
