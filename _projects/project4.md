@@ -5,7 +5,7 @@ thumbnail: assets/img/thumbs/rap_simulator.png
 tags: [ML, DL, Voice, Education, Transformer]
 links:
   repo: https://github.com/YOUR/repo1
-  report: /assets/docs/umnd-report.pdf
+  report: /assets/docs/Rap_Simulator.pdf
 ---
 
 # 🎤 랩 가수 음성 분석 및 유사 아티스트 추천 시스템
