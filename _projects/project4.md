@@ -81,7 +81,7 @@ links:
       * 음성 데이터에서 샘플링 레이트(SR, Sampling Rate)는 일반적으로 음질에 관련됩니다. 사람의 청각 가청 범위는 20 Hz~20 kHz지만, 실제 음성 정보는 약 0~8 kHz 구간에 집중되어 있습니다. 따라서 해당 대역을 정확히 재현하면서도 불필요한 고주파를 제거할 수 있는 16000을 적당한 SR로 선정했습니다.
       * 데이터에서 잡음 등 무의미한 소리를 제거하고 유의미한 구간만을 추출하기 위하여, librosa 라이브러리의 effects.split 함수를 사용해 음성 최대 진폭 대비 -20 dB 이하를 제거했습니다.
 
-![Artists](assets/img/mel-spectrogram.png)
+![Artists](https://github.com/yeonglan/yeonglan.github.io/blob/main/assets/img/mel-spectrogram.png?raw=true)
 *▲ 래퍼별 멜 스펙트로그램*
 
 ![tSNE_before_Embedding](https://github.com/yeonglan/yeonglan.github.io/blob/main/assets/img/t-SNE_of_Artists.png?raw=true)
