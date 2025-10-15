@@ -30,8 +30,8 @@ links:
 
 <table>
   <tr>
-    <th style="width: 15%; text-align:center;">구분</th>
-    <th style="width: 85%;">내용</th>
+    <th style="width: 5%; text-align:center;">구분</th>
+    <th style="width: 95%;">내용</th>
   </tr>
   <tr>
     <td style="text-align:center;"><b>전처리</b></td>
