@@ -84,9 +84,9 @@ links:
 ![Artists](assets/img/mel-spectrogram.png)
 *▲ 래퍼별 멜 스펙트로그램*
 
-![tSNE_before_Embedding](assets/img/t-SNE_of_Artists.png)
+![tSNE_before_Embedding](https://github.com/yeonglan/yeonglan.github.io/blob/main/assets/img/t-SNE_of_Artists.png?raw=true)
 
-![tSNE_Embedding](assets/img/t-SNE_projected_embeddings.png)
+![tSNE_Embedding](https://github.com/yeonglan/yeonglan.github.io/blob/main/assets/img/t-SNE_projected_embeddings.png?raw=true)
 *▲ 래퍼별 임베딩 군집 시각화 (t-SNE)*
 
 
@@ -100,7 +100,7 @@ links:
      * 마진 설정: 임베딩된 샘플 간 거리를 얼마나 벌릴까? 하이퍼 파라미터 튜닝0.1이 가장 적합했습니다.
 
 
-![Model Results](assets/img/thresholds.png)
+![Model Results](https://github.com/yeonglan/yeonglan.github.io/blob/main/assets/img/thresholds.png?raw=true)
 *▲ Stratified KFold 결과 예시*
 
 === Cross-Validation Summary ===
@@ -151,7 +151,7 @@ Precision@5 (Test)     ●●●○○
 
 따라서 거리 기반 표현 학습을 성공적으로 수행해 냈습니다.
 
-![silhouette](assets/img/silhouette_by_labels.png)
+![silhouette](https://github.com/yeonglan/yeonglan.github.io/blob/main/assets/img/silhouette_by_labels.png?raw=true)
 *▲ 래퍼별 실루엣 계수*
 
 
