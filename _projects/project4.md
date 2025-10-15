@@ -34,15 +34,15 @@ links:
     <th style="width: 95%;">내용</th>
   </tr>
   <tr>
-    <td style="text-align:center;"><b>전처리</b></td>
+    <td style="text-align:center;">전처리</td>
     <td>리샘플링(음질 정규화), 무음 제거, 길이 정규화, 유의미한 구간 추출,<br>데이터 증강 시도 (Pitch shift, Time stretch, GaussianNoise)</td>
   </tr>
   <tr>
-    <td style="text-align:center;"><b>모델링</b></td>
+    <td style="text-align:center;">모델링</td>
     <td>1️⃣ 사전 훈련된 트랜스포머 <b>HuBERT</b> 모델 임베딩<br>2️⃣ <b>Siamese Network</b> 기반 아티스트 유사도 계산 모델 구현</td>
   </tr>
   <tr>
-    <td style="text-align:center;"><b>시각화</b></td>
+    <td style="text-align:center;">시각화</td>
     <td><b>t-SNE</b>, <b>MFCC</b> 기반 샘플 분포 및 스펙트럼 분석</td>
   </tr>
 </table>
