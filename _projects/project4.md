@@ -62,10 +62,12 @@ links:
       * 음성 데이터에서 샘플링 레이트(SR, Sampling Rate)는 일반적으로 음질에 관련됩니다. 사람의 청각 가청 범위는 20 Hz~20 kHz지만, 실제 음성 정보는 약 0~8 kHz 구간에 집중되어 있습니다. 따라서 해당 대역을 정확히 재현하면서도 불필요한 고주파를 제거할 수 있는 16000을 적당한 SR로 선정했습니다.
       * 데이터에서 잡음 등 무의미한 소리를 제거하고 유의미한 구간만을 추출하기 위하여, librosa 라이브러리의 effects.split 함수를 사용해 음성 최대 진폭 대비 -20 dB 이하를 제거했습니다.
 
-![Artists](img/mel-spectrogram.png)
+![Artists](assets/img/mel-spectrogram.png)
 *▲ 래퍼별 멜 스펙트로그램*
 
-![tSNE Embedding](img/t-SNE$20of%20projected%20embeddings%20(perp%20=%2030).png)
+![tSNE_before_Embedding](assets/img/t-SNE_of_Artists.png)
+
+![tSNE_Embedding](assets/img/t-SNE_projected_embeddings.png)
 *▲ 래퍼별 임베딩 군집 시각화 (t-SNE)*
 
 
@@ -79,7 +81,7 @@ links:
      * 마진 설정: 임베딩된 샘플 간 거리를 얼마나 벌릴까? 하이퍼 파라미터 튜닝0.1이 가장 적합했습니다.
 
 
-![Model Results](img/thresholds.png)
+![Model Results](assets/img/thresholds.png)
 *▲ Stratified KFold 결과 예시*
 
 === Cross-Validation Summary ===
@@ -130,7 +132,7 @@ Precision@5 (Test)     ●●●○○
 
 따라서 거리 기반 표현 학습을 성공적으로 수행해 냈습니다.
 
-![silhouette](img/silhouette%20by%20labels.png)
+![silhouette](assets/img/silhouette_by_labels.png)
 *▲ 래퍼별 실루엣 계수*
 
 
