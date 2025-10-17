@@ -1,11 +1,11 @@
 ---
 title: "Toeic Speaking 학습을 위한 LLM 챗봇 서비스 구축"
 order: 1
-thumbnail: assets/img/thumbs/shap_summary.png
+thumbnail: assets/img/thumbs/spiking_proto.png
 tags: [Education, LLM, Customer-Service, Prompt-Engineering]
 links:
   repo: https://github.com/yeonglan/sPicking
-  report: /assets/docs/umnd-report.pdf
+  report: 
 ---
 
 ## 주요 성과
