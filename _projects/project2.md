@@ -8,14 +8,41 @@ links:
   report: /assets/docs/umnd-report.pdf
 ---
 
-# 주요 성과
-> * 얼굴 중심 전처리로 배경 노이즈 제거
-> * CNN+LSTM 기반 감정 분류 모델 구축
-> * 표정 중심 시퀀스 데이터로 강아지 감정 인식 가능성 입증
-> * 기존 논문보다 정확도 % 증가
-> * 전처리–학습–추론이 일관된 **reproducible pipeline** 구축
-> * 개체별 감정 패턴과 성향 분석 가능성 탐색
+# VGG19와 BiLSTM을 활용한 강아지 감정 인식 모델
+> 분석목적: 강아지의 몸짓, 표정, 소리, 뇌파 등 다양한 데이터를 복합적으로 분석하여, 매순간 반려동물의 긍정 상태와 활동성을 정량적으로 파악하고자 함<br>
+> 진행기간: 25.09.22 ~ 25.10.22 (4주)<br>
+> 참여인원: 5인<br>
+> 프로젝트 기여: 강아지 표정 기반 감정 분석, fastapi 이용해 HTTP 기반 웹 프레임워크 구축
 
+
+## 주요 성과
+> * 강아지 감정 분류 선행 연구보다 높은 분류 정확도 달성 0.605 ▶️ 0.801
+> * 전처리–학습–추론이 일관된 reproducible pipeline 구축
+> * HTTP 기반 웹 프레임워크 구현
+> * 도그널 어플리케이션 구현 및 서비스 출시 예정
+
+https://m.blog.naver.com/freepsw/222239299386
+
+### 담당 과업
+
+<table>
+  <tr>
+    <th style="width: 5%; text-align:center;">구분</th>
+    <th style="width: 95%;">내용</th>
+  </tr>
+  <tr>
+    <td style="text-align:center;">전처리</td>
+    <td>bounding box 추출, 15% 마진 적용해 강아지 귀, 얼굴을 전체적으로 학습,<br>(img_seq, label, dog_id) 구조화</td>
+  </tr>
+  <tr>
+    <td style="text-align:center;">모델링</td>
+    <td>1️⃣ 백본: <b>VGG19</b> 모델<br>2️⃣ 2 layer <b>BiLSTM</b> 모델</td>로 시계열 감정 패턴 학습<br>3️⃣ binary
+  </tr>
+  <tr>
+    <td style="text-align:center;"></td>
+    <td><b>t-SNE</b>, <b>MFCC</b> 기반 샘플 분포 및 스펙트럼 분석</td>
+  </tr>
+</table>
 
 # 개요
 저희 팀은 강아지의 감정, 뇌파(EEG), 행동, 소리 등 멀티 데이터를 기반으로 강아지의 성향을 진단하는 서비스 `도그널`을 기획했습니다.
@@ -29,7 +56,7 @@ links:
 
 ---
 
-# 도그널: Dog Emotion Recognition
+## 상세 내용
 
 > 강아지의 **표정과 시계열 패턴**을 기반으로 감정 상태를 분석하는 프로젝트입니다.
 > MobileNet-SSD 얼굴 검출, VGG19+BiLSTM 구조를 통해
@@ -153,12 +180,13 @@ Colab에서 반복되는 실험 과정에서 전처리·추론 코드가 분리�
 
 
 
-## References
+## 참고문헌
 
 * Franzoni, V., Biondi, G. & Milani, A. Advanced techniques for automated emotion recognition in dogs from video data through deep learning. Neural Comput & Applic 36, 17669–17688 (2024). https://doi.org/10.1007/s00521-024-10042-3
 
+
 ## 기술스택
-Scikit-learn, Tensorflow, keras
+scikit-learn, tf.keras, pytorch, fastapi
 
 
 ## 링크
