@@ -4,7 +4,7 @@ order: 4
 thumbnail: assets/img/thumbs/rap_simulator.png
 tags: [ML, DL, Voice, Education, Transformer]
 links:
-  repo: https://github.com/YOUR/repo1
+  repo: https://github.com/yeonglan/showmeyourvoice.git
   report: /assets/docs/Rap_Simulator.pdf
 ---
 
