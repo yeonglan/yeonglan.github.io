@@ -1,5 +1,5 @@
 ---
-title: "Toeic Speaking 학습을 위한 LLM 챗봇 서비스 구축"
+title: "[LLM] Toeic Speaking 학습을 위한 챗봇 서비스"
 order: 1
 thumbnail: assets/img/thumbs/spiking_proto.png
 tags: [Education, LLM, Customer-Service, Prompt-Engineering]
