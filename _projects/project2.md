@@ -1,10 +1,10 @@
 ---
-title: "[도그널]"
+title: "[이미지/영상] CNN+LSTM 기반 강아지 감정 인식"
 order: 2
 thumbnail: assets/img/thumbs/shap_summary.png
 tags: [Life, Human-Animal-Interaction, DL, Video]
 links:
-  repo: https://github.com/YOUR/repo1
+  repo: [https://github.com/ImCuriosity/pet_analysis_models.git](https://github.com/ImCuriosity/pet_analysis_models/tree/master)
   report: /assets/docs/umnd-report.pdf
 ---
 
@@ -29,7 +29,7 @@ links:
 
 ---
 
-# 🐶 Dog Emotion Recognition | CNN+LSTM 기반 강아지 감정 인식
+# 도그널: Dog Emotion Recognition
 
 > 강아지의 **표정과 시계열 패턴**을 기반으로 감정 상태를 분석하는 프로젝트입니다.
 > MobileNet-SSD 얼굴 검출, VGG19+BiLSTM 구조를 통해
