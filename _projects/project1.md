@@ -10,6 +10,8 @@ links:
 
 # Toeic Speaking 학습을 위한 챗봇 서비스 'sPiking'
 
+![main_page](https://github.com/yeonglan/yeonglan.github.io/blob/main/assets/img/thumbs/spiking_proto.png?raw=true)
+
 
 ## 주요 성과
 - streamlit, OpenAI 활용한 토익 스피킹 학습용 챗봇 서비스 구현
