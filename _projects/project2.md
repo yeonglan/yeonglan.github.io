@@ -4,7 +4,7 @@ order: 2
 thumbnail: assets/img/thumbs/shap_summary.png
 tags: [Life, Human-Animal-Interaction, DL, Video]
 links:
-  repo: [https://github.com/ImCuriosity/pet_analysis_models.git](https://github.com/ImCuriosity/pet_analysis_models/tree/master)
+  repo: https://github.com/ImCuriosity/pet_analysis_models/tree/master
   report: /assets/docs/umnd-report.pdf
 ---
 
