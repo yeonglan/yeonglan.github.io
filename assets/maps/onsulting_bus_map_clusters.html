@@ -1,0 +1,3690 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_5cb24a7c2d3a6ec818e885f84ae96fbc {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>
+    
+    
+<div style="
+ position: fixed; 
+ bottom: 20px; left: 20px; z-index: 9999;
+ background: white; padding: 10px 12px; border:1px solid #999; border-radius: 6px;
+ font-size: 13px; box-shadow: 0 2px 6px rgba(0,0,0,.2);
+">
+<b>클러스터 색상</b><br>
+<div style="display:flex; align-items:center; margin-top:4px;">
+  <div style="width:14px; height:14px; background:#4C78A8; margin-right:8px;"></div>Cluster 0
+</div>
+<div style="display:flex; align-items:center; margin-top:4px;">
+  <div style="width:14px; height:14px; background:#72B7B2; margin-right:8px;"></div>Cluster 1
+</div>
+<div style="display:flex; align-items:center; margin-top:4px;">
+  <div style="width:14px; height:14px; background:#F2C600; margin-right:8px;"></div>Cluster 2
+</div>
+</div>
+    
+            <div class="folium-map" id="map_5cb24a7c2d3a6ec818e885f84ae96fbc" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_5cb24a7c2d3a6ec818e885f84ae96fbc = L.map(
+                "map_5cb24a7c2d3a6ec818e885f84ae96fbc",
+                {
+                    center: [37.4733960210606, 126.92512762878789],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 12,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_3353511b91d7a603a0ee8252319973a7 = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_5cb24a7c2d3a6ec818e885f84ae96fbc);
+        
+    
+            var feature_group_512982d638c7215cfa95d08a891df539 = L.featureGroup(
+                {}
+            ).addTo(map_5cb24a7c2d3a6ec818e885f84ae96fbc);
+        
+    
+            var circle_marker_0e43613250ca5cdf35d5320fc43b43e4 = L.circleMarker(
+                [37.481571, 126.927363],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#72B7B2", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.184384330046141, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_512982d638c7215cfa95d08a891df539);
+        
+    
+        var popup_389bbcc8c4402b5ee5fc6d47bb141034 = L.popup({"maxWidth": 300});
+
+        
+            var html_cda0cc38da95cb52ef5fa9dd8b547dc4 = $(`<div id="html_cda0cc38da95cb52ef5fa9dd8b547dc4" style="width: 100.0%; height: 100.0%;">     <div style='font-size:13px'>       <b>장소명</b>: 신원동주민센터<br>       <b>행정동</b>: 신원동<br>       <b>클러스터</b>: 1<br>       <b>입지점수</b>: 0.273048     </div>     </div>`)[0];
+            popup_389bbcc8c4402b5ee5fc6d47bb141034.setContent(html_cda0cc38da95cb52ef5fa9dd8b547dc4);
+        
+
+        circle_marker_0e43613250ca5cdf35d5320fc43b43e4.bindPopup(popup_389bbcc8c4402b5ee5fc6d47bb141034)
+        ;
+
+        
+    
+    
+            circle_marker_0e43613250ca5cdf35d5320fc43b43e4.bindTooltip(
+                `<div>
+                     신원동주민센터 (신원동) | C1
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_195c253dec0f74fe0d1d2d97202d008c = L.circleMarker(
+                [37.4824579, 126.9241588],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#72B7B2", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.184384330046141, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_512982d638c7215cfa95d08a891df539);
+        
+    
+        var popup_7b324bd3f36838fa9fd6efe4d2f72286 = L.popup({"maxWidth": 300});
+
+        
+            var html_dcac758bd242b2ae03fe9324154183d8 = $(`<div id="html_dcac758bd242b2ae03fe9324154183d8" style="width: 100.0%; height: 100.0%;">     <div style='font-size:13px'>       <b>장소명</b>: 신원 경로당<br>       <b>행정동</b>: 신원동<br>       <b>클러스터</b>: 1<br>       <b>입지점수</b>: 0.273048     </div>     </div>`)[0];
+            popup_7b324bd3f36838fa9fd6efe4d2f72286.setContent(html_dcac758bd242b2ae03fe9324154183d8);
+        
+
+        circle_marker_195c253dec0f74fe0d1d2d97202d008c.bindPopup(popup_7b324bd3f36838fa9fd6efe4d2f72286)
+        ;
+
+        
+    
+    
+            circle_marker_195c253dec0f74fe0d1d2d97202d008c.bindTooltip(
+                `<div>
+                     신원 경로당 (신원동) | C1
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_9cd936a64102175e2db4986b5b919519 = L.circleMarker(
+                [37.478515, 126.928715],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#72B7B2", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.184384330046141, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_512982d638c7215cfa95d08a891df539);
+        
+    
+        var popup_537add895d14612ef36e2c976473aeee = L.popup({"maxWidth": 300});
+
+        
+            var html_7efbfe2885fa3d30796fd46900f8de82 = $(`<div id="html_7efbfe2885fa3d30796fd46900f8de82" style="width: 100.0%; height: 100.0%;">     <div style='font-size:13px'>       <b>장소명</b>: 신일 경로당<br>       <b>행정동</b>: 신원동<br>       <b>클러스터</b>: 1<br>       <b>입지점수</b>: 0.273048     </div>     </div>`)[0];
+            popup_537add895d14612ef36e2c976473aeee.setContent(html_7efbfe2885fa3d30796fd46900f8de82);
+        
+
+        circle_marker_9cd936a64102175e2db4986b5b919519.bindPopup(popup_537add895d14612ef36e2c976473aeee)
+        ;
+
+        
+    
+    
+            circle_marker_9cd936a64102175e2db4986b5b919519.bindTooltip(
+                `<div>
+                     신일 경로당 (신원동) | C1
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_e21b51100f9275e0e371fcecb00fbff7 = L.circleMarker(
+                [37.4825231, 126.9252732],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#72B7B2", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.184384330046141, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_512982d638c7215cfa95d08a891df539);
+        
+    
+        var popup_4ef0b6d2eca0003108be7ba70a7889b1 = L.popup({"maxWidth": 300});
+
+        
+            var html_5e72ffce232fb3cea4d9c68f3deeec10 = $(`<div id="html_5e72ffce232fb3cea4d9c68f3deeec10" style="width: 100.0%; height: 100.0%;">     <div style='font-size:13px'>       <b>장소명</b>: 인애노인교실<br>       <b>행정동</b>: 신원동<br>       <b>클러스터</b>: 1<br>       <b>입지점수</b>: 0.273048     </div>     </div>`)[0];
+            popup_4ef0b6d2eca0003108be7ba70a7889b1.setContent(html_5e72ffce232fb3cea4d9c68f3deeec10);
+        
+
+        circle_marker_e21b51100f9275e0e371fcecb00fbff7.bindPopup(popup_4ef0b6d2eca0003108be7ba70a7889b1)
+        ;
+
+        
+    
+    
+            circle_marker_e21b51100f9275e0e371fcecb00fbff7.bindTooltip(
+                `<div>
+                     인애노인교실 (신원동) | C1
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_ef5d2efa3411605945c20e84077cf5af = L.circleMarker(
+                [37.4788333, 126.9292758],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#72B7B2", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.184384330046141, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_512982d638c7215cfa95d08a891df539);
+        
+    
+        var popup_2936f22d6a68a3f363a8e6ace43ef2d5 = L.popup({"maxWidth": 300});
+
+        
+            var html_20e2e392c1e3f6c061aca550b541aa4a = $(`<div id="html_20e2e392c1e3f6c061aca550b541aa4a" style="width: 100.0%; height: 100.0%;">     <div style='font-size:13px'>       <b>장소명</b>: 시니어아카데미<br>       <b>행정동</b>: 신원동<br>       <b>클러스터</b>: 1<br>       <b>입지점수</b>: 0.273048     </div>     </div>`)[0];
+            popup_2936f22d6a68a3f363a8e6ace43ef2d5.setContent(html_20e2e392c1e3f6c061aca550b541aa4a);
+        
+
+        circle_marker_ef5d2efa3411605945c20e84077cf5af.bindPopup(popup_2936f22d6a68a3f363a8e6ace43ef2d5)
+        ;
+
+        
+    
+    
+            circle_marker_ef5d2efa3411605945c20e84077cf5af.bindTooltip(
+                `<div>
+                     시니어아카데미 (신원동) | C1
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_1933ef94420b0577c7c316b48b1ec9fc = L.circleMarker(
+                [37.48287372, 126.9215364],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#72B7B2", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.184384330046141, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_512982d638c7215cfa95d08a891df539);
+        
+    
+        var popup_2ecc88c7deef2804b138413e9a90809f = L.popup({"maxWidth": 300});
+
+        
+            var html_819db6f26adc8b0130e3cb3d79efdbb3 = $(`<div id="html_819db6f26adc8b0130e3cb3d79efdbb3" style="width: 100.0%; height: 100.0%;">     <div style='font-size:13px'>       <b>장소명</b>: 신원동자치회관<br>       <b>행정동</b>: 신원동<br>       <b>클러스터</b>: 1<br>       <b>입지점수</b>: 0.273048     </div>     </div>`)[0];
+            popup_2ecc88c7deef2804b138413e9a90809f.setContent(html_819db6f26adc8b0130e3cb3d79efdbb3);
+        
+
+        circle_marker_1933ef94420b0577c7c316b48b1ec9fc.bindPopup(popup_2ecc88c7deef2804b138413e9a90809f)
+        ;
+
+        
+    
+    
+            circle_marker_1933ef94420b0577c7c316b48b1ec9fc.bindTooltip(
+                `<div>
+                     신원동자치회관 (신원동) | C1
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_ec6e061216168746d086de8b14942eda = L.circleMarker(
+                [37.4822257, 126.9276219],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#72B7B2", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.184384330046141, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_512982d638c7215cfa95d08a891df539);
+        
+    
+        var popup_d33213586794e1a9d079546ff712f2be = L.popup({"maxWidth": 300});
+
+        
+            var html_0e15fa413e7849be96a13db930a232b4 = $(`<div id="html_0e15fa413e7849be96a13db930a232b4" style="width: 100.0%; height: 100.0%;">     <div style='font-size:13px'>       <b>장소명</b>: 신원시장<br>       <b>행정동</b>: 신원동<br>       <b>클러스터</b>: 1<br>       <b>입지점수</b>: 0.273048     </div>     </div>`)[0];
+            popup_d33213586794e1a9d079546ff712f2be.setContent(html_0e15fa413e7849be96a13db930a232b4);
+        
+
+        circle_marker_ec6e061216168746d086de8b14942eda.bindPopup(popup_d33213586794e1a9d079546ff712f2be)
+        ;
+
+        
+    
+    
+            circle_marker_ec6e061216168746d086de8b14942eda.bindTooltip(
+                `<div>
+                     신원시장 (신원동) | C1
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_ff6f294c832c25b8aad1ae5c782d8fec = L.circleMarker(
+                [37.4816312, 126.9279846],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#72B7B2", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.184384330046141, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_512982d638c7215cfa95d08a891df539);
+        
+    
+        var popup_e7b29a76c0df0fe1c79c756ee4a2317c = L.popup({"maxWidth": 300});
+
+        
+            var html_fa6c07855306f0fcfe46d86cb4568ccf = $(`<div id="html_fa6c07855306f0fcfe46d86cb4568ccf" style="width: 100.0%; height: 100.0%;">     <div style='font-size:13px'>       <b>장소명</b>: 관악종합시장<br>       <b>행정동</b>: 신원동<br>       <b>클러스터</b>: 1<br>       <b>입지점수</b>: 0.273048     </div>     </div>`)[0];
+            popup_e7b29a76c0df0fe1c79c756ee4a2317c.setContent(html_fa6c07855306f0fcfe46d86cb4568ccf);
+        
+
+        circle_marker_ff6f294c832c25b8aad1ae5c782d8fec.bindPopup(popup_e7b29a76c0df0fe1c79c756ee4a2317c)
+        ;
+
+        
+    
+    
+            circle_marker_ff6f294c832c25b8aad1ae5c782d8fec.bindTooltip(
+                `<div>
+                     관악종합시장 (신원동) | C1
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_64b8afdd2dedff9897ad5a88af3bec04 = L.circleMarker(
+                [37.470907, 126.921663],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4C78A8", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14.0, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_512982d638c7215cfa95d08a891df539);
+        
+    
+        var popup_896c37ee0234a9786a55e2451efbed66 = L.popup({"maxWidth": 300});
+
+        
+            var html_15123b061acb5ae7fe230f2d0504104c = $(`<div id="html_15123b061acb5ae7fe230f2d0504104c" style="width: 100.0%; height: 100.0%;">     <div style='font-size:13px'>       <b>장소명</b>: 난곡동주민센터<br>       <b>행정동</b>: 난곡동<br>       <b>클러스터</b>: 0<br>       <b>입지점수</b>: 1.000000     </div>     </div>`)[0];
+            popup_896c37ee0234a9786a55e2451efbed66.setContent(html_15123b061acb5ae7fe230f2d0504104c);
+        
+
+        circle_marker_64b8afdd2dedff9897ad5a88af3bec04.bindPopup(popup_896c37ee0234a9786a55e2451efbed66)
+        ;
+
+        
+    
+    
+            circle_marker_64b8afdd2dedff9897ad5a88af3bec04.bindTooltip(
+                `<div>
+                     난곡동주민센터 (난곡동) | C0
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_b4d584da14e77cd7240be575964f89f2 = L.circleMarker(
+                [37.4700485, 126.9245096],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4C78A8", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14.0, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_512982d638c7215cfa95d08a891df539);
+        
+    
+        var popup_40ed54088f4bd759842e823c495a5513 = L.popup({"maxWidth": 300});
+
+        
+            var html_c3a19c4a5a9bcbeaf288c9f2ab8541bc = $(`<div id="html_c3a19c4a5a9bcbeaf288c9f2ab8541bc" style="width: 100.0%; height: 100.0%;">     <div style='font-size:13px'>       <b>장소명</b>: 무궁화 경로당<br>       <b>행정동</b>: 난곡동<br>       <b>클러스터</b>: 0<br>       <b>입지점수</b>: 1.000000     </div>     </div>`)[0];
+            popup_40ed54088f4bd759842e823c495a5513.setContent(html_c3a19c4a5a9bcbeaf288c9f2ab8541bc);
+        
+
+        circle_marker_b4d584da14e77cd7240be575964f89f2.bindPopup(popup_40ed54088f4bd759842e823c495a5513)
+        ;
+
+        
+    
+    
+            circle_marker_b4d584da14e77cd7240be575964f89f2.bindTooltip(
+                `<div>
+                     무궁화 경로당 (난곡동) | C0
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_27a59f97245b1cd45a504223b11b9e31 = L.circleMarker(
+                [37.46997, 126.92182],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4C78A8", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14.0, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_512982d638c7215cfa95d08a891df539);
+        
+    
+        var popup_4d4ce3eead28e6d9f92ba0bd60906151 = L.popup({"maxWidth": 300});
+
+        
+            var html_beba73c390643604ed16492f0dc73d3e = $(`<div id="html_beba73c390643604ed16492f0dc73d3e" style="width: 100.0%; height: 100.0%;">     <div style='font-size:13px'>       <b>장소명</b>: 우림 경로당<br>       <b>행정동</b>: 난곡동<br>       <b>클러스터</b>: 0<br>       <b>입지점수</b>: 1.000000     </div>     </div>`)[0];
+            popup_4d4ce3eead28e6d9f92ba0bd60906151.setContent(html_beba73c390643604ed16492f0dc73d3e);
+        
+
+        circle_marker_27a59f97245b1cd45a504223b11b9e31.bindPopup(popup_4d4ce3eead28e6d9f92ba0bd60906151)
+        ;
+
+        
+    
+    
+            circle_marker_27a59f97245b1cd45a504223b11b9e31.bindTooltip(
+                `<div>
+                     우림 경로당 (난곡동) | C0
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_866d64b3b355cf164da03dfe1cffa3b8 = L.circleMarker(
+                [37.4704258, 126.9183468],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4C78A8", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14.0, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_512982d638c7215cfa95d08a891df539);
+        
+    
+        var popup_bc39082eb579671c06e52f3621e376ca = L.popup({"maxWidth": 300});
+
+        
+            var html_7e6c1194a1b5ff318a4493ae19f7f77e = $(`<div id="html_7e6c1194a1b5ff318a4493ae19f7f77e" style="width: 100.0%; height: 100.0%;">     <div style='font-size:13px'>       <b>장소명</b>: 구립난곡경로당<br>       <b>행정동</b>: 난곡동<br>       <b>클러스터</b>: 0<br>       <b>입지점수</b>: 1.000000     </div>     </div>`)[0];
+            popup_bc39082eb579671c06e52f3621e376ca.setContent(html_7e6c1194a1b5ff318a4493ae19f7f77e);
+        
+
+        circle_marker_866d64b3b355cf164da03dfe1cffa3b8.bindPopup(popup_bc39082eb579671c06e52f3621e376ca)
+        ;
+
+        
+    
+    
+            circle_marker_866d64b3b355cf164da03dfe1cffa3b8.bindTooltip(
+                `<div>
+                     구립난곡경로당 (난곡동) | C0
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_ce9d620892e5e250f08e8f19d4e4b1c4 = L.circleMarker(
+                [37.4758206, 126.9228963],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4C78A8", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14.0, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_512982d638c7215cfa95d08a891df539);
+        
+    
+        var popup_4aefdb175c9ee5e5eec1ece4c6a67b7c = L.popup({"maxWidth": 300});
+
+        
+            var html_5566401ddd88bd9e436d2ba62769cea5 = $(`<div id="html_5566401ddd88bd9e436d2ba62769cea5" style="width: 100.0%; height: 100.0%;">     <div style='font-size:13px'>       <b>장소명</b>: 법원 경로당<br>       <b>행정동</b>: 난곡동<br>       <b>클러스터</b>: 0<br>       <b>입지점수</b>: 1.000000     </div>     </div>`)[0];
+            popup_4aefdb175c9ee5e5eec1ece4c6a67b7c.setContent(html_5566401ddd88bd9e436d2ba62769cea5);
+        
+
+        circle_marker_ce9d620892e5e250f08e8f19d4e4b1c4.bindPopup(popup_4aefdb175c9ee5e5eec1ece4c6a67b7c)
+        ;
+
+        
+    
+    
+            circle_marker_ce9d620892e5e250f08e8f19d4e4b1c4.bindTooltip(
+                `<div>
+                     법원 경로당 (난곡동) | C0
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_3d75fdf8410932caf4a9bfadfef36ea0 = L.circleMarker(
+                [37.471917, 126.919266],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4C78A8", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14.0, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_512982d638c7215cfa95d08a891df539);
+        
+    
+        var popup_1789ddf3525ef0a140fab9663c8fd9a4 = L.popup({"maxWidth": 300});
+
+        
+            var html_df213eb7164e6003c97611a0113f1adc = $(`<div id="html_df213eb7164e6003c97611a0113f1adc" style="width: 100.0%; height: 100.0%;">     <div style='font-size:13px'>       <b>장소명</b>: 나눔재활데이케어센터<br>       <b>행정동</b>: 난곡동<br>       <b>클러스터</b>: 0<br>       <b>입지점수</b>: 1.000000     </div>     </div>`)[0];
+            popup_1789ddf3525ef0a140fab9663c8fd9a4.setContent(html_df213eb7164e6003c97611a0113f1adc);
+        
+
+        circle_marker_3d75fdf8410932caf4a9bfadfef36ea0.bindPopup(popup_1789ddf3525ef0a140fab9663c8fd9a4)
+        ;
+
+        
+    
+    
+            circle_marker_3d75fdf8410932caf4a9bfadfef36ea0.bindTooltip(
+                `<div>
+                     나눔재활데이케어센터 (난곡동) | C0
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_ee59917a582d0ffec076f5853c349620 = L.circleMarker(
+                [37.472213, 126.918195],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4C78A8", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14.0, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_512982d638c7215cfa95d08a891df539);
+        
+    
+        var popup_3fb03b5516d01dd09c9ba14071593a0e = L.popup({"maxWidth": 300});
+
+        
+            var html_2824ef56418e3b09b9002c9f529d1e6f = $(`<div id="html_2824ef56418e3b09b9002c9f529d1e6f" style="width: 100.0%; height: 100.0%;">     <div style='font-size:13px'>       <b>장소명</b>: 관악시조 노인교실<br>       <b>행정동</b>: 난곡동<br>       <b>클러스터</b>: 0<br>       <b>입지점수</b>: 1.000000     </div>     </div>`)[0];
+            popup_3fb03b5516d01dd09c9ba14071593a0e.setContent(html_2824ef56418e3b09b9002c9f529d1e6f);
+        
+
+        circle_marker_ee59917a582d0ffec076f5853c349620.bindPopup(popup_3fb03b5516d01dd09c9ba14071593a0e)
+        ;
+
+        
+    
+    
+            circle_marker_ee59917a582d0ffec076f5853c349620.bindTooltip(
+                `<div>
+                     관악시조 노인교실 (난곡동) | C0
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_dc419fe2ed5e7c8694fb2644c5c886b0 = L.circleMarker(
+                [37.470294, 126.920471],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4C78A8", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14.0, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_512982d638c7215cfa95d08a891df539);
+        
+    
+        var popup_9ea419e94228fa064d618da850d8b5e9 = L.popup({"maxWidth": 300});
+
+        
+            var html_d8fed785d00ed18beb0d2224b06aa36f = $(`<div id="html_d8fed785d00ed18beb0d2224b06aa36f" style="width: 100.0%; height: 100.0%;">     <div style='font-size:13px'>       <b>장소명</b>: 우림시장<br>       <b>행정동</b>: 난곡동<br>       <b>클러스터</b>: 0<br>       <b>입지점수</b>: 1.000000     </div>     </div>`)[0];
+            popup_9ea419e94228fa064d618da850d8b5e9.setContent(html_d8fed785d00ed18beb0d2224b06aa36f);
+        
+
+        circle_marker_dc419fe2ed5e7c8694fb2644c5c886b0.bindPopup(popup_9ea419e94228fa064d618da850d8b5e9)
+        ;
+
+        
+    
+    
+            circle_marker_dc419fe2ed5e7c8694fb2644c5c886b0.bindTooltip(
+                `<div>
+                     우림시장 (난곡동) | C0
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_0a4defd584dddea8365c3b5dd851481d = L.circleMarker(
+                [37.473491, 126.924678],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4C78A8", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14.0, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_512982d638c7215cfa95d08a891df539);
+        
+    
+        var popup_eadfb5832df979007d32e21e24d2d286 = L.popup({"maxWidth": 300});
+
+        
+            var html_473f6c93880740809f6642c90eee8cd8 = $(`<div id="html_473f6c93880740809f6642c90eee8cd8" style="width: 100.0%; height: 100.0%;">     <div style='font-size:13px'>       <b>장소명</b>: 남강어린이공원<br>       <b>행정동</b>: 난곡동<br>       <b>클러스터</b>: 0<br>       <b>입지점수</b>: 1.000000     </div>     </div>`)[0];
+            popup_eadfb5832df979007d32e21e24d2d286.setContent(html_473f6c93880740809f6642c90eee8cd8);
+        
+
+        circle_marker_0a4defd584dddea8365c3b5dd851481d.bindPopup(popup_eadfb5832df979007d32e21e24d2d286)
+        ;
+
+        
+    
+    
+            circle_marker_0a4defd584dddea8365c3b5dd851481d.bindTooltip(
+                `<div>
+                     남강어린이공원 (난곡동) | C0
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_69097442cfea1c43aa72f12315029a87 = L.circleMarker(
+                [37.475465, 126.925625],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4C78A8", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14.0, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_512982d638c7215cfa95d08a891df539);
+        
+    
+        var popup_ba945337cc265eca602c2871dd8a6efd = L.popup({"maxWidth": 300});
+
+        
+            var html_ed881ed82aae2b01b7f718d874f13f55 = $(`<div id="html_ed881ed82aae2b01b7f718d874f13f55" style="width: 100.0%; height: 100.0%;">     <div style='font-size:13px'>       <b>장소명</b>: 보명어린이공원<br>       <b>행정동</b>: 난곡동<br>       <b>클러스터</b>: 0<br>       <b>입지점수</b>: 1.000000     </div>     </div>`)[0];
+            popup_ba945337cc265eca602c2871dd8a6efd.setContent(html_ed881ed82aae2b01b7f718d874f13f55);
+        
+
+        circle_marker_69097442cfea1c43aa72f12315029a87.bindPopup(popup_ba945337cc265eca602c2871dd8a6efd)
+        ;
+
+        
+    
+    
+            circle_marker_69097442cfea1c43aa72f12315029a87.bindTooltip(
+                `<div>
+                     보명어린이공원 (난곡동) | C0
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_edbb8648b8320cc97b534aea6632c1ba = L.circleMarker(
+                [37.475469, 126.925628],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4C78A8", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14.0, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_512982d638c7215cfa95d08a891df539);
+        
+    
+        var popup_97a82b345fe50e594c5423ea31498fa4 = L.popup({"maxWidth": 300});
+
+        
+            var html_62ac2cf248a807ff93082ff09bf54687 = $(`<div id="html_62ac2cf248a807ff93082ff09bf54687" style="width: 100.0%; height: 100.0%;">     <div style='font-size:13px'>       <b>장소명</b>: 무궁화어린이공원<br>       <b>행정동</b>: 난곡동<br>       <b>클러스터</b>: 0<br>       <b>입지점수</b>: 1.000000     </div>     </div>`)[0];
+            popup_97a82b345fe50e594c5423ea31498fa4.setContent(html_62ac2cf248a807ff93082ff09bf54687);
+        
+
+        circle_marker_edbb8648b8320cc97b534aea6632c1ba.bindPopup(popup_97a82b345fe50e594c5423ea31498fa4)
+        ;
+
+        
+    
+    
+            circle_marker_edbb8648b8320cc97b534aea6632c1ba.bindTooltip(
+                `<div>
+                     무궁화어린이공원 (난곡동) | C0
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_d465c87068e7b7460fb4a72da9361d50 = L.circleMarker(
+                [37.469673, 126.923505],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4C78A8", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14.0, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_512982d638c7215cfa95d08a891df539);
+        
+    
+        var popup_1469ec5c0116af21e2a36da8422a7ba6 = L.popup({"maxWidth": 300});
+
+        
+            var html_8f0cc4f780092f0eaf0d09bff88c52e4 = $(`<div id="html_8f0cc4f780092f0eaf0d09bff88c52e4" style="width: 100.0%; height: 100.0%;">     <div style='font-size:13px'>       <b>장소명</b>: 난곡동마을마당<br>       <b>행정동</b>: 난곡동<br>       <b>클러스터</b>: 0<br>       <b>입지점수</b>: 1.000000     </div>     </div>`)[0];
+            popup_1469ec5c0116af21e2a36da8422a7ba6.setContent(html_8f0cc4f780092f0eaf0d09bff88c52e4);
+        
+
+        circle_marker_d465c87068e7b7460fb4a72da9361d50.bindPopup(popup_1469ec5c0116af21e2a36da8422a7ba6)
+        ;
+
+        
+    
+    
+            circle_marker_d465c87068e7b7460fb4a72da9361d50.bindTooltip(
+                `<div>
+                     난곡동마을마당 (난곡동) | C0
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_8ca4de64b602f68df2f8dd77802992b1 = L.circleMarker(
+                [37.467935, 126.920831],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4C78A8", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14.0, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_512982d638c7215cfa95d08a891df539);
+        
+    
+        var popup_d683326dbd953ce0e700d9c7db83ec94 = L.popup({"maxWidth": 300});
+
+        
+            var html_b3163d968323c02bbe9b848f4e66d206 = $(`<div id="html_b3163d968323c02bbe9b848f4e66d206" style="width: 100.0%; height: 100.0%;">     <div style='font-size:13px'>       <b>장소명</b>: 오성어린이공원<br>       <b>행정동</b>: 난곡동<br>       <b>클러스터</b>: 0<br>       <b>입지점수</b>: 1.000000     </div>     </div>`)[0];
+            popup_d683326dbd953ce0e700d9c7db83ec94.setContent(html_b3163d968323c02bbe9b848f4e66d206);
+        
+
+        circle_marker_8ca4de64b602f68df2f8dd77802992b1.bindPopup(popup_d683326dbd953ce0e700d9c7db83ec94)
+        ;
+
+        
+    
+    
+            circle_marker_8ca4de64b602f68df2f8dd77802992b1.bindTooltip(
+                `<div>
+                     오성어린이공원 (난곡동) | C0
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_f97ec01357bfe658f028fd33cb79c03f = L.circleMarker(
+                [37.480256, 126.914031],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4C78A8", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14.0, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_512982d638c7215cfa95d08a891df539);
+        
+    
+        var popup_bf15dc7b80ecee150d0111616a6bdefe = L.popup({"maxWidth": 300});
+
+        
+            var html_aa0b7e034ab22a16db4f60e9b66b717d = $(`<div id="html_aa0b7e034ab22a16db4f60e9b66b717d" style="width: 100.0%; height: 100.0%;">     <div style='font-size:13px'>       <b>장소명</b>: 난우어린이공원<br>       <b>행정동</b>: 난곡동<br>       <b>클러스터</b>: 0<br>       <b>입지점수</b>: 1.000000     </div>     </div>`)[0];
+            popup_bf15dc7b80ecee150d0111616a6bdefe.setContent(html_aa0b7e034ab22a16db4f60e9b66b717d);
+        
+
+        circle_marker_f97ec01357bfe658f028fd33cb79c03f.bindPopup(popup_bf15dc7b80ecee150d0111616a6bdefe)
+        ;
+
+        
+    
+    
+            circle_marker_f97ec01357bfe658f028fd33cb79c03f.bindTooltip(
+                `<div>
+                     난우어린이공원 (난곡동) | C0
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_e75fb10277c26d50526aca25db5e2f00 = L.circleMarker(
+                [37.461455, 126.918829],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#72B7B2", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_512982d638c7215cfa95d08a891df539);
+        
+    
+        var popup_d47d074297af2f34b721faf0baf571cf = L.popup({"maxWidth": 300});
+
+        
+            var html_06dfc89e4d97ee90a040156321104075 = $(`<div id="html_06dfc89e4d97ee90a040156321104075" style="width: 100.0%; height: 100.0%;">     <div style='font-size:13px'>       <b>장소명</b>: 난향동주민센터<br>       <b>행정동</b>: 난향동<br>       <b>클러스터</b>: 1<br>       <b>입지점수</b>: 0.000000     </div>     </div>`)[0];
+            popup_d47d074297af2f34b721faf0baf571cf.setContent(html_06dfc89e4d97ee90a040156321104075);
+        
+
+        circle_marker_e75fb10277c26d50526aca25db5e2f00.bindPopup(popup_d47d074297af2f34b721faf0baf571cf)
+        ;
+
+        
+    
+    
+            circle_marker_e75fb10277c26d50526aca25db5e2f00.bindTooltip(
+                `<div>
+                     난향동주민센터 (난향동) | C1
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_a97b28528734f617ec2ed33faa4567bc = L.circleMarker(
+                [37.4605538, 126.9206033],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#72B7B2", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_512982d638c7215cfa95d08a891df539);
+        
+    
+        var popup_e6a82f7de1037d5830eacf8b26c9a34f = L.popup({"maxWidth": 300});
+
+        
+            var html_77143bc20d6be015364e93ec69d80438 = $(`<div id="html_77143bc20d6be015364e93ec69d80438" style="width: 100.0%; height: 100.0%;">     <div style='font-size:13px'>       <b>장소명</b>: 관악난향데이케어센터<br>       <b>행정동</b>: 난향동<br>       <b>클러스터</b>: 1<br>       <b>입지점수</b>: 0.000000     </div>     </div>`)[0];
+            popup_e6a82f7de1037d5830eacf8b26c9a34f.setContent(html_77143bc20d6be015364e93ec69d80438);
+        
+
+        circle_marker_a97b28528734f617ec2ed33faa4567bc.bindPopup(popup_e6a82f7de1037d5830eacf8b26c9a34f)
+        ;
+
+        
+    
+    
+            circle_marker_a97b28528734f617ec2ed33faa4567bc.bindTooltip(
+                `<div>
+                     관악난향데이케어센터 (난향동) | C1
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_99a2c2e898884ce80b6765d321615af1 = L.circleMarker(
+                [37.4625458, 126.916353],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#72B7B2", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_512982d638c7215cfa95d08a891df539);
+        
+    
+        var popup_6b3250439752b5c75e5d6141fa8e8c7a = L.popup({"maxWidth": 300});
+
+        
+            var html_23f9d7333006ca4f43527b67fc571c66 = $(`<div id="html_23f9d7333006ca4f43527b67fc571c66" style="width: 100.0%; height: 100.0%;">     <div style='font-size:13px'>       <b>장소명</b>: 국회단지 경로당<br>       <b>행정동</b>: 난향동<br>       <b>클러스터</b>: 1<br>       <b>입지점수</b>: 0.000000     </div>     </div>`)[0];
+            popup_6b3250439752b5c75e5d6141fa8e8c7a.setContent(html_23f9d7333006ca4f43527b67fc571c66);
+        
+
+        circle_marker_99a2c2e898884ce80b6765d321615af1.bindPopup(popup_6b3250439752b5c75e5d6141fa8e8c7a)
+        ;
+
+        
+    
+    
+            circle_marker_99a2c2e898884ce80b6765d321615af1.bindTooltip(
+                `<div>
+                     국회단지 경로당 (난향동) | C1
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_989ecfb855b6731b8289c1d4876c2b82 = L.circleMarker(
+                [37.4639584, 126.9181093],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#72B7B2", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_512982d638c7215cfa95d08a891df539);
+        
+    
+        var popup_12fb845df7a965099d0d05964c48d9bf = L.popup({"maxWidth": 300});
+
+        
+            var html_ee1b1e96e179c7a88190d234ce64783d = $(`<div id="html_ee1b1e96e179c7a88190d234ce64783d" style="width: 100.0%; height: 100.0%;">     <div style='font-size:13px'>       <b>장소명</b>: 난향 경로당<br>       <b>행정동</b>: 난향동<br>       <b>클러스터</b>: 1<br>       <b>입지점수</b>: 0.000000     </div>     </div>`)[0];
+            popup_12fb845df7a965099d0d05964c48d9bf.setContent(html_ee1b1e96e179c7a88190d234ce64783d);
+        
+
+        circle_marker_989ecfb855b6731b8289c1d4876c2b82.bindPopup(popup_12fb845df7a965099d0d05964c48d9bf)
+        ;
+
+        
+    
+    
+            circle_marker_989ecfb855b6731b8289c1d4876c2b82.bindTooltip(
+                `<div>
+                     난향 경로당 (난향동) | C1
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_d364f3e14bf8eabefaee3254fe308bdc = L.circleMarker(
+                [37.4648412, 126.9198496],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#72B7B2", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_512982d638c7215cfa95d08a891df539);
+        
+    
+        var popup_176d5962a9f67cbf484f452567dad148 = L.popup({"maxWidth": 300});
+
+        
+            var html_5ef7d5a96afeeda40dcef23e6c60c808 = $(`<div id="html_5ef7d5a96afeeda40dcef23e6c60c808" style="width: 100.0%; height: 100.0%;">     <div style='font-size:13px'>       <b>장소명</b>: 신림종합사회복지관<br>       <b>행정동</b>: 난향동<br>       <b>클러스터</b>: 1<br>       <b>입지점수</b>: 0.000000     </div>     </div>`)[0];
+            popup_176d5962a9f67cbf484f452567dad148.setContent(html_5ef7d5a96afeeda40dcef23e6c60c808);
+        
+
+        circle_marker_d364f3e14bf8eabefaee3254fe308bdc.bindPopup(popup_176d5962a9f67cbf484f452567dad148)
+        ;
+
+        
+    
+    
+            circle_marker_d364f3e14bf8eabefaee3254fe308bdc.bindTooltip(
+                `<div>
+                     신림종합사회복지관 (난향동) | C1
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_c967f9f5e1486bf744bb788c2f042511 = L.circleMarker(
+                [37.464838, 126.9198509],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#72B7B2", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_512982d638c7215cfa95d08a891df539);
+        
+    
+        var popup_7690eb3eaf72d112ee12f0318e156bd7 = L.popup({"maxWidth": 300});
+
+        
+            var html_81425b8bc99f0b9da6d1517e10b9bede = $(`<div id="html_81425b8bc99f0b9da6d1517e10b9bede" style="width: 100.0%; height: 100.0%;">     <div style='font-size:13px'>       <b>장소명</b>: 푸른햇살데이케어센터<br>       <b>행정동</b>: 난향동<br>       <b>클러스터</b>: 1<br>       <b>입지점수</b>: 0.000000     </div>     </div>`)[0];
+            popup_7690eb3eaf72d112ee12f0318e156bd7.setContent(html_81425b8bc99f0b9da6d1517e10b9bede);
+        
+
+        circle_marker_c967f9f5e1486bf744bb788c2f042511.bindPopup(popup_7690eb3eaf72d112ee12f0318e156bd7)
+        ;
+
+        
+    
+    
+            circle_marker_c967f9f5e1486bf744bb788c2f042511.bindTooltip(
+                `<div>
+                     푸른햇살데이케어센터 (난향동) | C1
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_55cfb88fcbbadb96526419a0cd3337d8 = L.circleMarker(
+                [37.462816, 126.915253],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#72B7B2", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_512982d638c7215cfa95d08a891df539);
+        
+    
+        var popup_7a546361c2c5f3d7569cb1dac6c89e6f = L.popup({"maxWidth": 300});
+
+        
+            var html_4de5c3e0fff63070f7bf87c1e5441e7c = $(`<div id="html_4de5c3e0fff63070f7bf87c1e5441e7c" style="width: 100.0%; height: 100.0%;">     <div style='font-size:13px'>       <b>장소명</b>: 미도어린이공원<br>       <b>행정동</b>: 난향동<br>       <b>클러스터</b>: 1<br>       <b>입지점수</b>: 0.000000     </div>     </div>`)[0];
+            popup_7a546361c2c5f3d7569cb1dac6c89e6f.setContent(html_4de5c3e0fff63070f7bf87c1e5441e7c);
+        
+
+        circle_marker_55cfb88fcbbadb96526419a0cd3337d8.bindPopup(popup_7a546361c2c5f3d7569cb1dac6c89e6f)
+        ;
+
+        
+    
+    
+            circle_marker_55cfb88fcbbadb96526419a0cd3337d8.bindTooltip(
+                `<div>
+                     미도어린이공원 (난향동) | C1
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_1a4e85b82a6078901a46f8687892cc5b = L.circleMarker(
+                [37.485377, 126.918104],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F2C600", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.698362435537863, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_512982d638c7215cfa95d08a891df539);
+        
+    
+        var popup_bb8bd9bfb232416962259332c4ce1d27 = L.popup({"maxWidth": 300});
+
+        
+            var html_7fbf1d61a28fdf676dd56d3c0718722f = $(`<div id="html_7fbf1d61a28fdf676dd56d3c0718722f" style="width: 100.0%; height: 100.0%;">     <div style='font-size:13px'>       <b>장소명</b>: 신사동주민센터<br>       <b>행정동</b>: 신사동<br>       <b>클러스터</b>: 2<br>       <b>입지점수</b>: 0.712295     </div>     </div>`)[0];
+            popup_bb8bd9bfb232416962259332c4ce1d27.setContent(html_7fbf1d61a28fdf676dd56d3c0718722f);
+        
+
+        circle_marker_1a4e85b82a6078901a46f8687892cc5b.bindPopup(popup_bb8bd9bfb232416962259332c4ce1d27)
+        ;
+
+        
+    
+    
+            circle_marker_1a4e85b82a6078901a46f8687892cc5b.bindTooltip(
+                `<div>
+                     신사동주민센터 (신사동) | C2
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_3a71bd6f51082896025dbd0d2dd98cfe = L.circleMarker(
+                [37.4859463, 126.9190833],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F2C600", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.698362435537863, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_512982d638c7215cfa95d08a891df539);
+        
+    
+        var popup_7c8a02d67f5d901bb9203e82b722d0d6 = L.popup({"maxWidth": 300});
+
+        
+            var html_d3964c4b6d79dfd4f54cf154a2790534 = $(`<div id="html_d3964c4b6d79dfd4f54cf154a2790534" style="width: 100.0%; height: 100.0%;">     <div style='font-size:13px'>       <b>장소명</b>: 신사경로당<br>       <b>행정동</b>: 신사동<br>       <b>클러스터</b>: 2<br>       <b>입지점수</b>: 0.712295     </div>     </div>`)[0];
+            popup_7c8a02d67f5d901bb9203e82b722d0d6.setContent(html_d3964c4b6d79dfd4f54cf154a2790534);
+        
+
+        circle_marker_3a71bd6f51082896025dbd0d2dd98cfe.bindPopup(popup_7c8a02d67f5d901bb9203e82b722d0d6)
+        ;
+
+        
+    
+    
+            circle_marker_3a71bd6f51082896025dbd0d2dd98cfe.bindTooltip(
+                `<div>
+                     신사경로당 (신사동) | C2
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_12e7b39e8d19ad3ed4461564e63ac716 = L.circleMarker(
+                [37.4835924, 126.915474],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F2C600", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.698362435537863, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_512982d638c7215cfa95d08a891df539);
+        
+    
+        var popup_4d91e4c98dd19d6e56ee8d44deeb814d = L.popup({"maxWidth": 300});
+
+        
+            var html_89759897c090849ab90bdb589fe47cb2 = $(`<div id="html_89759897c090849ab90bdb589fe47cb2" style="width: 100.0%; height: 100.0%;">     <div style='font-size:13px'>       <b>장소명</b>: 어울림경로당<br>       <b>행정동</b>: 신사동<br>       <b>클러스터</b>: 2<br>       <b>입지점수</b>: 0.712295     </div>     </div>`)[0];
+            popup_4d91e4c98dd19d6e56ee8d44deeb814d.setContent(html_89759897c090849ab90bdb589fe47cb2);
+        
+
+        circle_marker_12e7b39e8d19ad3ed4461564e63ac716.bindPopup(popup_4d91e4c98dd19d6e56ee8d44deeb814d)
+        ;
+
+        
+    
+    
+            circle_marker_12e7b39e8d19ad3ed4461564e63ac716.bindTooltip(
+                `<div>
+                     어울림경로당 (신사동) | C2
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_f514ebcb8fa4de8e3afc0eca6c9edfb2 = L.circleMarker(
+                [37.4844545, 126.9137376],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F2C600", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.698362435537863, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_512982d638c7215cfa95d08a891df539);
+        
+    
+        var popup_bfa427cde1050acd44b2c72441a09986 = L.popup({"maxWidth": 300});
+
+        
+            var html_b12ea04d58598d163ddadb886e84e70f = $(`<div id="html_b12ea04d58598d163ddadb886e84e70f" style="width: 100.0%; height: 100.0%;">     <div style='font-size:13px'>       <b>장소명</b>: 아가페데이케어센터<br>       <b>행정동</b>: 신사동<br>       <b>클러스터</b>: 2<br>       <b>입지점수</b>: 0.712295     </div>     </div>`)[0];
+            popup_bfa427cde1050acd44b2c72441a09986.setContent(html_b12ea04d58598d163ddadb886e84e70f);
+        
+
+        circle_marker_f514ebcb8fa4de8e3afc0eca6c9edfb2.bindPopup(popup_bfa427cde1050acd44b2c72441a09986)
+        ;
+
+        
+    
+    
+            circle_marker_f514ebcb8fa4de8e3afc0eca6c9edfb2.bindTooltip(
+                `<div>
+                     아가페데이케어센터 (신사동) | C2
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_9f68556ff167447b2d629a1b2b732c34 = L.circleMarker(
+                [37.4858992, 126.9207544],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F2C600", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.698362435537863, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_512982d638c7215cfa95d08a891df539);
+        
+    
+        var popup_543085b00c08683e39edef9187bd223b = L.popup({"maxWidth": 300});
+
+        
+            var html_32ad4eb8e8b3351ebfd6c126d31fb7e0 = $(`<div id="html_32ad4eb8e8b3351ebfd6c126d31fb7e0" style="width: 100.0%; height: 100.0%;">     <div style='font-size:13px'>       <b>장소명</b>: 남부데이케어센터<br>       <b>행정동</b>: 신사동<br>       <b>클러스터</b>: 2<br>       <b>입지점수</b>: 0.712295     </div>     </div>`)[0];
+            popup_543085b00c08683e39edef9187bd223b.setContent(html_32ad4eb8e8b3351ebfd6c126d31fb7e0);
+        
+
+        circle_marker_9f68556ff167447b2d629a1b2b732c34.bindPopup(popup_543085b00c08683e39edef9187bd223b)
+        ;
+
+        
+    
+    
+            circle_marker_9f68556ff167447b2d629a1b2b732c34.bindTooltip(
+                `<div>
+                     남부데이케어센터 (신사동) | C2
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_6cf1edc1db7a77f1953b871e561e9c16 = L.circleMarker(
+                [37.4834196, 126.9180821],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F2C600", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.698362435537863, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_512982d638c7215cfa95d08a891df539);
+        
+    
+        var popup_ff1f63de8bb2d58b828118028df12b35 = L.popup({"maxWidth": 300});
+
+        
+            var html_a347cd56cfaa998ab6f0f0111aa35f79 = $(`<div id="html_a347cd56cfaa998ab6f0f0111aa35f79" style="width: 100.0%; height: 100.0%;">     <div style='font-size:13px'>       <b>장소명</b>: 신사동성베드로성당 시니어아카데미<br>       <b>행정동</b>: 신사동<br>       <b>클러스터</b>: 2<br>       <b>입지점수</b>: 0.712295     </div>     </div>`)[0];
+            popup_ff1f63de8bb2d58b828118028df12b35.setContent(html_a347cd56cfaa998ab6f0f0111aa35f79);
+        
+
+        circle_marker_6cf1edc1db7a77f1953b871e561e9c16.bindPopup(popup_ff1f63de8bb2d58b828118028df12b35)
+        ;
+
+        
+    
+    
+            circle_marker_6cf1edc1db7a77f1953b871e561e9c16.bindTooltip(
+                `<div>
+                     신사동성베드로성당 시니어아카데미 (신사동) | C2
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_b392adba1d93da8b25a70d288796ad86 = L.circleMarker(
+                [37.4834291, 126.9180553],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F2C600", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.698362435537863, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_512982d638c7215cfa95d08a891df539);
+        
+    
+        var popup_d5d460b2f6ef807a258a85d09b387054 = L.popup({"maxWidth": 300});
+
+        
+            var html_59b4db6ac9404d4f91ff5569f14d6e05 = $(`<div id="html_59b4db6ac9404d4f91ff5569f14d6e05" style="width: 100.0%; height: 100.0%;">     <div style='font-size:13px'>       <b>장소명</b>: 성림노인교실<br>       <b>행정동</b>: 신사동<br>       <b>클러스터</b>: 2<br>       <b>입지점수</b>: 0.712295     </div>     </div>`)[0];
+            popup_d5d460b2f6ef807a258a85d09b387054.setContent(html_59b4db6ac9404d4f91ff5569f14d6e05);
+        
+
+        circle_marker_b392adba1d93da8b25a70d288796ad86.bindPopup(popup_d5d460b2f6ef807a258a85d09b387054)
+        ;
+
+        
+    
+    
+            circle_marker_b392adba1d93da8b25a70d288796ad86.bindTooltip(
+                `<div>
+                     성림노인교실 (신사동) | C2
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_3c99375b00c5a29e9dc813292e249a08 = L.circleMarker(
+                [37.4838748, 126.9144332],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F2C600", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.698362435537863, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_512982d638c7215cfa95d08a891df539);
+        
+    
+        var popup_ed40e1f6cc40fb178721bdbaf9656296 = L.popup({"maxWidth": 300});
+
+        
+            var html_8b7a54bba2bdfd898ec8544623263525 = $(`<div id="html_8b7a54bba2bdfd898ec8544623263525" style="width: 100.0%; height: 100.0%;">     <div style='font-size:13px'>       <b>장소명</b>: 서울실버 노인교실<br>       <b>행정동</b>: 신사동<br>       <b>클러스터</b>: 2<br>       <b>입지점수</b>: 0.712295     </div>     </div>`)[0];
+            popup_ed40e1f6cc40fb178721bdbaf9656296.setContent(html_8b7a54bba2bdfd898ec8544623263525);
+        
+
+        circle_marker_3c99375b00c5a29e9dc813292e249a08.bindPopup(popup_ed40e1f6cc40fb178721bdbaf9656296)
+        ;
+
+        
+    
+    
+            circle_marker_3c99375b00c5a29e9dc813292e249a08.bindTooltip(
+                `<div>
+                     서울실버 노인교실 (신사동) | C2
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_c653b2fd38e1336e8c9664d913579900 = L.circleMarker(
+                [37.4846375, 126.9170695],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F2C600", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.698362435537863, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_512982d638c7215cfa95d08a891df539);
+        
+    
+        var popup_46fd9aee67fabe32751968933fc1a89b = L.popup({"maxWidth": 300});
+
+        
+            var html_9eec94bc89ca4c63f6b4914f32b3d6b8 = $(`<div id="html_9eec94bc89ca4c63f6b4914f32b3d6b8" style="width: 100.0%; height: 100.0%;">     <div style='font-size:13px'>       <b>장소명</b>: 신림종합시장<br>       <b>행정동</b>: 신사동<br>       <b>클러스터</b>: 2<br>       <b>입지점수</b>: 0.712295     </div>     </div>`)[0];
+            popup_46fd9aee67fabe32751968933fc1a89b.setContent(html_9eec94bc89ca4c63f6b4914f32b3d6b8);
+        
+
+        circle_marker_c653b2fd38e1336e8c9664d913579900.bindPopup(popup_46fd9aee67fabe32751968933fc1a89b)
+        ;
+
+        
+    
+    
+            circle_marker_c653b2fd38e1336e8c9664d913579900.bindTooltip(
+                `<div>
+                     신림종합시장 (신사동) | C2
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_0b05de4ed8d5a990a30fe9cfb85a9ff5 = L.circleMarker(
+                [37.4862466, 126.9167333],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F2C600", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.698362435537863, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_512982d638c7215cfa95d08a891df539);
+        
+    
+        var popup_3b71da54a040c11884cf1049253f1338 = L.popup({"maxWidth": 300});
+
+        
+            var html_e9380285beb4e3024f174f2f1a5f351a = $(`<div id="html_e9380285beb4e3024f174f2f1a5f351a" style="width: 100.0%; height: 100.0%;">     <div style='font-size:13px'>       <b>장소명</b>: 관악신사시장<br>       <b>행정동</b>: 신사동<br>       <b>클러스터</b>: 2<br>       <b>입지점수</b>: 0.712295     </div>     </div>`)[0];
+            popup_3b71da54a040c11884cf1049253f1338.setContent(html_e9380285beb4e3024f174f2f1a5f351a);
+        
+
+        circle_marker_0b05de4ed8d5a990a30fe9cfb85a9ff5.bindPopup(popup_3b71da54a040c11884cf1049253f1338)
+        ;
+
+        
+    
+    
+            circle_marker_0b05de4ed8d5a990a30fe9cfb85a9ff5.bindTooltip(
+                `<div>
+                     관악신사시장 (신사동) | C2
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_357fbd0985428bf6b0b6d728fdb319da = L.circleMarker(
+                [37.484937, 126.920549],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F2C600", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.698362435537863, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_512982d638c7215cfa95d08a891df539);
+        
+    
+        var popup_1a20307871719b561699efb3d4989efc = L.popup({"maxWidth": 300});
+
+        
+            var html_d30e4b9d68a641f58ff438c4eb5e630d = $(`<div id="html_d30e4b9d68a641f58ff438c4eb5e630d" style="width: 100.0%; height: 100.0%;">     <div style='font-size:13px'>       <b>장소명</b>: 남부어린이공원<br>       <b>행정동</b>: 신사동<br>       <b>클러스터</b>: 2<br>       <b>입지점수</b>: 0.712295     </div>     </div>`)[0];
+            popup_1a20307871719b561699efb3d4989efc.setContent(html_d30e4b9d68a641f58ff438c4eb5e630d);
+        
+
+        circle_marker_357fbd0985428bf6b0b6d728fdb319da.bindPopup(popup_1a20307871719b561699efb3d4989efc)
+        ;
+
+        
+    
+    
+            circle_marker_357fbd0985428bf6b0b6d728fdb319da.bindTooltip(
+                `<div>
+                     남부어린이공원 (신사동) | C2
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_59675fc4f4c5e700f05320bf9e2409de = L.circleMarker(
+                [37.486274, 126.91518],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F2C600", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.698362435537863, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_512982d638c7215cfa95d08a891df539);
+        
+    
+        var popup_bd314897ea245a6e94c761057952c061 = L.popup({"maxWidth": 300});
+
+        
+            var html_4a4a84f5e79c89da7f00fbb5bf70f7cd = $(`<div id="html_4a4a84f5e79c89da7f00fbb5bf70f7cd" style="width: 100.0%; height: 100.0%;">     <div style='font-size:13px'>       <b>장소명</b>: 새빛어린이공원<br>       <b>행정동</b>: 신사동<br>       <b>클러스터</b>: 2<br>       <b>입지점수</b>: 0.712295     </div>     </div>`)[0];
+            popup_bd314897ea245a6e94c761057952c061.setContent(html_4a4a84f5e79c89da7f00fbb5bf70f7cd);
+        
+
+        circle_marker_59675fc4f4c5e700f05320bf9e2409de.bindPopup(popup_bd314897ea245a6e94c761057952c061)
+        ;
+
+        
+    
+    
+            circle_marker_59675fc4f4c5e700f05320bf9e2409de.bindTooltip(
+                `<div>
+                     새빛어린이공원 (신사동) | C2
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_2c81b3741cb2c52b0dea0bae2b200d5a = L.circleMarker(
+                [37.487781, 126.914366],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F2C600", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.698362435537863, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_512982d638c7215cfa95d08a891df539);
+        
+    
+        var popup_808faae9dc830492a1378b7798c68377 = L.popup({"maxWidth": 300});
+
+        
+            var html_f7455faa8860b23ef43dc3fb729046d4 = $(`<div id="html_f7455faa8860b23ef43dc3fb729046d4" style="width: 100.0%; height: 100.0%;">     <div style='font-size:13px'>       <b>장소명</b>: 도림천 신대방역 하부 농구장<br>       <b>행정동</b>: 신사동<br>       <b>클러스터</b>: 2<br>       <b>입지점수</b>: 0.712295     </div>     </div>`)[0];
+            popup_808faae9dc830492a1378b7798c68377.setContent(html_f7455faa8860b23ef43dc3fb729046d4);
+        
+
+        circle_marker_2c81b3741cb2c52b0dea0bae2b200d5a.bindPopup(popup_808faae9dc830492a1378b7798c68377)
+        ;
+
+        
+    
+    
+            circle_marker_2c81b3741cb2c52b0dea0bae2b200d5a.bindTooltip(
+                `<div>
+                     도림천 신대방역 하부 농구장 (신사동) | C2
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_84c1be6ad709bfd387dfc01245b244e5 = L.circleMarker(
+                [37.474952, 126.935011],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4C78A8", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12.364245001357098, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_512982d638c7215cfa95d08a891df539);
+        
+    
+        var popup_d43a97e5faa8e8ff36c0f3adde61a793 = L.popup({"maxWidth": 300});
+
+        
+            var html_2f051436075cdbdc8a1a8a1181321a44 = $(`<div id="html_2f051436075cdbdc8a1a8a1181321a44" style="width: 100.0%; height: 100.0%;">     <div style='font-size:13px'>       <b>장소명</b>: 서림동주민센터<br>       <b>행정동</b>: 서림동<br>       <b>클러스터</b>: 0<br>       <b>입지점수</b>: 0.795531     </div>     </div>`)[0];
+            popup_d43a97e5faa8e8ff36c0f3adde61a793.setContent(html_2f051436075cdbdc8a1a8a1181321a44);
+        
+
+        circle_marker_84c1be6ad709bfd387dfc01245b244e5.bindPopup(popup_d43a97e5faa8e8ff36c0f3adde61a793)
+        ;
+
+        
+    
+    
+            circle_marker_84c1be6ad709bfd387dfc01245b244e5.bindTooltip(
+                `<div>
+                     서림동주민센터 (서림동) | C0
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_1b2bcccdadbedbf381815f35854bcabe = L.circleMarker(
+                [37.4751, 126.9324882],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4C78A8", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12.364245001357098, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_512982d638c7215cfa95d08a891df539);
+        
+    
+        var popup_f5ee13c5e91a4bf0ef592f35330c458f = L.popup({"maxWidth": 300});
+
+        
+            var html_07915eab6fecb028d81c4dc53ead4a91 = $(`<div id="html_07915eab6fecb028d81c4dc53ead4a91" style="width: 100.0%; height: 100.0%;">     <div style='font-size:13px'>       <b>장소명</b>: 신림현대종합상가<br>       <b>행정동</b>: 서림동<br>       <b>클러스터</b>: 0<br>       <b>입지점수</b>: 0.795531     </div>     </div>`)[0];
+            popup_f5ee13c5e91a4bf0ef592f35330c458f.setContent(html_07915eab6fecb028d81c4dc53ead4a91);
+        
+
+        circle_marker_1b2bcccdadbedbf381815f35854bcabe.bindPopup(popup_f5ee13c5e91a4bf0ef592f35330c458f)
+        ;
+
+        
+    
+    
+            circle_marker_1b2bcccdadbedbf381815f35854bcabe.bindTooltip(
+                `<div>
+                     신림현대종합상가 (서림동) | C0
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_44c23b7653f46c398ccd12996ec826e9 = L.circleMarker(
+                [37.476693, 126.93567],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4C78A8", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12.364245001357098, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_512982d638c7215cfa95d08a891df539);
+        
+    
+        var popup_83cbbd3ef9d773d95c19209baf98317f = L.popup({"maxWidth": 300});
+
+        
+            var html_56907a577f0dc5ab154112d94e1e3b7e = $(`<div id="html_56907a577f0dc5ab154112d94e1e3b7e" style="width: 100.0%; height: 100.0%;">     <div style='font-size:13px'>       <b>장소명</b>: 신화어린이공원<br>       <b>행정동</b>: 서림동<br>       <b>클러스터</b>: 0<br>       <b>입지점수</b>: 0.795531     </div>     </div>`)[0];
+            popup_83cbbd3ef9d773d95c19209baf98317f.setContent(html_56907a577f0dc5ab154112d94e1e3b7e);
+        
+
+        circle_marker_44c23b7653f46c398ccd12996ec826e9.bindPopup(popup_83cbbd3ef9d773d95c19209baf98317f)
+        ;
+
+        
+    
+    
+            circle_marker_44c23b7653f46c398ccd12996ec826e9.bindTooltip(
+                `<div>
+                     신화어린이공원 (서림동) | C0
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_cc74b91a1ac83dbad70b560b628a680e = L.circleMarker(
+                [37.47582, 126.94081],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4C78A8", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12.364245001357098, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_512982d638c7215cfa95d08a891df539);
+        
+    
+        var popup_b7308c4cdd35a2875f986f991d90a614 = L.popup({"maxWidth": 300});
+
+        
+            var html_6dded809efa3883866967fd9386f00de = $(`<div id="html_6dded809efa3883866967fd9386f00de" style="width: 100.0%; height: 100.0%;">     <div style='font-size:13px'>       <b>장소명</b>: 쑥고개어린이공원<br>       <b>행정동</b>: 서림동<br>       <b>클러스터</b>: 0<br>       <b>입지점수</b>: 0.795531     </div>     </div>`)[0];
+            popup_b7308c4cdd35a2875f986f991d90a614.setContent(html_6dded809efa3883866967fd9386f00de);
+        
+
+        circle_marker_cc74b91a1ac83dbad70b560b628a680e.bindPopup(popup_b7308c4cdd35a2875f986f991d90a614)
+        ;
+
+        
+    
+    
+            circle_marker_cc74b91a1ac83dbad70b560b628a680e.bindTooltip(
+                `<div>
+                     쑥고개어린이공원 (서림동) | C0
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_6b42edd3bd7df20cba3340199e8450fb = L.circleMarker(
+                [37.475215, 126.942827],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4C78A8", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12.364245001357098, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_512982d638c7215cfa95d08a891df539);
+        
+    
+        var popup_64c7e73457ad1667525f37ae1d5f25e8 = L.popup({"maxWidth": 300});
+
+        
+            var html_a64ae7c548e92c56d6cb5fd4b9223d5f = $(`<div id="html_a64ae7c548e92c56d6cb5fd4b9223d5f" style="width: 100.0%; height: 100.0%;">     <div style='font-size:13px'>       <b>장소명</b>: 서광어린이공원<br>       <b>행정동</b>: 서림동<br>       <b>클러스터</b>: 0<br>       <b>입지점수</b>: 0.795531     </div>     </div>`)[0];
+            popup_64c7e73457ad1667525f37ae1d5f25e8.setContent(html_a64ae7c548e92c56d6cb5fd4b9223d5f);
+        
+
+        circle_marker_6b42edd3bd7df20cba3340199e8450fb.bindPopup(popup_64c7e73457ad1667525f37ae1d5f25e8)
+        ;
+
+        
+    
+    
+            circle_marker_6b42edd3bd7df20cba3340199e8450fb.bindTooltip(
+                `<div>
+                     서광어린이공원 (서림동) | C0
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_6693eb36c4346c7451e824a9bf6ac3fc = L.circleMarker(
+                [37.475215, 126.942827],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4C78A8", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12.364245001357098, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_512982d638c7215cfa95d08a891df539);
+        
+    
+        var popup_ee5efdef1f4f9f2fc1d2a59a8dae2727 = L.popup({"maxWidth": 300});
+
+        
+            var html_7c36c7ae7be0ecfb6dc53d0c71296db2 = $(`<div id="html_7c36c7ae7be0ecfb6dc53d0c71296db2" style="width: 100.0%; height: 100.0%;">     <div style='font-size:13px'>       <b>장소명</b>: 해태어린이공원<br>       <b>행정동</b>: 서림동<br>       <b>클러스터</b>: 0<br>       <b>입지점수</b>: 0.795531     </div>     </div>`)[0];
+            popup_ee5efdef1f4f9f2fc1d2a59a8dae2727.setContent(html_7c36c7ae7be0ecfb6dc53d0c71296db2);
+        
+
+        circle_marker_6693eb36c4346c7451e824a9bf6ac3fc.bindPopup(popup_ee5efdef1f4f9f2fc1d2a59a8dae2727)
+        ;
+
+        
+    
+    
+            circle_marker_6693eb36c4346c7451e824a9bf6ac3fc.bindTooltip(
+                `<div>
+                     해태어린이공원 (서림동) | C0
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_98e84451d1d4a7f1f14b2b0a36050ee2 = L.circleMarker(
+                [37.459346, 126.932924],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4C78A8", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12.364245001357098, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_512982d638c7215cfa95d08a891df539);
+        
+    
+        var popup_3a82fadc0a95c51cf9d561c8710e06d9 = L.popup({"maxWidth": 300});
+
+        
+            var html_9a77d4ad8f3d3546d9e7fc3bec3117d9 = $(`<div id="html_9a77d4ad8f3d3546d9e7fc3bec3117d9" style="width: 100.0%; height: 100.0%;">     <div style='font-size:13px'>       <b>장소명</b>: 도림천 신림2교 농구장<br>       <b>행정동</b>: 서림동<br>       <b>클러스터</b>: 0<br>       <b>입지점수</b>: 0.795531     </div>     </div>`)[0];
+            popup_3a82fadc0a95c51cf9d561c8710e06d9.setContent(html_9a77d4ad8f3d3546d9e7fc3bec3117d9);
+        
+
+        circle_marker_98e84451d1d4a7f1f14b2b0a36050ee2.bindPopup(popup_3a82fadc0a95c51cf9d561c8710e06d9)
+        ;
+
+        
+    
+    
+            circle_marker_98e84451d1d4a7f1f14b2b0a36050ee2.bindTooltip(
+                `<div>
+                     도림천 신림2교 농구장 (서림동) | C0
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_17d0595a5a1faacffca72be70f54ef31 = L.circleMarker(
+                [37.470108, 126.932974],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F2C600", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.959106125033928, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_512982d638c7215cfa95d08a891df539);
+        
+    
+        var popup_ff4fcc1a062d45e2f72fbf0017d187fa = L.popup({"maxWidth": 300});
+
+        
+            var html_5894a92f9317aa838f45b754d217f097 = $(`<div id="html_5894a92f9317aa838f45b754d217f097" style="width: 100.0%; height: 100.0%;">     <div style='font-size:13px'>       <b>장소명</b>: 삼성동주민센터<br>       <b>행정동</b>: 삼성동<br>       <b>클러스터</b>: 2<br>       <b>입지점수</b>: 0.494888     </div>     </div>`)[0];
+            popup_ff4fcc1a062d45e2f72fbf0017d187fa.setContent(html_5894a92f9317aa838f45b754d217f097);
+        
+
+        circle_marker_17d0595a5a1faacffca72be70f54ef31.bindPopup(popup_ff4fcc1a062d45e2f72fbf0017d187fa)
+        ;
+
+        
+    
+    
+            circle_marker_17d0595a5a1faacffca72be70f54ef31.bindTooltip(
+                `<div>
+                     삼성동주민센터 (삼성동) | C2
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_58130e792b11c5f3bfb60ae659d8d800 = L.circleMarker(
+                [37.4704905, 126.9279858],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F2C600", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.959106125033928, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_512982d638c7215cfa95d08a891df539);
+        
+    
+        var popup_feff993b753d491ef71a1c51188a3bc8 = L.popup({"maxWidth": 300});
+
+        
+            var html_3569723415ad5feb01730d08eb2455c4 = $(`<div id="html_3569723415ad5feb01730d08eb2455c4" style="width: 100.0%; height: 100.0%;">     <div style='font-size:13px'>       <b>장소명</b>: 원신 경로당<br>       <b>행정동</b>: 삼성동<br>       <b>클러스터</b>: 2<br>       <b>입지점수</b>: 0.494888     </div>     </div>`)[0];
+            popup_feff993b753d491ef71a1c51188a3bc8.setContent(html_3569723415ad5feb01730d08eb2455c4);
+        
+
+        circle_marker_58130e792b11c5f3bfb60ae659d8d800.bindPopup(popup_feff993b753d491ef71a1c51188a3bc8)
+        ;
+
+        
+    
+    
+            circle_marker_58130e792b11c5f3bfb60ae659d8d800.bindTooltip(
+                `<div>
+                     원신 경로당 (삼성동) | C2
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_181390a680d58a68822abb4455113afd = L.circleMarker(
+                [37.4619041, 126.9302],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F2C600", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.959106125033928, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_512982d638c7215cfa95d08a891df539);
+        
+    
+        var popup_9914c011341f574054b48da2affda643 = L.popup({"maxWidth": 300});
+
+        
+            var html_52156411c2486b71c9b2d04574a880c7 = $(`<div id="html_52156411c2486b71c9b2d04574a880c7" style="width: 100.0%; height: 100.0%;">     <div style='font-size:13px'>       <b>장소명</b>: 율곡 경로당<br>       <b>행정동</b>: 삼성동<br>       <b>클러스터</b>: 2<br>       <b>입지점수</b>: 0.494888     </div>     </div>`)[0];
+            popup_9914c011341f574054b48da2affda643.setContent(html_52156411c2486b71c9b2d04574a880c7);
+        
+
+        circle_marker_181390a680d58a68822abb4455113afd.bindPopup(popup_9914c011341f574054b48da2affda643)
+        ;
+
+        
+    
+    
+            circle_marker_181390a680d58a68822abb4455113afd.bindTooltip(
+                `<div>
+                     율곡 경로당 (삼성동) | C2
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_de4ba6023dc65b5a7a1b60ebc8453922 = L.circleMarker(
+                [37.4653326, 126.9328833],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F2C600", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.959106125033928, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_512982d638c7215cfa95d08a891df539);
+        
+    
+        var popup_217c1093847eeafcd45cb5324d4a7b5e = L.popup({"maxWidth": 300});
+
+        
+            var html_fa73c6e7f1bad2a8942e7ad9feecd79b = $(`<div id="html_fa73c6e7f1bad2a8942e7ad9feecd79b" style="width: 100.0%; height: 100.0%;">     <div style='font-size:13px'>       <b>장소명</b>: 돌샘 경로당<br>       <b>행정동</b>: 삼성동<br>       <b>클러스터</b>: 2<br>       <b>입지점수</b>: 0.494888     </div>     </div>`)[0];
+            popup_217c1093847eeafcd45cb5324d4a7b5e.setContent(html_fa73c6e7f1bad2a8942e7ad9feecd79b);
+        
+
+        circle_marker_de4ba6023dc65b5a7a1b60ebc8453922.bindPopup(popup_217c1093847eeafcd45cb5324d4a7b5e)
+        ;
+
+        
+    
+    
+            circle_marker_de4ba6023dc65b5a7a1b60ebc8453922.bindTooltip(
+                `<div>
+                     돌샘 경로당 (삼성동) | C2
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_994f564c032196e5f95251a706eb772d = L.circleMarker(
+                [37.4667452, 126.931173],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F2C600", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.959106125033928, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_512982d638c7215cfa95d08a891df539);
+        
+    
+        var popup_5734279d7f0354a5cc573385416e51e7 = L.popup({"maxWidth": 300});
+
+        
+            var html_0c2503f1519ff8a3a84f83c5a8eef6d7 = $(`<div id="html_0c2503f1519ff8a3a84f83c5a8eef6d7" style="width: 100.0%; height: 100.0%;">     <div style='font-size:13px'>       <b>장소명</b>: 성민종합사회복지관<br>       <b>행정동</b>: 삼성동<br>       <b>클러스터</b>: 2<br>       <b>입지점수</b>: 0.494888     </div>     </div>`)[0];
+            popup_5734279d7f0354a5cc573385416e51e7.setContent(html_0c2503f1519ff8a3a84f83c5a8eef6d7);
+        
+
+        circle_marker_994f564c032196e5f95251a706eb772d.bindPopup(popup_5734279d7f0354a5cc573385416e51e7)
+        ;
+
+        
+    
+    
+            circle_marker_994f564c032196e5f95251a706eb772d.bindTooltip(
+                `<div>
+                     성민종합사회복지관 (삼성동) | C2
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_ee2b00d19facdc17187fe98a4db57f63 = L.circleMarker(
+                [37.4664597, 126.9311809],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F2C600", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.959106125033928, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_512982d638c7215cfa95d08a891df539);
+        
+    
+        var popup_70948b2d1995a086ca37ee4777e3d0b6 = L.popup({"maxWidth": 300});
+
+        
+            var html_3799051d70265b9542fcc0e8f3960446 = $(`<div id="html_3799051d70265b9542fcc0e8f3960446" style="width: 100.0%; height: 100.0%;">     <div style='font-size:13px'>       <b>장소명</b>: 동산평생대학<br>       <b>행정동</b>: 삼성동<br>       <b>클러스터</b>: 2<br>       <b>입지점수</b>: 0.494888     </div>     </div>`)[0];
+            popup_70948b2d1995a086ca37ee4777e3d0b6.setContent(html_3799051d70265b9542fcc0e8f3960446);
+        
+
+        circle_marker_ee2b00d19facdc17187fe98a4db57f63.bindPopup(popup_70948b2d1995a086ca37ee4777e3d0b6)
+        ;
+
+        
+    
+    
+            circle_marker_ee2b00d19facdc17187fe98a4db57f63.bindTooltip(
+                `<div>
+                     동산평생대학 (삼성동) | C2
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_f4690b4b000a493a415e56226b92e443 = L.circleMarker(
+                [37.4663305, 126.9297967],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F2C600", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.959106125033928, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_512982d638c7215cfa95d08a891df539);
+        
+    
+        var popup_24631d528cb694e09366a0f3fda4f289 = L.popup({"maxWidth": 300});
+
+        
+            var html_919b96a70bef20c7384bc06b80cd6a9e = $(`<div id="html_919b96a70bef20c7384bc06b80cd6a9e" style="width: 100.0%; height: 100.0%;">     <div style='font-size:13px'>       <b>장소명</b>: 신원예닮노인교실<br>       <b>행정동</b>: 삼성동<br>       <b>클러스터</b>: 2<br>       <b>입지점수</b>: 0.494888     </div>     </div>`)[0];
+            popup_24631d528cb694e09366a0f3fda4f289.setContent(html_919b96a70bef20c7384bc06b80cd6a9e);
+        
+
+        circle_marker_f4690b4b000a493a415e56226b92e443.bindPopup(popup_24631d528cb694e09366a0f3fda4f289)
+        ;
+
+        
+    
+    
+            circle_marker_f4690b4b000a493a415e56226b92e443.bindTooltip(
+                `<div>
+                     신원예닮노인교실 (삼성동) | C2
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_7b5b860228d86b15fca877b1e404e9d0 = L.circleMarker(
+                [37.46415507, 126.9317581],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F2C600", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.959106125033928, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_512982d638c7215cfa95d08a891df539);
+        
+    
+        var popup_bff0c4216abfa38e1d704dc92edd288e = L.popup({"maxWidth": 300});
+
+        
+            var html_2558a10b609de6006c4fea9d78e41f85 = $(`<div id="html_2558a10b609de6006c4fea9d78e41f85" style="width: 100.0%; height: 100.0%;">     <div style='font-size:13px'>       <b>장소명</b>: 삼성동자치회관<br>       <b>행정동</b>: 삼성동<br>       <b>클러스터</b>: 2<br>       <b>입지점수</b>: 0.494888     </div>     </div>`)[0];
+            popup_bff0c4216abfa38e1d704dc92edd288e.setContent(html_2558a10b609de6006c4fea9d78e41f85);
+        
+
+        circle_marker_7b5b860228d86b15fca877b1e404e9d0.bindPopup(popup_bff0c4216abfa38e1d704dc92edd288e)
+        ;
+
+        
+    
+    
+            circle_marker_7b5b860228d86b15fca877b1e404e9d0.bindTooltip(
+                `<div>
+                     삼성동자치회관 (삼성동) | C2
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_b0bce622672a219160a18bbe59537ed8 = L.circleMarker(
+                [37.470633, 126.932502],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F2C600", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.959106125033928, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_512982d638c7215cfa95d08a891df539);
+        
+    
+        var popup_9abb4e8308f018ce6646bf064888eb57 = L.popup({"maxWidth": 300});
+
+        
+            var html_3df5abd05b8412b3e31cb6729d41786b = $(`<div id="html_3df5abd05b8412b3e31cb6729d41786b" style="width: 100.0%; height: 100.0%;">     <div style='font-size:13px'>       <b>장소명</b>: 삼성동시장<br>       <b>행정동</b>: 삼성동<br>       <b>클러스터</b>: 2<br>       <b>입지점수</b>: 0.494888     </div>     </div>`)[0];
+            popup_9abb4e8308f018ce6646bf064888eb57.setContent(html_3df5abd05b8412b3e31cb6729d41786b);
+        
+
+        circle_marker_b0bce622672a219160a18bbe59537ed8.bindPopup(popup_9abb4e8308f018ce6646bf064888eb57)
+        ;
+
+        
+    
+    
+            circle_marker_b0bce622672a219160a18bbe59537ed8.bindTooltip(
+                `<div>
+                     삼성동시장 (삼성동) | C2
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_8703ddf986a49d153701155567376606 = L.circleMarker(
+                [37.4708717, 126.9322223],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F2C600", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.959106125033928, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_512982d638c7215cfa95d08a891df539);
+        
+    
+        var popup_2dfc0216d407d7c74fd87cf2a5ed7e65 = L.popup({"maxWidth": 300});
+
+        
+            var html_3878765fd8f831151947516557deece6 = $(`<div id="html_3878765fd8f831151947516557deece6" style="width: 100.0%; height: 100.0%;">     <div style='font-size:13px'>       <b>장소명</b>: 신신림시장<br>       <b>행정동</b>: 삼성동<br>       <b>클러스터</b>: 2<br>       <b>입지점수</b>: 0.494888     </div>     </div>`)[0];
+            popup_2dfc0216d407d7c74fd87cf2a5ed7e65.setContent(html_3878765fd8f831151947516557deece6);
+        
+
+        circle_marker_8703ddf986a49d153701155567376606.bindPopup(popup_2dfc0216d407d7c74fd87cf2a5ed7e65)
+        ;
+
+        
+    
+    
+            circle_marker_8703ddf986a49d153701155567376606.bindTooltip(
+                `<div>
+                     신신림시장 (삼성동) | C2
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_0fd683f65e3199fda029475699b89bd9 = L.circleMarker(
+                [37.473544, 126.932513],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F2C600", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.959106125033928, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_512982d638c7215cfa95d08a891df539);
+        
+    
+        var popup_cfc50aa5340cf01fd17febfb25613a57 = L.popup({"maxWidth": 300});
+
+        
+            var html_bd9cf501a2cf45d25de20037c32d53ad = $(`<div id="html_bd9cf501a2cf45d25de20037c32d53ad" style="width: 100.0%; height: 100.0%;">     <div style='font-size:13px'>       <b>장소명</b>: 양산어린이공원<br>       <b>행정동</b>: 삼성동<br>       <b>클러스터</b>: 2<br>       <b>입지점수</b>: 0.494888     </div>     </div>`)[0];
+            popup_cfc50aa5340cf01fd17febfb25613a57.setContent(html_bd9cf501a2cf45d25de20037c32d53ad);
+        
+
+        circle_marker_0fd683f65e3199fda029475699b89bd9.bindPopup(popup_cfc50aa5340cf01fd17febfb25613a57)
+        ;
+
+        
+    
+    
+            circle_marker_0fd683f65e3199fda029475699b89bd9.bindTooltip(
+                `<div>
+                     양산어린이공원 (삼성동) | C2
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_41ac8557aebe57dbf9992c3e768643db = L.circleMarker(
+                [37.469892, 126.929443],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F2C600", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.959106125033928, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_512982d638c7215cfa95d08a891df539);
+        
+    
+        var popup_ebc8ea39b21dda38d407ea3e05faf589 = L.popup({"maxWidth": 300});
+
+        
+            var html_c45040620463a141417a195ae88b135a = $(`<div id="html_c45040620463a141417a195ae88b135a" style="width: 100.0%; height: 100.0%;">     <div style='font-size:13px'>       <b>장소명</b>: 원신마을마당<br>       <b>행정동</b>: 삼성동<br>       <b>클러스터</b>: 2<br>       <b>입지점수</b>: 0.494888     </div>     </div>`)[0];
+            popup_ebc8ea39b21dda38d407ea3e05faf589.setContent(html_c45040620463a141417a195ae88b135a);
+        
+
+        circle_marker_41ac8557aebe57dbf9992c3e768643db.bindPopup(popup_ebc8ea39b21dda38d407ea3e05faf589)
+        ;
+
+        
+    
+    
+            circle_marker_41ac8557aebe57dbf9992c3e768643db.bindTooltip(
+                `<div>
+                     원신마을마당 (삼성동) | C2
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_8ae4e81660edb1620fb99f215fd9da07 = L.circleMarker(
+                [37.465097, 126.927033],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F2C600", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.959106125033928, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_512982d638c7215cfa95d08a891df539);
+        
+    
+        var popup_e083b123b4e2f502d2fd61c950142053 = L.popup({"maxWidth": 300});
+
+        
+            var html_70197bb58a0ac1d8063c6f92578ed318 = $(`<div id="html_70197bb58a0ac1d8063c6f92578ed318" style="width: 100.0%; height: 100.0%;">     <div style='font-size:13px'>       <b>장소명</b>: 합실어린이공원<br>       <b>행정동</b>: 삼성동<br>       <b>클러스터</b>: 2<br>       <b>입지점수</b>: 0.494888     </div>     </div>`)[0];
+            popup_e083b123b4e2f502d2fd61c950142053.setContent(html_70197bb58a0ac1d8063c6f92578ed318);
+        
+
+        circle_marker_8ae4e81660edb1620fb99f215fd9da07.bindPopup(popup_e083b123b4e2f502d2fd61c950142053)
+        ;
+
+        
+    
+    
+            circle_marker_8ae4e81660edb1620fb99f215fd9da07.bindTooltip(
+                `<div>
+                     합실어린이공원 (삼성동) | C2
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_d47153598fe9d627aba0d6324c02c8da = L.circleMarker(
+                [37.4629, 126.930025],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F2C600", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.959106125033928, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_512982d638c7215cfa95d08a891df539);
+        
+    
+        var popup_9bd08e0ccc4476c05eab021f8fc1d048 = L.popup({"maxWidth": 300});
+
+        
+            var html_51772f85bf8d960f7840fee0a3a40480 = $(`<div id="html_51772f85bf8d960f7840fee0a3a40480" style="width: 100.0%; height: 100.0%;">     <div style='font-size:13px'>       <b>장소명</b>: 해바라기 어린이 공원<br>       <b>행정동</b>: 삼성동<br>       <b>클러스터</b>: 2<br>       <b>입지점수</b>: 0.494888     </div>     </div>`)[0];
+            popup_9bd08e0ccc4476c05eab021f8fc1d048.setContent(html_51772f85bf8d960f7840fee0a3a40480);
+        
+
+        circle_marker_d47153598fe9d627aba0d6324c02c8da.bindPopup(popup_9bd08e0ccc4476c05eab021f8fc1d048)
+        ;
+
+        
+    
+    
+            circle_marker_d47153598fe9d627aba0d6324c02c8da.bindTooltip(
+                `<div>
+                     해바라기 어린이 공원 (삼성동) | C2
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_f11a2aaac9e80f485b73d3df48147016 = L.circleMarker(
+                [37.459346, 126.932924],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F2C600", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.959106125033928, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_512982d638c7215cfa95d08a891df539);
+        
+    
+        var popup_4ce66179408f18336e5bff3aabba1e7f = L.popup({"maxWidth": 300});
+
+        
+            var html_7e13120dbfe6dc9f80c85f13addc9355 = $(`<div id="html_7e13120dbfe6dc9f80c85f13addc9355" style="width: 100.0%; height: 100.0%;">     <div style='font-size:13px'>       <b>장소명</b>: 약수암어린이공원<br>       <b>행정동</b>: 삼성동<br>       <b>클러스터</b>: 2<br>       <b>입지점수</b>: 0.494888     </div>     </div>`)[0];
+            popup_4ce66179408f18336e5bff3aabba1e7f.setContent(html_7e13120dbfe6dc9f80c85f13addc9355);
+        
+
+        circle_marker_f11a2aaac9e80f485b73d3df48147016.bindPopup(popup_4ce66179408f18336e5bff3aabba1e7f)
+        ;
+
+        
+    
+    
+            circle_marker_f11a2aaac9e80f485b73d3df48147016.bindTooltip(
+                `<div>
+                     약수암어린이공원 (삼성동) | C2
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_d103e408c786af2bef81c6fcf1518017 = L.circleMarker(
+                [37.458502, 126.933738],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F2C600", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.959106125033928, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_512982d638c7215cfa95d08a891df539);
+        
+    
+        var popup_b316df35f4993c3085df9d51ea0ddd19 = L.popup({"maxWidth": 300});
+
+        
+            var html_351f6e8939be5557a736606657e4193c = $(`<div id="html_351f6e8939be5557a736606657e4193c" style="width: 100.0%; height: 100.0%;">     <div style='font-size:13px'>       <b>장소명</b>: 관악정<br>       <b>행정동</b>: 삼성동<br>       <b>클러스터</b>: 2<br>       <b>입지점수</b>: 0.494888     </div>     </div>`)[0];
+            popup_b316df35f4993c3085df9d51ea0ddd19.setContent(html_351f6e8939be5557a736606657e4193c);
+        
+
+        circle_marker_d103e408c786af2bef81c6fcf1518017.bindPopup(popup_b316df35f4993c3085df9d51ea0ddd19)
+        ;
+
+        
+    
+    
+            circle_marker_d103e408c786af2bef81c6fcf1518017.bindTooltip(
+                `<div>
+                     관악정 (삼성동) | C2
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_63994a6071f4133887b99f069acdd745 = L.circleMarker(
+                [37.458092, 126.93365],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F2C600", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.959106125033928, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_512982d638c7215cfa95d08a891df539);
+        
+    
+        var popup_90ff7746841f4e260747912480be7fd4 = L.popup({"maxWidth": 300});
+
+        
+            var html_64ab5dd0d462a88fb16030265ed1acdb = $(`<div id="html_64ab5dd0d462a88fb16030265ed1acdb" style="width: 100.0%; height: 100.0%;">     <div style='font-size:13px'>       <b>장소명</b>: 제2구민운동장<br>       <b>행정동</b>: 삼성동<br>       <b>클러스터</b>: 2<br>       <b>입지점수</b>: 0.494888     </div>     </div>`)[0];
+            popup_90ff7746841f4e260747912480be7fd4.setContent(html_64ab5dd0d462a88fb16030265ed1acdb);
+        
+
+        circle_marker_63994a6071f4133887b99f069acdd745.bindPopup(popup_90ff7746841f4e260747912480be7fd4)
+        ;
+
+        
+    
+    
+            circle_marker_63994a6071f4133887b99f069acdd745.bindTooltip(
+                `<div>
+                     제2구민운동장 (삼성동) | C2
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var feature_group_6ad79733acdf2df72866b6734cadea42 = L.featureGroup(
+                {}
+            ).addTo(map_5cb24a7c2d3a6ec818e885f84ae96fbc);
+        
+    
+            var circle_marker_3c2f867cbe3c8345f39b45ced546dc31 = L.circleMarker(
+                [37.470907, 126.921663],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4C78A8", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14.0, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_6ad79733acdf2df72866b6734cadea42);
+        
+    
+        var popup_1128b854c880a69791040d25ae54a445 = L.popup({"maxWidth": 300});
+
+        
+            var html_eb8f071b7f30f5fb29f96363999eaba8 = $(`<div id="html_eb8f071b7f30f5fb29f96363999eaba8" style="width: 100.0%; height: 100.0%;">         <div style='font-size:13px'>           <b>장소명</b>: 난곡동주민센터<br>           <b>행정동</b>: 난곡동<br>           <b>클러스터</b>: 0<br>           <b>입지점수</b>: 1.000000         </div>         </div>`)[0];
+            popup_1128b854c880a69791040d25ae54a445.setContent(html_eb8f071b7f30f5fb29f96363999eaba8);
+        
+
+        circle_marker_3c2f867cbe3c8345f39b45ced546dc31.bindPopup(popup_1128b854c880a69791040d25ae54a445)
+        ;
+
+        
+    
+    
+            circle_marker_3c2f867cbe3c8345f39b45ced546dc31.bindTooltip(
+                `<div>
+                     [C0] 난곡동주민센터
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_462c081f340e6765db8f3e57cf8a0085 = L.circleMarker(
+                [37.4700485, 126.9245096],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4C78A8", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14.0, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_6ad79733acdf2df72866b6734cadea42);
+        
+    
+        var popup_db048f0bdb2c049a7e3d23c01250c0d1 = L.popup({"maxWidth": 300});
+
+        
+            var html_930a48b5a13584bdc91d0f13cb820225 = $(`<div id="html_930a48b5a13584bdc91d0f13cb820225" style="width: 100.0%; height: 100.0%;">         <div style='font-size:13px'>           <b>장소명</b>: 무궁화 경로당<br>           <b>행정동</b>: 난곡동<br>           <b>클러스터</b>: 0<br>           <b>입지점수</b>: 1.000000         </div>         </div>`)[0];
+            popup_db048f0bdb2c049a7e3d23c01250c0d1.setContent(html_930a48b5a13584bdc91d0f13cb820225);
+        
+
+        circle_marker_462c081f340e6765db8f3e57cf8a0085.bindPopup(popup_db048f0bdb2c049a7e3d23c01250c0d1)
+        ;
+
+        
+    
+    
+            circle_marker_462c081f340e6765db8f3e57cf8a0085.bindTooltip(
+                `<div>
+                     [C0] 무궁화 경로당
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_6a5587629c066f91e6b54085f04f4e9a = L.circleMarker(
+                [37.46997, 126.92182],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4C78A8", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14.0, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_6ad79733acdf2df72866b6734cadea42);
+        
+    
+        var popup_0a9facb737f674dfad6887e0aa756452 = L.popup({"maxWidth": 300});
+
+        
+            var html_252e039b5192ae8b3ee1a58775c68f35 = $(`<div id="html_252e039b5192ae8b3ee1a58775c68f35" style="width: 100.0%; height: 100.0%;">         <div style='font-size:13px'>           <b>장소명</b>: 우림 경로당<br>           <b>행정동</b>: 난곡동<br>           <b>클러스터</b>: 0<br>           <b>입지점수</b>: 1.000000         </div>         </div>`)[0];
+            popup_0a9facb737f674dfad6887e0aa756452.setContent(html_252e039b5192ae8b3ee1a58775c68f35);
+        
+
+        circle_marker_6a5587629c066f91e6b54085f04f4e9a.bindPopup(popup_0a9facb737f674dfad6887e0aa756452)
+        ;
+
+        
+    
+    
+            circle_marker_6a5587629c066f91e6b54085f04f4e9a.bindTooltip(
+                `<div>
+                     [C0] 우림 경로당
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_6230732d71720517eb054c60127a31ae = L.circleMarker(
+                [37.4704258, 126.9183468],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4C78A8", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14.0, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_6ad79733acdf2df72866b6734cadea42);
+        
+    
+        var popup_eccba1bda008d514c35c84c6947ce71e = L.popup({"maxWidth": 300});
+
+        
+            var html_2d676cc0676471809f8efcc614b67847 = $(`<div id="html_2d676cc0676471809f8efcc614b67847" style="width: 100.0%; height: 100.0%;">         <div style='font-size:13px'>           <b>장소명</b>: 구립난곡경로당<br>           <b>행정동</b>: 난곡동<br>           <b>클러스터</b>: 0<br>           <b>입지점수</b>: 1.000000         </div>         </div>`)[0];
+            popup_eccba1bda008d514c35c84c6947ce71e.setContent(html_2d676cc0676471809f8efcc614b67847);
+        
+
+        circle_marker_6230732d71720517eb054c60127a31ae.bindPopup(popup_eccba1bda008d514c35c84c6947ce71e)
+        ;
+
+        
+    
+    
+            circle_marker_6230732d71720517eb054c60127a31ae.bindTooltip(
+                `<div>
+                     [C0] 구립난곡경로당
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_2cbaf22a4a5a06cae7a605fc0aea5961 = L.circleMarker(
+                [37.4758206, 126.9228963],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4C78A8", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14.0, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_6ad79733acdf2df72866b6734cadea42);
+        
+    
+        var popup_c152ea9e60ceffddc352eaa1c03e0776 = L.popup({"maxWidth": 300});
+
+        
+            var html_295c4a6b73453200383846f40ced2cb0 = $(`<div id="html_295c4a6b73453200383846f40ced2cb0" style="width: 100.0%; height: 100.0%;">         <div style='font-size:13px'>           <b>장소명</b>: 법원 경로당<br>           <b>행정동</b>: 난곡동<br>           <b>클러스터</b>: 0<br>           <b>입지점수</b>: 1.000000         </div>         </div>`)[0];
+            popup_c152ea9e60ceffddc352eaa1c03e0776.setContent(html_295c4a6b73453200383846f40ced2cb0);
+        
+
+        circle_marker_2cbaf22a4a5a06cae7a605fc0aea5961.bindPopup(popup_c152ea9e60ceffddc352eaa1c03e0776)
+        ;
+
+        
+    
+    
+            circle_marker_2cbaf22a4a5a06cae7a605fc0aea5961.bindTooltip(
+                `<div>
+                     [C0] 법원 경로당
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_792707a58fa4f8554871231c4c05b4b4 = L.circleMarker(
+                [37.471917, 126.919266],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4C78A8", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14.0, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_6ad79733acdf2df72866b6734cadea42);
+        
+    
+        var popup_7c52b2438d222d17e5b1768979aef11d = L.popup({"maxWidth": 300});
+
+        
+            var html_a2c0821fe0a890ab39b5bf6a53c6111c = $(`<div id="html_a2c0821fe0a890ab39b5bf6a53c6111c" style="width: 100.0%; height: 100.0%;">         <div style='font-size:13px'>           <b>장소명</b>: 나눔재활데이케어센터<br>           <b>행정동</b>: 난곡동<br>           <b>클러스터</b>: 0<br>           <b>입지점수</b>: 1.000000         </div>         </div>`)[0];
+            popup_7c52b2438d222d17e5b1768979aef11d.setContent(html_a2c0821fe0a890ab39b5bf6a53c6111c);
+        
+
+        circle_marker_792707a58fa4f8554871231c4c05b4b4.bindPopup(popup_7c52b2438d222d17e5b1768979aef11d)
+        ;
+
+        
+    
+    
+            circle_marker_792707a58fa4f8554871231c4c05b4b4.bindTooltip(
+                `<div>
+                     [C0] 나눔재활데이케어센터
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_2f60601744c6a9bb9b4bb100dfd8b4fe = L.circleMarker(
+                [37.472213, 126.918195],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4C78A8", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14.0, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_6ad79733acdf2df72866b6734cadea42);
+        
+    
+        var popup_ca16dc0b704ae5346717c4ab3efc75a3 = L.popup({"maxWidth": 300});
+
+        
+            var html_f4c604aae6e4227ff0aa9d3e1e603100 = $(`<div id="html_f4c604aae6e4227ff0aa9d3e1e603100" style="width: 100.0%; height: 100.0%;">         <div style='font-size:13px'>           <b>장소명</b>: 관악시조 노인교실<br>           <b>행정동</b>: 난곡동<br>           <b>클러스터</b>: 0<br>           <b>입지점수</b>: 1.000000         </div>         </div>`)[0];
+            popup_ca16dc0b704ae5346717c4ab3efc75a3.setContent(html_f4c604aae6e4227ff0aa9d3e1e603100);
+        
+
+        circle_marker_2f60601744c6a9bb9b4bb100dfd8b4fe.bindPopup(popup_ca16dc0b704ae5346717c4ab3efc75a3)
+        ;
+
+        
+    
+    
+            circle_marker_2f60601744c6a9bb9b4bb100dfd8b4fe.bindTooltip(
+                `<div>
+                     [C0] 관악시조 노인교실
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_33cec16ce802f17d7460f5717a6261c9 = L.circleMarker(
+                [37.470294, 126.920471],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4C78A8", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14.0, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_6ad79733acdf2df72866b6734cadea42);
+        
+    
+        var popup_a6574b6950db6d1a02d8129bb0005b27 = L.popup({"maxWidth": 300});
+
+        
+            var html_52a21f5a88e1d8d93be515fcd85ac761 = $(`<div id="html_52a21f5a88e1d8d93be515fcd85ac761" style="width: 100.0%; height: 100.0%;">         <div style='font-size:13px'>           <b>장소명</b>: 우림시장<br>           <b>행정동</b>: 난곡동<br>           <b>클러스터</b>: 0<br>           <b>입지점수</b>: 1.000000         </div>         </div>`)[0];
+            popup_a6574b6950db6d1a02d8129bb0005b27.setContent(html_52a21f5a88e1d8d93be515fcd85ac761);
+        
+
+        circle_marker_33cec16ce802f17d7460f5717a6261c9.bindPopup(popup_a6574b6950db6d1a02d8129bb0005b27)
+        ;
+
+        
+    
+    
+            circle_marker_33cec16ce802f17d7460f5717a6261c9.bindTooltip(
+                `<div>
+                     [C0] 우림시장
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_4c41ad2d210bb137c2d8475a1a060d93 = L.circleMarker(
+                [37.473491, 126.924678],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4C78A8", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14.0, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_6ad79733acdf2df72866b6734cadea42);
+        
+    
+        var popup_2bd3cbb31e2c63a85104ccd4de302cf9 = L.popup({"maxWidth": 300});
+
+        
+            var html_c6757ede538b044e84e54df8204ee9da = $(`<div id="html_c6757ede538b044e84e54df8204ee9da" style="width: 100.0%; height: 100.0%;">         <div style='font-size:13px'>           <b>장소명</b>: 남강어린이공원<br>           <b>행정동</b>: 난곡동<br>           <b>클러스터</b>: 0<br>           <b>입지점수</b>: 1.000000         </div>         </div>`)[0];
+            popup_2bd3cbb31e2c63a85104ccd4de302cf9.setContent(html_c6757ede538b044e84e54df8204ee9da);
+        
+
+        circle_marker_4c41ad2d210bb137c2d8475a1a060d93.bindPopup(popup_2bd3cbb31e2c63a85104ccd4de302cf9)
+        ;
+
+        
+    
+    
+            circle_marker_4c41ad2d210bb137c2d8475a1a060d93.bindTooltip(
+                `<div>
+                     [C0] 남강어린이공원
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_e26ff0276685061361253c75e21eb445 = L.circleMarker(
+                [37.475465, 126.925625],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4C78A8", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14.0, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_6ad79733acdf2df72866b6734cadea42);
+        
+    
+        var popup_1ea311902cffed4b9857429eed11283f = L.popup({"maxWidth": 300});
+
+        
+            var html_3de5f21090182fd93d548114f52564d5 = $(`<div id="html_3de5f21090182fd93d548114f52564d5" style="width: 100.0%; height: 100.0%;">         <div style='font-size:13px'>           <b>장소명</b>: 보명어린이공원<br>           <b>행정동</b>: 난곡동<br>           <b>클러스터</b>: 0<br>           <b>입지점수</b>: 1.000000         </div>         </div>`)[0];
+            popup_1ea311902cffed4b9857429eed11283f.setContent(html_3de5f21090182fd93d548114f52564d5);
+        
+
+        circle_marker_e26ff0276685061361253c75e21eb445.bindPopup(popup_1ea311902cffed4b9857429eed11283f)
+        ;
+
+        
+    
+    
+            circle_marker_e26ff0276685061361253c75e21eb445.bindTooltip(
+                `<div>
+                     [C0] 보명어린이공원
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_46d166de8d8570b74a553f7eccace6a2 = L.circleMarker(
+                [37.475469, 126.925628],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4C78A8", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14.0, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_6ad79733acdf2df72866b6734cadea42);
+        
+    
+        var popup_21af7560e8a015ba194fcb1e49c58ce9 = L.popup({"maxWidth": 300});
+
+        
+            var html_3dc267e54681b4ebf51f95fe6e417626 = $(`<div id="html_3dc267e54681b4ebf51f95fe6e417626" style="width: 100.0%; height: 100.0%;">         <div style='font-size:13px'>           <b>장소명</b>: 무궁화어린이공원<br>           <b>행정동</b>: 난곡동<br>           <b>클러스터</b>: 0<br>           <b>입지점수</b>: 1.000000         </div>         </div>`)[0];
+            popup_21af7560e8a015ba194fcb1e49c58ce9.setContent(html_3dc267e54681b4ebf51f95fe6e417626);
+        
+
+        circle_marker_46d166de8d8570b74a553f7eccace6a2.bindPopup(popup_21af7560e8a015ba194fcb1e49c58ce9)
+        ;
+
+        
+    
+    
+            circle_marker_46d166de8d8570b74a553f7eccace6a2.bindTooltip(
+                `<div>
+                     [C0] 무궁화어린이공원
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_31a1be65b1af00eeea1d0c2791579b28 = L.circleMarker(
+                [37.469673, 126.923505],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4C78A8", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14.0, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_6ad79733acdf2df72866b6734cadea42);
+        
+    
+        var popup_00db5dd40563b89793b9a1422a16e721 = L.popup({"maxWidth": 300});
+
+        
+            var html_acc9ed290704f26aa2c1e877e50e65f8 = $(`<div id="html_acc9ed290704f26aa2c1e877e50e65f8" style="width: 100.0%; height: 100.0%;">         <div style='font-size:13px'>           <b>장소명</b>: 난곡동마을마당<br>           <b>행정동</b>: 난곡동<br>           <b>클러스터</b>: 0<br>           <b>입지점수</b>: 1.000000         </div>         </div>`)[0];
+            popup_00db5dd40563b89793b9a1422a16e721.setContent(html_acc9ed290704f26aa2c1e877e50e65f8);
+        
+
+        circle_marker_31a1be65b1af00eeea1d0c2791579b28.bindPopup(popup_00db5dd40563b89793b9a1422a16e721)
+        ;
+
+        
+    
+    
+            circle_marker_31a1be65b1af00eeea1d0c2791579b28.bindTooltip(
+                `<div>
+                     [C0] 난곡동마을마당
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_ed0241c2ac0938e0edb67383bf6c4883 = L.circleMarker(
+                [37.467935, 126.920831],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4C78A8", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14.0, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_6ad79733acdf2df72866b6734cadea42);
+        
+    
+        var popup_cd54ffd297a2603aaafb42874849a012 = L.popup({"maxWidth": 300});
+
+        
+            var html_b520f027cda723f3b0e1c0e957db7574 = $(`<div id="html_b520f027cda723f3b0e1c0e957db7574" style="width: 100.0%; height: 100.0%;">         <div style='font-size:13px'>           <b>장소명</b>: 오성어린이공원<br>           <b>행정동</b>: 난곡동<br>           <b>클러스터</b>: 0<br>           <b>입지점수</b>: 1.000000         </div>         </div>`)[0];
+            popup_cd54ffd297a2603aaafb42874849a012.setContent(html_b520f027cda723f3b0e1c0e957db7574);
+        
+
+        circle_marker_ed0241c2ac0938e0edb67383bf6c4883.bindPopup(popup_cd54ffd297a2603aaafb42874849a012)
+        ;
+
+        
+    
+    
+            circle_marker_ed0241c2ac0938e0edb67383bf6c4883.bindTooltip(
+                `<div>
+                     [C0] 오성어린이공원
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_764b1cb3911899594adddad6d410d858 = L.circleMarker(
+                [37.480256, 126.914031],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4C78A8", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14.0, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_6ad79733acdf2df72866b6734cadea42);
+        
+    
+        var popup_ce84e4e30ad03e85279e806810dde948 = L.popup({"maxWidth": 300});
+
+        
+            var html_260f6ce22261eb7ca459b5a685fdc285 = $(`<div id="html_260f6ce22261eb7ca459b5a685fdc285" style="width: 100.0%; height: 100.0%;">         <div style='font-size:13px'>           <b>장소명</b>: 난우어린이공원<br>           <b>행정동</b>: 난곡동<br>           <b>클러스터</b>: 0<br>           <b>입지점수</b>: 1.000000         </div>         </div>`)[0];
+            popup_ce84e4e30ad03e85279e806810dde948.setContent(html_260f6ce22261eb7ca459b5a685fdc285);
+        
+
+        circle_marker_764b1cb3911899594adddad6d410d858.bindPopup(popup_ce84e4e30ad03e85279e806810dde948)
+        ;
+
+        
+    
+    
+            circle_marker_764b1cb3911899594adddad6d410d858.bindTooltip(
+                `<div>
+                     [C0] 난우어린이공원
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_138c8a2aa5a880ac6c79b18c9c69e33b = L.circleMarker(
+                [37.474952, 126.935011],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4C78A8", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12.364245001357098, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_6ad79733acdf2df72866b6734cadea42);
+        
+    
+        var popup_55322d23abe65f249b7b9fe69c92e27d = L.popup({"maxWidth": 300});
+
+        
+            var html_ab8300e5b360dfb09001bd89c5211ca2 = $(`<div id="html_ab8300e5b360dfb09001bd89c5211ca2" style="width: 100.0%; height: 100.0%;">         <div style='font-size:13px'>           <b>장소명</b>: 서림동주민센터<br>           <b>행정동</b>: 서림동<br>           <b>클러스터</b>: 0<br>           <b>입지점수</b>: 0.795531         </div>         </div>`)[0];
+            popup_55322d23abe65f249b7b9fe69c92e27d.setContent(html_ab8300e5b360dfb09001bd89c5211ca2);
+        
+
+        circle_marker_138c8a2aa5a880ac6c79b18c9c69e33b.bindPopup(popup_55322d23abe65f249b7b9fe69c92e27d)
+        ;
+
+        
+    
+    
+            circle_marker_138c8a2aa5a880ac6c79b18c9c69e33b.bindTooltip(
+                `<div>
+                     [C0] 서림동주민센터
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_0b0a5651d690beda29c7f918fc0ed8c0 = L.circleMarker(
+                [37.4751, 126.9324882],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4C78A8", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12.364245001357098, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_6ad79733acdf2df72866b6734cadea42);
+        
+    
+        var popup_4196eb7cd3e8ff8b2b17bcc02b85471d = L.popup({"maxWidth": 300});
+
+        
+            var html_ff10fb80fbb3b0ae4f5c4c1b48c54b66 = $(`<div id="html_ff10fb80fbb3b0ae4f5c4c1b48c54b66" style="width: 100.0%; height: 100.0%;">         <div style='font-size:13px'>           <b>장소명</b>: 신림현대종합상가<br>           <b>행정동</b>: 서림동<br>           <b>클러스터</b>: 0<br>           <b>입지점수</b>: 0.795531         </div>         </div>`)[0];
+            popup_4196eb7cd3e8ff8b2b17bcc02b85471d.setContent(html_ff10fb80fbb3b0ae4f5c4c1b48c54b66);
+        
+
+        circle_marker_0b0a5651d690beda29c7f918fc0ed8c0.bindPopup(popup_4196eb7cd3e8ff8b2b17bcc02b85471d)
+        ;
+
+        
+    
+    
+            circle_marker_0b0a5651d690beda29c7f918fc0ed8c0.bindTooltip(
+                `<div>
+                     [C0] 신림현대종합상가
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_f0383f281a26d95de2ee0dcfc0d18682 = L.circleMarker(
+                [37.476693, 126.93567],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4C78A8", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12.364245001357098, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_6ad79733acdf2df72866b6734cadea42);
+        
+    
+        var popup_3d6f5ac5389a98d91eeb4a7127ef612e = L.popup({"maxWidth": 300});
+
+        
+            var html_f1ece2e972cda83caf2fa0d1240e60fd = $(`<div id="html_f1ece2e972cda83caf2fa0d1240e60fd" style="width: 100.0%; height: 100.0%;">         <div style='font-size:13px'>           <b>장소명</b>: 신화어린이공원<br>           <b>행정동</b>: 서림동<br>           <b>클러스터</b>: 0<br>           <b>입지점수</b>: 0.795531         </div>         </div>`)[0];
+            popup_3d6f5ac5389a98d91eeb4a7127ef612e.setContent(html_f1ece2e972cda83caf2fa0d1240e60fd);
+        
+
+        circle_marker_f0383f281a26d95de2ee0dcfc0d18682.bindPopup(popup_3d6f5ac5389a98d91eeb4a7127ef612e)
+        ;
+
+        
+    
+    
+            circle_marker_f0383f281a26d95de2ee0dcfc0d18682.bindTooltip(
+                `<div>
+                     [C0] 신화어린이공원
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_5fc63e3d4b630b6ea91ccd61f8bf57ba = L.circleMarker(
+                [37.47582, 126.94081],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4C78A8", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12.364245001357098, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_6ad79733acdf2df72866b6734cadea42);
+        
+    
+        var popup_8747a4bf84138a288a723c374f4e3a16 = L.popup({"maxWidth": 300});
+
+        
+            var html_bcb73d25711f66c52609b0db161613cc = $(`<div id="html_bcb73d25711f66c52609b0db161613cc" style="width: 100.0%; height: 100.0%;">         <div style='font-size:13px'>           <b>장소명</b>: 쑥고개어린이공원<br>           <b>행정동</b>: 서림동<br>           <b>클러스터</b>: 0<br>           <b>입지점수</b>: 0.795531         </div>         </div>`)[0];
+            popup_8747a4bf84138a288a723c374f4e3a16.setContent(html_bcb73d25711f66c52609b0db161613cc);
+        
+
+        circle_marker_5fc63e3d4b630b6ea91ccd61f8bf57ba.bindPopup(popup_8747a4bf84138a288a723c374f4e3a16)
+        ;
+
+        
+    
+    
+            circle_marker_5fc63e3d4b630b6ea91ccd61f8bf57ba.bindTooltip(
+                `<div>
+                     [C0] 쑥고개어린이공원
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_5d92925b25f75f1d0faf717a20f5385c = L.circleMarker(
+                [37.475215, 126.942827],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4C78A8", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12.364245001357098, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_6ad79733acdf2df72866b6734cadea42);
+        
+    
+        var popup_239cbd62c415bd19876338b633b507fa = L.popup({"maxWidth": 300});
+
+        
+            var html_81577ca6dc61ba9f17b8df3a4dd7b7a2 = $(`<div id="html_81577ca6dc61ba9f17b8df3a4dd7b7a2" style="width: 100.0%; height: 100.0%;">         <div style='font-size:13px'>           <b>장소명</b>: 서광어린이공원<br>           <b>행정동</b>: 서림동<br>           <b>클러스터</b>: 0<br>           <b>입지점수</b>: 0.795531         </div>         </div>`)[0];
+            popup_239cbd62c415bd19876338b633b507fa.setContent(html_81577ca6dc61ba9f17b8df3a4dd7b7a2);
+        
+
+        circle_marker_5d92925b25f75f1d0faf717a20f5385c.bindPopup(popup_239cbd62c415bd19876338b633b507fa)
+        ;
+
+        
+    
+    
+            circle_marker_5d92925b25f75f1d0faf717a20f5385c.bindTooltip(
+                `<div>
+                     [C0] 서광어린이공원
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_1c5c1deeee0ed4f3afef10b161f10267 = L.circleMarker(
+                [37.475215, 126.942827],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4C78A8", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12.364245001357098, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_6ad79733acdf2df72866b6734cadea42);
+        
+    
+        var popup_43de9cb2d102b54a712e7b8f2d694b6e = L.popup({"maxWidth": 300});
+
+        
+            var html_7481a48e3777aeed0333972bf266db12 = $(`<div id="html_7481a48e3777aeed0333972bf266db12" style="width: 100.0%; height: 100.0%;">         <div style='font-size:13px'>           <b>장소명</b>: 해태어린이공원<br>           <b>행정동</b>: 서림동<br>           <b>클러스터</b>: 0<br>           <b>입지점수</b>: 0.795531         </div>         </div>`)[0];
+            popup_43de9cb2d102b54a712e7b8f2d694b6e.setContent(html_7481a48e3777aeed0333972bf266db12);
+        
+
+        circle_marker_1c5c1deeee0ed4f3afef10b161f10267.bindPopup(popup_43de9cb2d102b54a712e7b8f2d694b6e)
+        ;
+
+        
+    
+    
+            circle_marker_1c5c1deeee0ed4f3afef10b161f10267.bindTooltip(
+                `<div>
+                     [C0] 해태어린이공원
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_35d4f504f2823653890ba5499c159920 = L.circleMarker(
+                [37.459346, 126.932924],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4C78A8", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12.364245001357098, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_6ad79733acdf2df72866b6734cadea42);
+        
+    
+        var popup_b871cde32f03cb744842abc286fc2ad9 = L.popup({"maxWidth": 300});
+
+        
+            var html_b83329c4ba6f67040f69ab61026ada83 = $(`<div id="html_b83329c4ba6f67040f69ab61026ada83" style="width: 100.0%; height: 100.0%;">         <div style='font-size:13px'>           <b>장소명</b>: 도림천 신림2교 농구장<br>           <b>행정동</b>: 서림동<br>           <b>클러스터</b>: 0<br>           <b>입지점수</b>: 0.795531         </div>         </div>`)[0];
+            popup_b871cde32f03cb744842abc286fc2ad9.setContent(html_b83329c4ba6f67040f69ab61026ada83);
+        
+
+        circle_marker_35d4f504f2823653890ba5499c159920.bindPopup(popup_b871cde32f03cb744842abc286fc2ad9)
+        ;
+
+        
+    
+    
+            circle_marker_35d4f504f2823653890ba5499c159920.bindTooltip(
+                `<div>
+                     [C0] 도림천 신림2교 농구장
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var feature_group_206842ac4c2f64d1ccceb252827b9141 = L.featureGroup(
+                {}
+            ).addTo(map_5cb24a7c2d3a6ec818e885f84ae96fbc);
+        
+    
+            var circle_marker_36ebac582af097ec05708743c8d30cc0 = L.circleMarker(
+                [37.481571, 126.927363],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#72B7B2", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.184384330046141, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_206842ac4c2f64d1ccceb252827b9141);
+        
+    
+        var popup_516fdd3a8e1df2635b08cf7a73867899 = L.popup({"maxWidth": 300});
+
+        
+            var html_6abc586930ccb16393b2a39776374be6 = $(`<div id="html_6abc586930ccb16393b2a39776374be6" style="width: 100.0%; height: 100.0%;">         <div style='font-size:13px'>           <b>장소명</b>: 신원동주민센터<br>           <b>행정동</b>: 신원동<br>           <b>클러스터</b>: 1<br>           <b>입지점수</b>: 0.273048         </div>         </div>`)[0];
+            popup_516fdd3a8e1df2635b08cf7a73867899.setContent(html_6abc586930ccb16393b2a39776374be6);
+        
+
+        circle_marker_36ebac582af097ec05708743c8d30cc0.bindPopup(popup_516fdd3a8e1df2635b08cf7a73867899)
+        ;
+
+        
+    
+    
+            circle_marker_36ebac582af097ec05708743c8d30cc0.bindTooltip(
+                `<div>
+                     [C1] 신원동주민센터
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_3249bfb0bfeb20d48e33a4fd7a941198 = L.circleMarker(
+                [37.4824579, 126.9241588],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#72B7B2", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.184384330046141, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_206842ac4c2f64d1ccceb252827b9141);
+        
+    
+        var popup_223a839de69a146607701e736f291c10 = L.popup({"maxWidth": 300});
+
+        
+            var html_5d9289c4dacfa67f8447966d702848d4 = $(`<div id="html_5d9289c4dacfa67f8447966d702848d4" style="width: 100.0%; height: 100.0%;">         <div style='font-size:13px'>           <b>장소명</b>: 신원 경로당<br>           <b>행정동</b>: 신원동<br>           <b>클러스터</b>: 1<br>           <b>입지점수</b>: 0.273048         </div>         </div>`)[0];
+            popup_223a839de69a146607701e736f291c10.setContent(html_5d9289c4dacfa67f8447966d702848d4);
+        
+
+        circle_marker_3249bfb0bfeb20d48e33a4fd7a941198.bindPopup(popup_223a839de69a146607701e736f291c10)
+        ;
+
+        
+    
+    
+            circle_marker_3249bfb0bfeb20d48e33a4fd7a941198.bindTooltip(
+                `<div>
+                     [C1] 신원 경로당
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_52276f9297552abbed9c71360c6e3ad4 = L.circleMarker(
+                [37.478515, 126.928715],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#72B7B2", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.184384330046141, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_206842ac4c2f64d1ccceb252827b9141);
+        
+    
+        var popup_a85b7d739dda95a41f56565a44599da0 = L.popup({"maxWidth": 300});
+
+        
+            var html_3d8dcb35beb1b966cdf25802db848b64 = $(`<div id="html_3d8dcb35beb1b966cdf25802db848b64" style="width: 100.0%; height: 100.0%;">         <div style='font-size:13px'>           <b>장소명</b>: 신일 경로당<br>           <b>행정동</b>: 신원동<br>           <b>클러스터</b>: 1<br>           <b>입지점수</b>: 0.273048         </div>         </div>`)[0];
+            popup_a85b7d739dda95a41f56565a44599da0.setContent(html_3d8dcb35beb1b966cdf25802db848b64);
+        
+
+        circle_marker_52276f9297552abbed9c71360c6e3ad4.bindPopup(popup_a85b7d739dda95a41f56565a44599da0)
+        ;
+
+        
+    
+    
+            circle_marker_52276f9297552abbed9c71360c6e3ad4.bindTooltip(
+                `<div>
+                     [C1] 신일 경로당
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_cbd6719b4e166c05701f50f295ffa068 = L.circleMarker(
+                [37.4825231, 126.9252732],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#72B7B2", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.184384330046141, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_206842ac4c2f64d1ccceb252827b9141);
+        
+    
+        var popup_a3b38bd485ef64476c5759ed63e7598d = L.popup({"maxWidth": 300});
+
+        
+            var html_1f432c2a8bae9e9a3e2f6ed7f58bec48 = $(`<div id="html_1f432c2a8bae9e9a3e2f6ed7f58bec48" style="width: 100.0%; height: 100.0%;">         <div style='font-size:13px'>           <b>장소명</b>: 인애노인교실<br>           <b>행정동</b>: 신원동<br>           <b>클러스터</b>: 1<br>           <b>입지점수</b>: 0.273048         </div>         </div>`)[0];
+            popup_a3b38bd485ef64476c5759ed63e7598d.setContent(html_1f432c2a8bae9e9a3e2f6ed7f58bec48);
+        
+
+        circle_marker_cbd6719b4e166c05701f50f295ffa068.bindPopup(popup_a3b38bd485ef64476c5759ed63e7598d)
+        ;
+
+        
+    
+    
+            circle_marker_cbd6719b4e166c05701f50f295ffa068.bindTooltip(
+                `<div>
+                     [C1] 인애노인교실
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_8ba1d2f44086e408d6652cbad8901a4c = L.circleMarker(
+                [37.4788333, 126.9292758],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#72B7B2", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.184384330046141, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_206842ac4c2f64d1ccceb252827b9141);
+        
+    
+        var popup_ef07ac8dc83df8aff114840d2dfd436b = L.popup({"maxWidth": 300});
+
+        
+            var html_26efceae1a4c7ef06a02b359461603ad = $(`<div id="html_26efceae1a4c7ef06a02b359461603ad" style="width: 100.0%; height: 100.0%;">         <div style='font-size:13px'>           <b>장소명</b>: 시니어아카데미<br>           <b>행정동</b>: 신원동<br>           <b>클러스터</b>: 1<br>           <b>입지점수</b>: 0.273048         </div>         </div>`)[0];
+            popup_ef07ac8dc83df8aff114840d2dfd436b.setContent(html_26efceae1a4c7ef06a02b359461603ad);
+        
+
+        circle_marker_8ba1d2f44086e408d6652cbad8901a4c.bindPopup(popup_ef07ac8dc83df8aff114840d2dfd436b)
+        ;
+
+        
+    
+    
+            circle_marker_8ba1d2f44086e408d6652cbad8901a4c.bindTooltip(
+                `<div>
+                     [C1] 시니어아카데미
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_a4afcae8be6730cd1d398bb87daa92e4 = L.circleMarker(
+                [37.48287372, 126.9215364],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#72B7B2", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.184384330046141, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_206842ac4c2f64d1ccceb252827b9141);
+        
+    
+        var popup_76dde4d921dca0f6848811ddc0e38166 = L.popup({"maxWidth": 300});
+
+        
+            var html_a9b3e272ff68dbb8d13623cd6c2818c1 = $(`<div id="html_a9b3e272ff68dbb8d13623cd6c2818c1" style="width: 100.0%; height: 100.0%;">         <div style='font-size:13px'>           <b>장소명</b>: 신원동자치회관<br>           <b>행정동</b>: 신원동<br>           <b>클러스터</b>: 1<br>           <b>입지점수</b>: 0.273048         </div>         </div>`)[0];
+            popup_76dde4d921dca0f6848811ddc0e38166.setContent(html_a9b3e272ff68dbb8d13623cd6c2818c1);
+        
+
+        circle_marker_a4afcae8be6730cd1d398bb87daa92e4.bindPopup(popup_76dde4d921dca0f6848811ddc0e38166)
+        ;
+
+        
+    
+    
+            circle_marker_a4afcae8be6730cd1d398bb87daa92e4.bindTooltip(
+                `<div>
+                     [C1] 신원동자치회관
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_51698017eea7ad2d32cf4ae9f3a1ced2 = L.circleMarker(
+                [37.4822257, 126.9276219],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#72B7B2", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.184384330046141, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_206842ac4c2f64d1ccceb252827b9141);
+        
+    
+        var popup_f2ada076dce9a616139c227284727870 = L.popup({"maxWidth": 300});
+
+        
+            var html_1d7a98a8ae9206ab54241587d9140d6c = $(`<div id="html_1d7a98a8ae9206ab54241587d9140d6c" style="width: 100.0%; height: 100.0%;">         <div style='font-size:13px'>           <b>장소명</b>: 신원시장<br>           <b>행정동</b>: 신원동<br>           <b>클러스터</b>: 1<br>           <b>입지점수</b>: 0.273048         </div>         </div>`)[0];
+            popup_f2ada076dce9a616139c227284727870.setContent(html_1d7a98a8ae9206ab54241587d9140d6c);
+        
+
+        circle_marker_51698017eea7ad2d32cf4ae9f3a1ced2.bindPopup(popup_f2ada076dce9a616139c227284727870)
+        ;
+
+        
+    
+    
+            circle_marker_51698017eea7ad2d32cf4ae9f3a1ced2.bindTooltip(
+                `<div>
+                     [C1] 신원시장
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_51b2d4e7cc9ce6fcbfce647ff2ddef5a = L.circleMarker(
+                [37.4816312, 126.9279846],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#72B7B2", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.184384330046141, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_206842ac4c2f64d1ccceb252827b9141);
+        
+    
+        var popup_fc5e3fc1c27de28c1e22c40971c15a5e = L.popup({"maxWidth": 300});
+
+        
+            var html_761361b9bda78fc3066178bd75e24ba9 = $(`<div id="html_761361b9bda78fc3066178bd75e24ba9" style="width: 100.0%; height: 100.0%;">         <div style='font-size:13px'>           <b>장소명</b>: 관악종합시장<br>           <b>행정동</b>: 신원동<br>           <b>클러스터</b>: 1<br>           <b>입지점수</b>: 0.273048         </div>         </div>`)[0];
+            popup_fc5e3fc1c27de28c1e22c40971c15a5e.setContent(html_761361b9bda78fc3066178bd75e24ba9);
+        
+
+        circle_marker_51b2d4e7cc9ce6fcbfce647ff2ddef5a.bindPopup(popup_fc5e3fc1c27de28c1e22c40971c15a5e)
+        ;
+
+        
+    
+    
+            circle_marker_51b2d4e7cc9ce6fcbfce647ff2ddef5a.bindTooltip(
+                `<div>
+                     [C1] 관악종합시장
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_50c5c2506560aecc7a73f75c2c4c9527 = L.circleMarker(
+                [37.461455, 126.918829],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#72B7B2", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_206842ac4c2f64d1ccceb252827b9141);
+        
+    
+        var popup_be6a1ed3af46a6ab530e8bfb7a4749fc = L.popup({"maxWidth": 300});
+
+        
+            var html_a58aad7b71d979128e5c4cc0aaa269a6 = $(`<div id="html_a58aad7b71d979128e5c4cc0aaa269a6" style="width: 100.0%; height: 100.0%;">         <div style='font-size:13px'>           <b>장소명</b>: 난향동주민센터<br>           <b>행정동</b>: 난향동<br>           <b>클러스터</b>: 1<br>           <b>입지점수</b>: 0.000000         </div>         </div>`)[0];
+            popup_be6a1ed3af46a6ab530e8bfb7a4749fc.setContent(html_a58aad7b71d979128e5c4cc0aaa269a6);
+        
+
+        circle_marker_50c5c2506560aecc7a73f75c2c4c9527.bindPopup(popup_be6a1ed3af46a6ab530e8bfb7a4749fc)
+        ;
+
+        
+    
+    
+            circle_marker_50c5c2506560aecc7a73f75c2c4c9527.bindTooltip(
+                `<div>
+                     [C1] 난향동주민센터
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_df08722981276b836c90b6d85a9c276d = L.circleMarker(
+                [37.4605538, 126.9206033],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#72B7B2", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_206842ac4c2f64d1ccceb252827b9141);
+        
+    
+        var popup_e9cd39114757db5998e9de1a2ae2c5b0 = L.popup({"maxWidth": 300});
+
+        
+            var html_72c4d531d8fcad77a1ce2561dae8bda7 = $(`<div id="html_72c4d531d8fcad77a1ce2561dae8bda7" style="width: 100.0%; height: 100.0%;">         <div style='font-size:13px'>           <b>장소명</b>: 관악난향데이케어센터<br>           <b>행정동</b>: 난향동<br>           <b>클러스터</b>: 1<br>           <b>입지점수</b>: 0.000000         </div>         </div>`)[0];
+            popup_e9cd39114757db5998e9de1a2ae2c5b0.setContent(html_72c4d531d8fcad77a1ce2561dae8bda7);
+        
+
+        circle_marker_df08722981276b836c90b6d85a9c276d.bindPopup(popup_e9cd39114757db5998e9de1a2ae2c5b0)
+        ;
+
+        
+    
+    
+            circle_marker_df08722981276b836c90b6d85a9c276d.bindTooltip(
+                `<div>
+                     [C1] 관악난향데이케어센터
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_86cc2c82521cac5769a0eefe855c5d01 = L.circleMarker(
+                [37.4625458, 126.916353],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#72B7B2", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_206842ac4c2f64d1ccceb252827b9141);
+        
+    
+        var popup_f8092c9ff8c96b2c2927068dc5af9e6b = L.popup({"maxWidth": 300});
+
+        
+            var html_e420f72dcbf87d6c05a973f840874670 = $(`<div id="html_e420f72dcbf87d6c05a973f840874670" style="width: 100.0%; height: 100.0%;">         <div style='font-size:13px'>           <b>장소명</b>: 국회단지 경로당<br>           <b>행정동</b>: 난향동<br>           <b>클러스터</b>: 1<br>           <b>입지점수</b>: 0.000000         </div>         </div>`)[0];
+            popup_f8092c9ff8c96b2c2927068dc5af9e6b.setContent(html_e420f72dcbf87d6c05a973f840874670);
+        
+
+        circle_marker_86cc2c82521cac5769a0eefe855c5d01.bindPopup(popup_f8092c9ff8c96b2c2927068dc5af9e6b)
+        ;
+
+        
+    
+    
+            circle_marker_86cc2c82521cac5769a0eefe855c5d01.bindTooltip(
+                `<div>
+                     [C1] 국회단지 경로당
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_c08100fda5e10c539d3347008b4a7940 = L.circleMarker(
+                [37.4639584, 126.9181093],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#72B7B2", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_206842ac4c2f64d1ccceb252827b9141);
+        
+    
+        var popup_45d56001b93715a449a63b0a360e0b0c = L.popup({"maxWidth": 300});
+
+        
+            var html_a637cd24843bf341f2c86fb9f099cd31 = $(`<div id="html_a637cd24843bf341f2c86fb9f099cd31" style="width: 100.0%; height: 100.0%;">         <div style='font-size:13px'>           <b>장소명</b>: 난향 경로당<br>           <b>행정동</b>: 난향동<br>           <b>클러스터</b>: 1<br>           <b>입지점수</b>: 0.000000         </div>         </div>`)[0];
+            popup_45d56001b93715a449a63b0a360e0b0c.setContent(html_a637cd24843bf341f2c86fb9f099cd31);
+        
+
+        circle_marker_c08100fda5e10c539d3347008b4a7940.bindPopup(popup_45d56001b93715a449a63b0a360e0b0c)
+        ;
+
+        
+    
+    
+            circle_marker_c08100fda5e10c539d3347008b4a7940.bindTooltip(
+                `<div>
+                     [C1] 난향 경로당
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_b873a2fdf3f444a2e9b93a4708c4b963 = L.circleMarker(
+                [37.4648412, 126.9198496],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#72B7B2", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_206842ac4c2f64d1ccceb252827b9141);
+        
+    
+        var popup_b074c5bd3b501e2b9f86434d73861dca = L.popup({"maxWidth": 300});
+
+        
+            var html_cc06d2e11713ba85f8c587ed8abfb57c = $(`<div id="html_cc06d2e11713ba85f8c587ed8abfb57c" style="width: 100.0%; height: 100.0%;">         <div style='font-size:13px'>           <b>장소명</b>: 신림종합사회복지관<br>           <b>행정동</b>: 난향동<br>           <b>클러스터</b>: 1<br>           <b>입지점수</b>: 0.000000         </div>         </div>`)[0];
+            popup_b074c5bd3b501e2b9f86434d73861dca.setContent(html_cc06d2e11713ba85f8c587ed8abfb57c);
+        
+
+        circle_marker_b873a2fdf3f444a2e9b93a4708c4b963.bindPopup(popup_b074c5bd3b501e2b9f86434d73861dca)
+        ;
+
+        
+    
+    
+            circle_marker_b873a2fdf3f444a2e9b93a4708c4b963.bindTooltip(
+                `<div>
+                     [C1] 신림종합사회복지관
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_592dfac9561bb786bd174f8ea1bab2ac = L.circleMarker(
+                [37.464838, 126.9198509],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#72B7B2", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_206842ac4c2f64d1ccceb252827b9141);
+        
+    
+        var popup_00f6a08f06f72f9aa2e47411343560e6 = L.popup({"maxWidth": 300});
+
+        
+            var html_805a822655253cd0ff2b8520b81e27e7 = $(`<div id="html_805a822655253cd0ff2b8520b81e27e7" style="width: 100.0%; height: 100.0%;">         <div style='font-size:13px'>           <b>장소명</b>: 푸른햇살데이케어센터<br>           <b>행정동</b>: 난향동<br>           <b>클러스터</b>: 1<br>           <b>입지점수</b>: 0.000000         </div>         </div>`)[0];
+            popup_00f6a08f06f72f9aa2e47411343560e6.setContent(html_805a822655253cd0ff2b8520b81e27e7);
+        
+
+        circle_marker_592dfac9561bb786bd174f8ea1bab2ac.bindPopup(popup_00f6a08f06f72f9aa2e47411343560e6)
+        ;
+
+        
+    
+    
+            circle_marker_592dfac9561bb786bd174f8ea1bab2ac.bindTooltip(
+                `<div>
+                     [C1] 푸른햇살데이케어센터
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_c5ba0b496b4b6459442c80942fbd9153 = L.circleMarker(
+                [37.462816, 126.915253],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#72B7B2", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_206842ac4c2f64d1ccceb252827b9141);
+        
+    
+        var popup_e6d4ba20e88201399972b4f7fdd32607 = L.popup({"maxWidth": 300});
+
+        
+            var html_4155c2a1112b0e65735e7eb9193f2732 = $(`<div id="html_4155c2a1112b0e65735e7eb9193f2732" style="width: 100.0%; height: 100.0%;">         <div style='font-size:13px'>           <b>장소명</b>: 미도어린이공원<br>           <b>행정동</b>: 난향동<br>           <b>클러스터</b>: 1<br>           <b>입지점수</b>: 0.000000         </div>         </div>`)[0];
+            popup_e6d4ba20e88201399972b4f7fdd32607.setContent(html_4155c2a1112b0e65735e7eb9193f2732);
+        
+
+        circle_marker_c5ba0b496b4b6459442c80942fbd9153.bindPopup(popup_e6d4ba20e88201399972b4f7fdd32607)
+        ;
+
+        
+    
+    
+            circle_marker_c5ba0b496b4b6459442c80942fbd9153.bindTooltip(
+                `<div>
+                     [C1] 미도어린이공원
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var feature_group_b2458a4f76a9de736a778e077d832c57 = L.featureGroup(
+                {}
+            ).addTo(map_5cb24a7c2d3a6ec818e885f84ae96fbc);
+        
+    
+            var circle_marker_0c1a645639118f44100a03e4ec46d5ca = L.circleMarker(
+                [37.485377, 126.918104],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F2C600", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.698362435537863, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_b2458a4f76a9de736a778e077d832c57);
+        
+    
+        var popup_555c81bdd929ee613990bf42ab055888 = L.popup({"maxWidth": 300});
+
+        
+            var html_d9430956bb827326cbb885210e10f1b6 = $(`<div id="html_d9430956bb827326cbb885210e10f1b6" style="width: 100.0%; height: 100.0%;">         <div style='font-size:13px'>           <b>장소명</b>: 신사동주민센터<br>           <b>행정동</b>: 신사동<br>           <b>클러스터</b>: 2<br>           <b>입지점수</b>: 0.712295         </div>         </div>`)[0];
+            popup_555c81bdd929ee613990bf42ab055888.setContent(html_d9430956bb827326cbb885210e10f1b6);
+        
+
+        circle_marker_0c1a645639118f44100a03e4ec46d5ca.bindPopup(popup_555c81bdd929ee613990bf42ab055888)
+        ;
+
+        
+    
+    
+            circle_marker_0c1a645639118f44100a03e4ec46d5ca.bindTooltip(
+                `<div>
+                     [C2] 신사동주민센터
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_ceba88f6184a2a37c59e96a0ca719beb = L.circleMarker(
+                [37.4859463, 126.9190833],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F2C600", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.698362435537863, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_b2458a4f76a9de736a778e077d832c57);
+        
+    
+        var popup_6e1e1bce43c738e819402f15d64b5bc6 = L.popup({"maxWidth": 300});
+
+        
+            var html_97f9a05bd6da54f27ec82589e9ad57b5 = $(`<div id="html_97f9a05bd6da54f27ec82589e9ad57b5" style="width: 100.0%; height: 100.0%;">         <div style='font-size:13px'>           <b>장소명</b>: 신사경로당<br>           <b>행정동</b>: 신사동<br>           <b>클러스터</b>: 2<br>           <b>입지점수</b>: 0.712295         </div>         </div>`)[0];
+            popup_6e1e1bce43c738e819402f15d64b5bc6.setContent(html_97f9a05bd6da54f27ec82589e9ad57b5);
+        
+
+        circle_marker_ceba88f6184a2a37c59e96a0ca719beb.bindPopup(popup_6e1e1bce43c738e819402f15d64b5bc6)
+        ;
+
+        
+    
+    
+            circle_marker_ceba88f6184a2a37c59e96a0ca719beb.bindTooltip(
+                `<div>
+                     [C2] 신사경로당
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_ca8b08cb9cdb37dfb664c2d99c998c36 = L.circleMarker(
+                [37.4835924, 126.915474],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F2C600", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.698362435537863, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_b2458a4f76a9de736a778e077d832c57);
+        
+    
+        var popup_3d39642f1c4d787f009dae6bcaf42973 = L.popup({"maxWidth": 300});
+
+        
+            var html_e8c26b0e13f1722c63e8e58d1d80c717 = $(`<div id="html_e8c26b0e13f1722c63e8e58d1d80c717" style="width: 100.0%; height: 100.0%;">         <div style='font-size:13px'>           <b>장소명</b>: 어울림경로당<br>           <b>행정동</b>: 신사동<br>           <b>클러스터</b>: 2<br>           <b>입지점수</b>: 0.712295         </div>         </div>`)[0];
+            popup_3d39642f1c4d787f009dae6bcaf42973.setContent(html_e8c26b0e13f1722c63e8e58d1d80c717);
+        
+
+        circle_marker_ca8b08cb9cdb37dfb664c2d99c998c36.bindPopup(popup_3d39642f1c4d787f009dae6bcaf42973)
+        ;
+
+        
+    
+    
+            circle_marker_ca8b08cb9cdb37dfb664c2d99c998c36.bindTooltip(
+                `<div>
+                     [C2] 어울림경로당
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_10ac10feefb4212433dc8019f4a40ab6 = L.circleMarker(
+                [37.4844545, 126.9137376],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F2C600", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.698362435537863, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_b2458a4f76a9de736a778e077d832c57);
+        
+    
+        var popup_b5bc3f50e1cd0e134b0c62717170f8ca = L.popup({"maxWidth": 300});
+
+        
+            var html_8365e8e8e382d5689eef9828ddb1a5cc = $(`<div id="html_8365e8e8e382d5689eef9828ddb1a5cc" style="width: 100.0%; height: 100.0%;">         <div style='font-size:13px'>           <b>장소명</b>: 아가페데이케어센터<br>           <b>행정동</b>: 신사동<br>           <b>클러스터</b>: 2<br>           <b>입지점수</b>: 0.712295         </div>         </div>`)[0];
+            popup_b5bc3f50e1cd0e134b0c62717170f8ca.setContent(html_8365e8e8e382d5689eef9828ddb1a5cc);
+        
+
+        circle_marker_10ac10feefb4212433dc8019f4a40ab6.bindPopup(popup_b5bc3f50e1cd0e134b0c62717170f8ca)
+        ;
+
+        
+    
+    
+            circle_marker_10ac10feefb4212433dc8019f4a40ab6.bindTooltip(
+                `<div>
+                     [C2] 아가페데이케어센터
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_f3c4fda7b0d10863912db07aec3daf33 = L.circleMarker(
+                [37.4858992, 126.9207544],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F2C600", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.698362435537863, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_b2458a4f76a9de736a778e077d832c57);
+        
+    
+        var popup_bf56ec7b499633ae8c310f028bedb996 = L.popup({"maxWidth": 300});
+
+        
+            var html_051e2ea0c8e53be3cf59643ef7b38588 = $(`<div id="html_051e2ea0c8e53be3cf59643ef7b38588" style="width: 100.0%; height: 100.0%;">         <div style='font-size:13px'>           <b>장소명</b>: 남부데이케어센터<br>           <b>행정동</b>: 신사동<br>           <b>클러스터</b>: 2<br>           <b>입지점수</b>: 0.712295         </div>         </div>`)[0];
+            popup_bf56ec7b499633ae8c310f028bedb996.setContent(html_051e2ea0c8e53be3cf59643ef7b38588);
+        
+
+        circle_marker_f3c4fda7b0d10863912db07aec3daf33.bindPopup(popup_bf56ec7b499633ae8c310f028bedb996)
+        ;
+
+        
+    
+    
+            circle_marker_f3c4fda7b0d10863912db07aec3daf33.bindTooltip(
+                `<div>
+                     [C2] 남부데이케어센터
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_7d18ac6475ebedd66e1767f1bb5b7669 = L.circleMarker(
+                [37.4834196, 126.9180821],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F2C600", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.698362435537863, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_b2458a4f76a9de736a778e077d832c57);
+        
+    
+        var popup_e240ce54ed03a1548f02a03f6f2adc2d = L.popup({"maxWidth": 300});
+
+        
+            var html_6f54797b5885c078be03d9959c265347 = $(`<div id="html_6f54797b5885c078be03d9959c265347" style="width: 100.0%; height: 100.0%;">         <div style='font-size:13px'>           <b>장소명</b>: 신사동성베드로성당 시니어아카데미<br>           <b>행정동</b>: 신사동<br>           <b>클러스터</b>: 2<br>           <b>입지점수</b>: 0.712295         </div>         </div>`)[0];
+            popup_e240ce54ed03a1548f02a03f6f2adc2d.setContent(html_6f54797b5885c078be03d9959c265347);
+        
+
+        circle_marker_7d18ac6475ebedd66e1767f1bb5b7669.bindPopup(popup_e240ce54ed03a1548f02a03f6f2adc2d)
+        ;
+
+        
+    
+    
+            circle_marker_7d18ac6475ebedd66e1767f1bb5b7669.bindTooltip(
+                `<div>
+                     [C2] 신사동성베드로성당 시니어아카데미
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_814d177cbe02463e3ff67c95cc1ec3fd = L.circleMarker(
+                [37.4834291, 126.9180553],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F2C600", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.698362435537863, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_b2458a4f76a9de736a778e077d832c57);
+        
+    
+        var popup_065236bf90346dea5d18a56bd508b41c = L.popup({"maxWidth": 300});
+
+        
+            var html_3ad601fd84ec49c67d4f6903d138f2a8 = $(`<div id="html_3ad601fd84ec49c67d4f6903d138f2a8" style="width: 100.0%; height: 100.0%;">         <div style='font-size:13px'>           <b>장소명</b>: 성림노인교실<br>           <b>행정동</b>: 신사동<br>           <b>클러스터</b>: 2<br>           <b>입지점수</b>: 0.712295         </div>         </div>`)[0];
+            popup_065236bf90346dea5d18a56bd508b41c.setContent(html_3ad601fd84ec49c67d4f6903d138f2a8);
+        
+
+        circle_marker_814d177cbe02463e3ff67c95cc1ec3fd.bindPopup(popup_065236bf90346dea5d18a56bd508b41c)
+        ;
+
+        
+    
+    
+            circle_marker_814d177cbe02463e3ff67c95cc1ec3fd.bindTooltip(
+                `<div>
+                     [C2] 성림노인교실
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_0d82e13b16f7f0dd71b10d288009ab1c = L.circleMarker(
+                [37.4838748, 126.9144332],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F2C600", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.698362435537863, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_b2458a4f76a9de736a778e077d832c57);
+        
+    
+        var popup_fc1535ab564033470c64a7d33bafeb0b = L.popup({"maxWidth": 300});
+
+        
+            var html_594384b660f68612036702c921c3b7bc = $(`<div id="html_594384b660f68612036702c921c3b7bc" style="width: 100.0%; height: 100.0%;">         <div style='font-size:13px'>           <b>장소명</b>: 서울실버 노인교실<br>           <b>행정동</b>: 신사동<br>           <b>클러스터</b>: 2<br>           <b>입지점수</b>: 0.712295         </div>         </div>`)[0];
+            popup_fc1535ab564033470c64a7d33bafeb0b.setContent(html_594384b660f68612036702c921c3b7bc);
+        
+
+        circle_marker_0d82e13b16f7f0dd71b10d288009ab1c.bindPopup(popup_fc1535ab564033470c64a7d33bafeb0b)
+        ;
+
+        
+    
+    
+            circle_marker_0d82e13b16f7f0dd71b10d288009ab1c.bindTooltip(
+                `<div>
+                     [C2] 서울실버 노인교실
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_4d0ca8080227f8d2a2a06c8ca1a9cad7 = L.circleMarker(
+                [37.4846375, 126.9170695],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F2C600", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.698362435537863, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_b2458a4f76a9de736a778e077d832c57);
+        
+    
+        var popup_3df2053ae0d94f49a8b0a84de9f29da7 = L.popup({"maxWidth": 300});
+
+        
+            var html_ddb8a07195aa35ab6389939f76c42e1d = $(`<div id="html_ddb8a07195aa35ab6389939f76c42e1d" style="width: 100.0%; height: 100.0%;">         <div style='font-size:13px'>           <b>장소명</b>: 신림종합시장<br>           <b>행정동</b>: 신사동<br>           <b>클러스터</b>: 2<br>           <b>입지점수</b>: 0.712295         </div>         </div>`)[0];
+            popup_3df2053ae0d94f49a8b0a84de9f29da7.setContent(html_ddb8a07195aa35ab6389939f76c42e1d);
+        
+
+        circle_marker_4d0ca8080227f8d2a2a06c8ca1a9cad7.bindPopup(popup_3df2053ae0d94f49a8b0a84de9f29da7)
+        ;
+
+        
+    
+    
+            circle_marker_4d0ca8080227f8d2a2a06c8ca1a9cad7.bindTooltip(
+                `<div>
+                     [C2] 신림종합시장
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_45ee174a534f9f4cf6d73fd548c8a3b9 = L.circleMarker(
+                [37.4862466, 126.9167333],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F2C600", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.698362435537863, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_b2458a4f76a9de736a778e077d832c57);
+        
+    
+        var popup_09bc01b74290000007a1b350a16be93f = L.popup({"maxWidth": 300});
+
+        
+            var html_7310443e43fa19bf2de8006a1fc920ed = $(`<div id="html_7310443e43fa19bf2de8006a1fc920ed" style="width: 100.0%; height: 100.0%;">         <div style='font-size:13px'>           <b>장소명</b>: 관악신사시장<br>           <b>행정동</b>: 신사동<br>           <b>클러스터</b>: 2<br>           <b>입지점수</b>: 0.712295         </div>         </div>`)[0];
+            popup_09bc01b74290000007a1b350a16be93f.setContent(html_7310443e43fa19bf2de8006a1fc920ed);
+        
+
+        circle_marker_45ee174a534f9f4cf6d73fd548c8a3b9.bindPopup(popup_09bc01b74290000007a1b350a16be93f)
+        ;
+
+        
+    
+    
+            circle_marker_45ee174a534f9f4cf6d73fd548c8a3b9.bindTooltip(
+                `<div>
+                     [C2] 관악신사시장
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_9a5d46b3c333fcb43e7d894274ddddd1 = L.circleMarker(
+                [37.484937, 126.920549],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F2C600", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.698362435537863, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_b2458a4f76a9de736a778e077d832c57);
+        
+    
+        var popup_ca9497f0beda2a57b580c1186758d34a = L.popup({"maxWidth": 300});
+
+        
+            var html_caa863a5d025f0c295cfab9a12dd15f5 = $(`<div id="html_caa863a5d025f0c295cfab9a12dd15f5" style="width: 100.0%; height: 100.0%;">         <div style='font-size:13px'>           <b>장소명</b>: 남부어린이공원<br>           <b>행정동</b>: 신사동<br>           <b>클러스터</b>: 2<br>           <b>입지점수</b>: 0.712295         </div>         </div>`)[0];
+            popup_ca9497f0beda2a57b580c1186758d34a.setContent(html_caa863a5d025f0c295cfab9a12dd15f5);
+        
+
+        circle_marker_9a5d46b3c333fcb43e7d894274ddddd1.bindPopup(popup_ca9497f0beda2a57b580c1186758d34a)
+        ;
+
+        
+    
+    
+            circle_marker_9a5d46b3c333fcb43e7d894274ddddd1.bindTooltip(
+                `<div>
+                     [C2] 남부어린이공원
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_2d91d867ca36e96b77e31ec49eeb79c0 = L.circleMarker(
+                [37.486274, 126.91518],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F2C600", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.698362435537863, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_b2458a4f76a9de736a778e077d832c57);
+        
+    
+        var popup_c574752750b28279284a9e21d8fd140a = L.popup({"maxWidth": 300});
+
+        
+            var html_dc9d5b3a29c33e57377224ebf0556d72 = $(`<div id="html_dc9d5b3a29c33e57377224ebf0556d72" style="width: 100.0%; height: 100.0%;">         <div style='font-size:13px'>           <b>장소명</b>: 새빛어린이공원<br>           <b>행정동</b>: 신사동<br>           <b>클러스터</b>: 2<br>           <b>입지점수</b>: 0.712295         </div>         </div>`)[0];
+            popup_c574752750b28279284a9e21d8fd140a.setContent(html_dc9d5b3a29c33e57377224ebf0556d72);
+        
+
+        circle_marker_2d91d867ca36e96b77e31ec49eeb79c0.bindPopup(popup_c574752750b28279284a9e21d8fd140a)
+        ;
+
+        
+    
+    
+            circle_marker_2d91d867ca36e96b77e31ec49eeb79c0.bindTooltip(
+                `<div>
+                     [C2] 새빛어린이공원
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_46493015c10b6b2db706f163ae54737e = L.circleMarker(
+                [37.487781, 126.914366],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F2C600", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.698362435537863, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_b2458a4f76a9de736a778e077d832c57);
+        
+    
+        var popup_fec76b516a6f62418363361688180079 = L.popup({"maxWidth": 300});
+
+        
+            var html_26daba5528328620b3eb167eae2c9613 = $(`<div id="html_26daba5528328620b3eb167eae2c9613" style="width: 100.0%; height: 100.0%;">         <div style='font-size:13px'>           <b>장소명</b>: 도림천 신대방역 하부 농구장<br>           <b>행정동</b>: 신사동<br>           <b>클러스터</b>: 2<br>           <b>입지점수</b>: 0.712295         </div>         </div>`)[0];
+            popup_fec76b516a6f62418363361688180079.setContent(html_26daba5528328620b3eb167eae2c9613);
+        
+
+        circle_marker_46493015c10b6b2db706f163ae54737e.bindPopup(popup_fec76b516a6f62418363361688180079)
+        ;
+
+        
+    
+    
+            circle_marker_46493015c10b6b2db706f163ae54737e.bindTooltip(
+                `<div>
+                     [C2] 도림천 신대방역 하부 농구장
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_14521cfba6a586e6a6695fe6bd597657 = L.circleMarker(
+                [37.470108, 126.932974],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F2C600", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.959106125033928, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_b2458a4f76a9de736a778e077d832c57);
+        
+    
+        var popup_63fd0e206cd8d8027a323c4ce59353e5 = L.popup({"maxWidth": 300});
+
+        
+            var html_5cc0ca8da35c378e880415b917c00fca = $(`<div id="html_5cc0ca8da35c378e880415b917c00fca" style="width: 100.0%; height: 100.0%;">         <div style='font-size:13px'>           <b>장소명</b>: 삼성동주민센터<br>           <b>행정동</b>: 삼성동<br>           <b>클러스터</b>: 2<br>           <b>입지점수</b>: 0.494888         </div>         </div>`)[0];
+            popup_63fd0e206cd8d8027a323c4ce59353e5.setContent(html_5cc0ca8da35c378e880415b917c00fca);
+        
+
+        circle_marker_14521cfba6a586e6a6695fe6bd597657.bindPopup(popup_63fd0e206cd8d8027a323c4ce59353e5)
+        ;
+
+        
+    
+    
+            circle_marker_14521cfba6a586e6a6695fe6bd597657.bindTooltip(
+                `<div>
+                     [C2] 삼성동주민센터
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_848c8d2812c3c2c652aba4748142e261 = L.circleMarker(
+                [37.4704905, 126.9279858],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F2C600", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.959106125033928, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_b2458a4f76a9de736a778e077d832c57);
+        
+    
+        var popup_27da13a4933a661417c68e551e6951af = L.popup({"maxWidth": 300});
+
+        
+            var html_462ec82b69cb9b8ef4355b32e6291244 = $(`<div id="html_462ec82b69cb9b8ef4355b32e6291244" style="width: 100.0%; height: 100.0%;">         <div style='font-size:13px'>           <b>장소명</b>: 원신 경로당<br>           <b>행정동</b>: 삼성동<br>           <b>클러스터</b>: 2<br>           <b>입지점수</b>: 0.494888         </div>         </div>`)[0];
+            popup_27da13a4933a661417c68e551e6951af.setContent(html_462ec82b69cb9b8ef4355b32e6291244);
+        
+
+        circle_marker_848c8d2812c3c2c652aba4748142e261.bindPopup(popup_27da13a4933a661417c68e551e6951af)
+        ;
+
+        
+    
+    
+            circle_marker_848c8d2812c3c2c652aba4748142e261.bindTooltip(
+                `<div>
+                     [C2] 원신 경로당
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_fce2208aa5c61723440dc54d7307e7fc = L.circleMarker(
+                [37.4619041, 126.9302],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F2C600", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.959106125033928, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_b2458a4f76a9de736a778e077d832c57);
+        
+    
+        var popup_841209a546efff8cc3b1fb9aecbd06e1 = L.popup({"maxWidth": 300});
+
+        
+            var html_ec835787343d4bb1b460182fac2a61a8 = $(`<div id="html_ec835787343d4bb1b460182fac2a61a8" style="width: 100.0%; height: 100.0%;">         <div style='font-size:13px'>           <b>장소명</b>: 율곡 경로당<br>           <b>행정동</b>: 삼성동<br>           <b>클러스터</b>: 2<br>           <b>입지점수</b>: 0.494888         </div>         </div>`)[0];
+            popup_841209a546efff8cc3b1fb9aecbd06e1.setContent(html_ec835787343d4bb1b460182fac2a61a8);
+        
+
+        circle_marker_fce2208aa5c61723440dc54d7307e7fc.bindPopup(popup_841209a546efff8cc3b1fb9aecbd06e1)
+        ;
+
+        
+    
+    
+            circle_marker_fce2208aa5c61723440dc54d7307e7fc.bindTooltip(
+                `<div>
+                     [C2] 율곡 경로당
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_134efd66dcc79fe811419c509ad8a096 = L.circleMarker(
+                [37.4653326, 126.9328833],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F2C600", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.959106125033928, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_b2458a4f76a9de736a778e077d832c57);
+        
+    
+        var popup_8821d107bb0243465d2fb7ff1d4d68fb = L.popup({"maxWidth": 300});
+
+        
+            var html_97c979e2ef21d87e24927c34404b045c = $(`<div id="html_97c979e2ef21d87e24927c34404b045c" style="width: 100.0%; height: 100.0%;">         <div style='font-size:13px'>           <b>장소명</b>: 돌샘 경로당<br>           <b>행정동</b>: 삼성동<br>           <b>클러스터</b>: 2<br>           <b>입지점수</b>: 0.494888         </div>         </div>`)[0];
+            popup_8821d107bb0243465d2fb7ff1d4d68fb.setContent(html_97c979e2ef21d87e24927c34404b045c);
+        
+
+        circle_marker_134efd66dcc79fe811419c509ad8a096.bindPopup(popup_8821d107bb0243465d2fb7ff1d4d68fb)
+        ;
+
+        
+    
+    
+            circle_marker_134efd66dcc79fe811419c509ad8a096.bindTooltip(
+                `<div>
+                     [C2] 돌샘 경로당
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_463ceb27b9da243841c29ad93db7070a = L.circleMarker(
+                [37.4667452, 126.931173],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F2C600", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.959106125033928, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_b2458a4f76a9de736a778e077d832c57);
+        
+    
+        var popup_ab8c6fb7ee485ddaf0341f1efeb80bcf = L.popup({"maxWidth": 300});
+
+        
+            var html_1a6a362cff3c0a5c0e9d39e6a188f353 = $(`<div id="html_1a6a362cff3c0a5c0e9d39e6a188f353" style="width: 100.0%; height: 100.0%;">         <div style='font-size:13px'>           <b>장소명</b>: 성민종합사회복지관<br>           <b>행정동</b>: 삼성동<br>           <b>클러스터</b>: 2<br>           <b>입지점수</b>: 0.494888         </div>         </div>`)[0];
+            popup_ab8c6fb7ee485ddaf0341f1efeb80bcf.setContent(html_1a6a362cff3c0a5c0e9d39e6a188f353);
+        
+
+        circle_marker_463ceb27b9da243841c29ad93db7070a.bindPopup(popup_ab8c6fb7ee485ddaf0341f1efeb80bcf)
+        ;
+
+        
+    
+    
+            circle_marker_463ceb27b9da243841c29ad93db7070a.bindTooltip(
+                `<div>
+                     [C2] 성민종합사회복지관
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_a7481a73f7e209389ace799ab77c009f = L.circleMarker(
+                [37.4664597, 126.9311809],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F2C600", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.959106125033928, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_b2458a4f76a9de736a778e077d832c57);
+        
+    
+        var popup_e865cb595846f0b9320eec8583d00fdd = L.popup({"maxWidth": 300});
+
+        
+            var html_6bb000261e8e83d83a597cc65d07e892 = $(`<div id="html_6bb000261e8e83d83a597cc65d07e892" style="width: 100.0%; height: 100.0%;">         <div style='font-size:13px'>           <b>장소명</b>: 동산평생대학<br>           <b>행정동</b>: 삼성동<br>           <b>클러스터</b>: 2<br>           <b>입지점수</b>: 0.494888         </div>         </div>`)[0];
+            popup_e865cb595846f0b9320eec8583d00fdd.setContent(html_6bb000261e8e83d83a597cc65d07e892);
+        
+
+        circle_marker_a7481a73f7e209389ace799ab77c009f.bindPopup(popup_e865cb595846f0b9320eec8583d00fdd)
+        ;
+
+        
+    
+    
+            circle_marker_a7481a73f7e209389ace799ab77c009f.bindTooltip(
+                `<div>
+                     [C2] 동산평생대학
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_2a17b1e26cee9090d54b319f332e5422 = L.circleMarker(
+                [37.4663305, 126.9297967],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F2C600", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.959106125033928, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_b2458a4f76a9de736a778e077d832c57);
+        
+    
+        var popup_bc89175de37821718b834465a903fc91 = L.popup({"maxWidth": 300});
+
+        
+            var html_d32d0af1ac5167df898a88f5ba58e811 = $(`<div id="html_d32d0af1ac5167df898a88f5ba58e811" style="width: 100.0%; height: 100.0%;">         <div style='font-size:13px'>           <b>장소명</b>: 신원예닮노인교실<br>           <b>행정동</b>: 삼성동<br>           <b>클러스터</b>: 2<br>           <b>입지점수</b>: 0.494888         </div>         </div>`)[0];
+            popup_bc89175de37821718b834465a903fc91.setContent(html_d32d0af1ac5167df898a88f5ba58e811);
+        
+
+        circle_marker_2a17b1e26cee9090d54b319f332e5422.bindPopup(popup_bc89175de37821718b834465a903fc91)
+        ;
+
+        
+    
+    
+            circle_marker_2a17b1e26cee9090d54b319f332e5422.bindTooltip(
+                `<div>
+                     [C2] 신원예닮노인교실
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_d1596052ac3b175d85d04962a70abf8a = L.circleMarker(
+                [37.46415507, 126.9317581],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F2C600", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.959106125033928, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_b2458a4f76a9de736a778e077d832c57);
+        
+    
+        var popup_633038072b42f9cc170f355efaa1ec4e = L.popup({"maxWidth": 300});
+
+        
+            var html_a1944de6b19b019eb481a1a98470d031 = $(`<div id="html_a1944de6b19b019eb481a1a98470d031" style="width: 100.0%; height: 100.0%;">         <div style='font-size:13px'>           <b>장소명</b>: 삼성동자치회관<br>           <b>행정동</b>: 삼성동<br>           <b>클러스터</b>: 2<br>           <b>입지점수</b>: 0.494888         </div>         </div>`)[0];
+            popup_633038072b42f9cc170f355efaa1ec4e.setContent(html_a1944de6b19b019eb481a1a98470d031);
+        
+
+        circle_marker_d1596052ac3b175d85d04962a70abf8a.bindPopup(popup_633038072b42f9cc170f355efaa1ec4e)
+        ;
+
+        
+    
+    
+            circle_marker_d1596052ac3b175d85d04962a70abf8a.bindTooltip(
+                `<div>
+                     [C2] 삼성동자치회관
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_201f4067f04fe9533b5f39eaea572278 = L.circleMarker(
+                [37.470633, 126.932502],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F2C600", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.959106125033928, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_b2458a4f76a9de736a778e077d832c57);
+        
+    
+        var popup_6ff773d2cd268062f5e96e00b7742d57 = L.popup({"maxWidth": 300});
+
+        
+            var html_f682f0461ca95363ad5014f208a05438 = $(`<div id="html_f682f0461ca95363ad5014f208a05438" style="width: 100.0%; height: 100.0%;">         <div style='font-size:13px'>           <b>장소명</b>: 삼성동시장<br>           <b>행정동</b>: 삼성동<br>           <b>클러스터</b>: 2<br>           <b>입지점수</b>: 0.494888         </div>         </div>`)[0];
+            popup_6ff773d2cd268062f5e96e00b7742d57.setContent(html_f682f0461ca95363ad5014f208a05438);
+        
+
+        circle_marker_201f4067f04fe9533b5f39eaea572278.bindPopup(popup_6ff773d2cd268062f5e96e00b7742d57)
+        ;
+
+        
+    
+    
+            circle_marker_201f4067f04fe9533b5f39eaea572278.bindTooltip(
+                `<div>
+                     [C2] 삼성동시장
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_b952c58f3a3165ea70271c0602d8800d = L.circleMarker(
+                [37.4708717, 126.9322223],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F2C600", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.959106125033928, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_b2458a4f76a9de736a778e077d832c57);
+        
+    
+        var popup_6fe82a29449643efc6260b58b292f7fa = L.popup({"maxWidth": 300});
+
+        
+            var html_02213d28bbb011fb801c14b89e7551f2 = $(`<div id="html_02213d28bbb011fb801c14b89e7551f2" style="width: 100.0%; height: 100.0%;">         <div style='font-size:13px'>           <b>장소명</b>: 신신림시장<br>           <b>행정동</b>: 삼성동<br>           <b>클러스터</b>: 2<br>           <b>입지점수</b>: 0.494888         </div>         </div>`)[0];
+            popup_6fe82a29449643efc6260b58b292f7fa.setContent(html_02213d28bbb011fb801c14b89e7551f2);
+        
+
+        circle_marker_b952c58f3a3165ea70271c0602d8800d.bindPopup(popup_6fe82a29449643efc6260b58b292f7fa)
+        ;
+
+        
+    
+    
+            circle_marker_b952c58f3a3165ea70271c0602d8800d.bindTooltip(
+                `<div>
+                     [C2] 신신림시장
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_85884a061ca9187e6f11b462216807db = L.circleMarker(
+                [37.473544, 126.932513],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F2C600", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.959106125033928, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_b2458a4f76a9de736a778e077d832c57);
+        
+    
+        var popup_ca4a01f5c1e49978f137c5380a12eb9e = L.popup({"maxWidth": 300});
+
+        
+            var html_f453030101c7276b8a47ac66588268dc = $(`<div id="html_f453030101c7276b8a47ac66588268dc" style="width: 100.0%; height: 100.0%;">         <div style='font-size:13px'>           <b>장소명</b>: 양산어린이공원<br>           <b>행정동</b>: 삼성동<br>           <b>클러스터</b>: 2<br>           <b>입지점수</b>: 0.494888         </div>         </div>`)[0];
+            popup_ca4a01f5c1e49978f137c5380a12eb9e.setContent(html_f453030101c7276b8a47ac66588268dc);
+        
+
+        circle_marker_85884a061ca9187e6f11b462216807db.bindPopup(popup_ca4a01f5c1e49978f137c5380a12eb9e)
+        ;
+
+        
+    
+    
+            circle_marker_85884a061ca9187e6f11b462216807db.bindTooltip(
+                `<div>
+                     [C2] 양산어린이공원
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_d61003e655e2094540850f86e808b72b = L.circleMarker(
+                [37.469892, 126.929443],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F2C600", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.959106125033928, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_b2458a4f76a9de736a778e077d832c57);
+        
+    
+        var popup_8d0b6a248bdb87ed3862b956e2894b7a = L.popup({"maxWidth": 300});
+
+        
+            var html_8478c70843cb3b46a7d4959e01ffd582 = $(`<div id="html_8478c70843cb3b46a7d4959e01ffd582" style="width: 100.0%; height: 100.0%;">         <div style='font-size:13px'>           <b>장소명</b>: 원신마을마당<br>           <b>행정동</b>: 삼성동<br>           <b>클러스터</b>: 2<br>           <b>입지점수</b>: 0.494888         </div>         </div>`)[0];
+            popup_8d0b6a248bdb87ed3862b956e2894b7a.setContent(html_8478c70843cb3b46a7d4959e01ffd582);
+        
+
+        circle_marker_d61003e655e2094540850f86e808b72b.bindPopup(popup_8d0b6a248bdb87ed3862b956e2894b7a)
+        ;
+
+        
+    
+    
+            circle_marker_d61003e655e2094540850f86e808b72b.bindTooltip(
+                `<div>
+                     [C2] 원신마을마당
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_8f82861a6435cd24705a94609f02b03c = L.circleMarker(
+                [37.465097, 126.927033],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F2C600", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.959106125033928, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_b2458a4f76a9de736a778e077d832c57);
+        
+    
+        var popup_2e929db6c02d9b0fddead71d95345412 = L.popup({"maxWidth": 300});
+
+        
+            var html_f07c735cb79033eef4e0a02ae22615b2 = $(`<div id="html_f07c735cb79033eef4e0a02ae22615b2" style="width: 100.0%; height: 100.0%;">         <div style='font-size:13px'>           <b>장소명</b>: 합실어린이공원<br>           <b>행정동</b>: 삼성동<br>           <b>클러스터</b>: 2<br>           <b>입지점수</b>: 0.494888         </div>         </div>`)[0];
+            popup_2e929db6c02d9b0fddead71d95345412.setContent(html_f07c735cb79033eef4e0a02ae22615b2);
+        
+
+        circle_marker_8f82861a6435cd24705a94609f02b03c.bindPopup(popup_2e929db6c02d9b0fddead71d95345412)
+        ;
+
+        
+    
+    
+            circle_marker_8f82861a6435cd24705a94609f02b03c.bindTooltip(
+                `<div>
+                     [C2] 합실어린이공원
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_8267f6631d906a9ddcc15d00a718876d = L.circleMarker(
+                [37.4629, 126.930025],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F2C600", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.959106125033928, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_b2458a4f76a9de736a778e077d832c57);
+        
+    
+        var popup_565d2162765a978d2edcb8bdbb511bbc = L.popup({"maxWidth": 300});
+
+        
+            var html_db3323f4d9fcbb9f41e416332cad0f13 = $(`<div id="html_db3323f4d9fcbb9f41e416332cad0f13" style="width: 100.0%; height: 100.0%;">         <div style='font-size:13px'>           <b>장소명</b>: 해바라기 어린이 공원<br>           <b>행정동</b>: 삼성동<br>           <b>클러스터</b>: 2<br>           <b>입지점수</b>: 0.494888         </div>         </div>`)[0];
+            popup_565d2162765a978d2edcb8bdbb511bbc.setContent(html_db3323f4d9fcbb9f41e416332cad0f13);
+        
+
+        circle_marker_8267f6631d906a9ddcc15d00a718876d.bindPopup(popup_565d2162765a978d2edcb8bdbb511bbc)
+        ;
+
+        
+    
+    
+            circle_marker_8267f6631d906a9ddcc15d00a718876d.bindTooltip(
+                `<div>
+                     [C2] 해바라기 어린이 공원
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_24a29f11253e7864936fe980582b61e3 = L.circleMarker(
+                [37.459346, 126.932924],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F2C600", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.959106125033928, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_b2458a4f76a9de736a778e077d832c57);
+        
+    
+        var popup_545c92d29892947805058b5727b3964a = L.popup({"maxWidth": 300});
+
+        
+            var html_a968a6f5d53935d6d6c67956d71e562e = $(`<div id="html_a968a6f5d53935d6d6c67956d71e562e" style="width: 100.0%; height: 100.0%;">         <div style='font-size:13px'>           <b>장소명</b>: 약수암어린이공원<br>           <b>행정동</b>: 삼성동<br>           <b>클러스터</b>: 2<br>           <b>입지점수</b>: 0.494888         </div>         </div>`)[0];
+            popup_545c92d29892947805058b5727b3964a.setContent(html_a968a6f5d53935d6d6c67956d71e562e);
+        
+
+        circle_marker_24a29f11253e7864936fe980582b61e3.bindPopup(popup_545c92d29892947805058b5727b3964a)
+        ;
+
+        
+    
+    
+            circle_marker_24a29f11253e7864936fe980582b61e3.bindTooltip(
+                `<div>
+                     [C2] 약수암어린이공원
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_95afe634c39b7c92e2e62626871efa88 = L.circleMarker(
+                [37.458502, 126.933738],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F2C600", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.959106125033928, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_b2458a4f76a9de736a778e077d832c57);
+        
+    
+        var popup_a30166e2c0526b5abbd7ae3766310368 = L.popup({"maxWidth": 300});
+
+        
+            var html_05c27d1eee889563c9d9325aec951962 = $(`<div id="html_05c27d1eee889563c9d9325aec951962" style="width: 100.0%; height: 100.0%;">         <div style='font-size:13px'>           <b>장소명</b>: 관악정<br>           <b>행정동</b>: 삼성동<br>           <b>클러스터</b>: 2<br>           <b>입지점수</b>: 0.494888         </div>         </div>`)[0];
+            popup_a30166e2c0526b5abbd7ae3766310368.setContent(html_05c27d1eee889563c9d9325aec951962);
+        
+
+        circle_marker_95afe634c39b7c92e2e62626871efa88.bindPopup(popup_a30166e2c0526b5abbd7ae3766310368)
+        ;
+
+        
+    
+    
+            circle_marker_95afe634c39b7c92e2e62626871efa88.bindTooltip(
+                `<div>
+                     [C2] 관악정
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_7d00fc2edaf244e9ccc453885e3cac01 = L.circleMarker(
+                [37.458092, 126.93365],
+                {"bubblingMouseEvents": true, "color": "#2A2A2A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F2C600", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.959106125033928, "stroke": true, "weight": 0.8}
+            ).addTo(feature_group_b2458a4f76a9de736a778e077d832c57);
+        
+    
+        var popup_725ff687aac0e5e1f6149b7761ae28a5 = L.popup({"maxWidth": 300});
+
+        
+            var html_e41ae0d6f058e5a3fb61818c1544c352 = $(`<div id="html_e41ae0d6f058e5a3fb61818c1544c352" style="width: 100.0%; height: 100.0%;">         <div style='font-size:13px'>           <b>장소명</b>: 제2구민운동장<br>           <b>행정동</b>: 삼성동<br>           <b>클러스터</b>: 2<br>           <b>입지점수</b>: 0.494888         </div>         </div>`)[0];
+            popup_725ff687aac0e5e1f6149b7761ae28a5.setContent(html_e41ae0d6f058e5a3fb61818c1544c352);
+        
+
+        circle_marker_7d00fc2edaf244e9ccc453885e3cac01.bindPopup(popup_725ff687aac0e5e1f6149b7761ae28a5)
+        ;
+
+        
+    
+    
+            circle_marker_7d00fc2edaf244e9ccc453885e3cac01.bindTooltip(
+                `<div>
+                     [C2] 제2구민운동장
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var layer_control_aa180e2ddad17405e409ef0eacae2d19 = {
+                base_layers : {
+                    "cartodbpositron" : tile_layer_3353511b91d7a603a0ee8252319973a7,
+                },
+                overlays :  {
+                    "\uc804\uccb4 \uc9c0\uc810(\uac1c\ubcc4 \ub9c8\ucee4, \ube44\uc9d1\uacc4)" : feature_group_512982d638c7215cfa95d08a891df539,
+                    "Cluster 0 (\uac1c\ubcc4 \ub9c8\ucee4)" : feature_group_6ad79733acdf2df72866b6734cadea42,
+                    "Cluster 1 (\uac1c\ubcc4 \ub9c8\ucee4)" : feature_group_206842ac4c2f64d1ccceb252827b9141,
+                    "Cluster 2 (\uac1c\ubcc4 \ub9c8\ucee4)" : feature_group_b2458a4f76a9de736a778e077d832c57,
+                },
+            };
+            L.control.layers(
+                layer_control_aa180e2ddad17405e409ef0eacae2d19.base_layers,
+                layer_control_aa180e2ddad17405e409ef0eacae2d19.overlays,
+                {"autoZIndex": true, "collapsed": false, "position": "topright"}
+            ).addTo(map_5cb24a7c2d3a6ec818e885f84ae96fbc);
+            feature_group_6ad79733acdf2df72866b6734cadea42.remove();
+            feature_group_206842ac4c2f64d1ccceb252827b9141.remove();
+        
+</script>
+</html>
